@@ -87,8 +87,8 @@ public class ReflectionTest {
         reflectionInvokeMethods = new ReflectionInvokeMethods<>(arrayListUser, arrayMethodName);
 
         // Results
-        String[][] expectedResult = reflectionInvokeMethods.getArrayReports();
-        String[][] actualResult = {
+        String[][] actualResult = reflectionInvokeMethods.getArrayReports();
+        String[][] expectedResult = {
                 {"6265552", "Mich", "Harris", "18/05/1990", "Michael.Harris@gmail.com"},
                 {"8545632", "Tony", "Stark", "18/08/1991", "Tony.Stark@gmail.com"},
                 {"9863214", "Nicole", "Cruise", "18/08/1996", "Nicole.Cruise@gmail.com"}
