@@ -14,7 +14,7 @@ plugins {
     id 'checkstyle'
     id 'pmd'
     id 'findbugs'
-    id 'jacoco'    
+    id 'jacoco'
 }
 
 // In this section you declare where to find the dependencies of your project
