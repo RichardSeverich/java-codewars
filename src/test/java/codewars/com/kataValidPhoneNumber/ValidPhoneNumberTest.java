@@ -1,4 +1,4 @@
-package codewars.com.exampleValidPhoneNumber;
+package codewars.com.kataValidPhoneNumber;
 
 import org.junit.Assert;
 import org.junit.Before;

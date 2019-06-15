@@ -1,4 +1,4 @@
-package codewars.com.exampleValidPhoneNumber;
+package codewars.com.kataValidPhoneNumber;
 
 /**
  * Kata
@@ -35,6 +35,7 @@ public class ValidPhoneNumber {
      * @return boolean.
      */
     public boolean validPhoneNumber(final String phoneNumber) {
+        // Pattern.matches("^\\(\\d{3}\\) \\d{3}-\\d{4}$", phoneNumber);
         return phoneNumber.matches(PHONE_REGEX);
     }
 }
