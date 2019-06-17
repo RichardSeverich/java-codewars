@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class ReversedWords {
 
+    private static final String WORD_SEPARATOR = " ";
+
     /**
      * Constructor.
      */
@@ -29,7 +31,7 @@ public class ReversedWords {
      * @return string.
      */
     public String reverse1(String str) {
-        String[] array = str.split(" ");
+        String[] array = str.split(WORD_SEPARATOR);
         StringBuilder sb = new StringBuilder();
         for (int i = array.length - 1; i >= 0; i--) {
             sb.append(array[i]);
@@ -43,8 +45,8 @@ public class ReversedWords {
      * @return string.
      */
     public String reverse2(String str) {
-        List<String> listWords = Arrays.asList(str.split(" "));
+        List<String> listWords = Arrays.asList(str.split(WORD_SEPARATOR));
         Collections.reverse(listWords);
-        return String.join(" ", listWords);
+        return String.join(WORD_SEPARATOR, listWords);
     }
 }
