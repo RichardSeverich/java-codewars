@@ -12,7 +12,7 @@ public class ValidPhoneNumberTest {
     private ValidPhoneNumber validPhoneNumber;
 
     /**
-     * Test 1.
+     * Before.
      */
     @Before
     public void setUp() {
@@ -20,7 +20,7 @@ public class ValidPhoneNumberTest {
     }
 
     /**
-     * Test 2.
+     * Test 1.
      */
     @Test
     public void test1() {
@@ -28,7 +28,7 @@ public class ValidPhoneNumberTest {
     }
 
     /**
-     *
+     * Test 2.
      */
     @Test
     public void test2() {

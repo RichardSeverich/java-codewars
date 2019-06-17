@@ -7,6 +7,9 @@ import java.util.stream.IntStream;
 
 
 /**
+ *
+ * 6 kyu
+ *
  * Let us consider this example (array written in general format):
  * <p>
  * ls = [0, 1, 3, 6, 10]

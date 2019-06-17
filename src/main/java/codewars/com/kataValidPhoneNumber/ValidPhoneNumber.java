@@ -1,6 +1,9 @@
 package codewars.com.kataValidPhoneNumber;
 
 /**
+ *
+ * 6 kyu
+ *
  * Kata
  * <p>
  * Write a function that accepts a string, and returns true if it is in the form of a phone number.
