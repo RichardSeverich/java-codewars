@@ -30,7 +30,7 @@ public class ReversedWords {
      * @param str str.
      * @return string.
      */
-    public String reverse1(String str) {
+    public String reverse1(final String str) {
         String[] array = str.split(WORD_SEPARATOR);
         StringBuilder sb = new StringBuilder();
         for (int i = array.length - 1; i >= 0; i--) {
@@ -44,7 +44,7 @@ public class ReversedWords {
      * @param str str.
      * @return string.
      */
-    public String reverse2(String str) {
+    public String reverse2(final String str) {
         List<String> listWords = Arrays.asList(str.split(WORD_SEPARATOR));
         Collections.reverse(listWords);
         return String.join(WORD_SEPARATOR, listWords);
