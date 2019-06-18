@@ -54,7 +54,7 @@ public class BiggerNumberNext {
     }
 
     /**
-     * permutation function
+     * permutation function (Bad performance.)
      *
      * @param str string to calculate permutation for
      * @param l   starting index
