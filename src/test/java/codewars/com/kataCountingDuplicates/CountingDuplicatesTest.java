@@ -42,4 +42,21 @@ public class CountingDuplicatesTest {
     public void test3() {
         Assert.assertEquals(1, countingDuplicates.duplicateCount("indIvisIbilIt"));
     }
+
+    /**
+     * Test 4.
+     */
+    @Test
+    public void test4() {
+        Assert.assertEquals(1, countingDuplicates.duplicateCountPro("indIvisIbilIt"));
+    }
+
+    /**
+     * Test 5.
+     */
+    @Test
+    public void test5() {
+        Assert.assertEquals(1, countingDuplicates.duplicateCountGood("indIvisIbilIt"));
+    }
+
 }

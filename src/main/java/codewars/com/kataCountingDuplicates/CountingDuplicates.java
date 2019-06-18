@@ -1,7 +1,10 @@
 package codewars.com.kataCountingDuplicates;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 6 kyu
@@ -48,5 +51,29 @@ public class CountingDuplicates {
             }
         }
         return result;
+    }
+
+    /**
+     * @param text text
+     * @return number of duplicates.
+     */
+    public int duplicateCountPro(String text) {
+        return (int) text
+                .toLowerCase()
+                .chars()
+                .boxed()
+                .collect(Collectors.groupingBy(k -> k, Collectors.counting()))
+                .values()
+                .stream()
+                .filter(e -> e > 1).count();
+    }
+
+    /**
+     * @param text text
+     * @return number of duplicates.
+     */
+    public int duplicateCountGood(String text) {
+        List<String> list = Arrays.asList(text.toLowerCase().split(""));
+        return (int) list.stream().filter(s -> Collections.frequency(list, s) > 1).distinct().count();
     }
 }
