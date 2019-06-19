@@ -1,5 +1,10 @@
 package codewars.com.kataNextBiggernumber;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  *
  */
@@ -7,25 +12,72 @@ public class BiggerNumNext {
 
     /**
      * @param number number.
-     * @return nextBiggerNumber.
+     * @return getNextBiggerNumber.
      */
-    public long nextBiggerNumber(final long number) {
+    public long getNextBiggerNumber(final long number) {
+        // convert long to string
+        String stringNumber = String.valueOf(number);
+        // get array.
         String[] arrayString = String.valueOf(number).split("");
+        // get index should be swapped.
         int[] arrayIndexChange = this.getIndexChange(arrayString);
-        int indexChangeFirst = arrayIndexChange[0];
+        if (arrayIndexChange[0] == -1) {
+            return -1;
+        }
+        // swapped.
+        String stringNumberSwapped = this.swap(stringNumber, arrayIndexChange[0], arrayIndexChange[1]);
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(number);
-        String stringNumber = sb.toString();
-        String headerString = stringNumber.substring(0, indexChangeFirst - 1);
-        String mediumString = stringNumber.substring(indexChangeFirst, indexChangeFirst);
-        String tailString = stringNumber.substring(indexChangeFirst, stringNumber.length() - 1);
+        // get header and tail
+        String headerString = stringNumberSwapped.substring(0, arrayIndexChange[0] + 1);
+        String tailString = stringNumberSwapped.substring(arrayIndexChange[0]);
+        tailString = tailString.substring(1);
 
+        // build result
         StringBuilder result = new StringBuilder();
         result.append(headerString);
-        result.append(mediumString);
+        if (tailString.length() == 0) {
+            return Long.parseLong(result.toString());
+        }
+        tailString = sortStringNumbers(tailString);
         result.append(tailString);
-        return -1;
+        return Long.parseLong(result.toString());
+    }
+
+    /**
+     * @param srt srt.
+     * @return srt.
+     */
+    public String sortStringNumbers(String srt) {
+        String[] arrayString = srt.split("");
+        List<String> listString = new ArrayList<>(Arrays.asList(arrayString));
+        listString = listString
+                .stream()
+                .map(Integer::valueOf)
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.toList());
+        StringBuilder sb = new StringBuilder();
+        for (String element : listString) {
+            sb.append(element);
+        }
+        return sb.toString();
+    }
+
+    /**
+     * value in index= i should be replace for value in index j
+     * <p>
+     * value in index= j should be replace for value in index i
+     *
+     * @param str string.
+     * @param i   index.
+     * @param j   index.
+     * @return string swapped.
+     */
+    public String swap(String str, int i, int j) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.setCharAt(i, str.charAt(j));
+        sb.setCharAt(j, str.charAt(i));
+        return sb.toString();
     }
 
     /**
@@ -41,6 +93,8 @@ public class BiggerNumNext {
     public int[] getIndexChange(String[] arrayString) {
         int[] arrayIndex = new int[2];
         int indexChange = -1;
+        arrayIndex[0] = -1;
+        arrayIndex[1] = -1;
         for (int i = arrayString.length - 1; i >= 0; i--) {
             for (int j = i; j >= 0; j--) {
                 int valueOne = Integer.parseInt(arrayString[i]);
