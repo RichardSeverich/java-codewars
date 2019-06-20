@@ -60,6 +60,7 @@ public class BiggerNumNextTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
+
     /**
      * Test 5.
      */
@@ -117,6 +118,27 @@ public class BiggerNumNextTest {
     public void test10() {
         long actualResult = biggerNumNext.getNextBiggerNumber(534976);
         long expectedResult = 536479;
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test 11.
+     */
+    @Test
+    public void test11() {
+        int[] actualResult = biggerNumNext
+                .getIndexChange(new String[]{"1", "0", "0", "5", "1", "7", "0", "1", "6", "1"});
+        int[] expectedResult = new int[]{7, 8};
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test 12.
+     */
+    @Test
+    public void test12() {
+        long actualResult = biggerNumNext.getNextBiggerNumber(1005170161);
+        long expectedResult = 1005170611;
         Assert.assertEquals(expectedResult, actualResult);
     }
 

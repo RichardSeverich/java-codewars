@@ -99,15 +99,16 @@ public class BiggerNumNext {
             for (int j = i; j >= 0; j--) {
                 int valueOne = Integer.parseInt(arrayString[i]);
                 int valueTwo = Integer.parseInt(arrayString[j]);
-                if (valueOne > valueTwo) {
-                    indexChange = j;
+                if (valueOne > valueTwo && indexChange == -1) {
+                    indexChange = 1;
+                    arrayIndex[0] = j;
+                    arrayIndex[1] = i;
+                    break;
+                } else if (valueOne > valueTwo && arrayIndex[0] < j && arrayIndex[1] > i) {
                     arrayIndex[0] = j;
                     arrayIndex[1] = i;
                     break;
                 }
-            }
-            if (indexChange != -1) {
-                break;
             }
         }
         return arrayIndex;
