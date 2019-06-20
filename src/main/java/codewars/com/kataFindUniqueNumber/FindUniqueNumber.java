@@ -44,7 +44,7 @@ public class FindUniqueNumber {
      * @param array array.
      * @return double.
      */
-    public double findUnique(double array[]) {
+    public double findUnique(final double[] array) {
         List<Double> listDuplicates = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
             int count = 0;
@@ -69,7 +69,7 @@ public class FindUniqueNumber {
      * @param array array.
      * @return double.
      */
-    public double findUniquePro(double array[]) {
+    public double findUniquePro(final double[] array) {
         int length = array.length;
         double noRepeated = array[0];
         for (int i = 0; i < length; i++) {

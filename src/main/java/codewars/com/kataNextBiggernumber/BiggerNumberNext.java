@@ -5,7 +5,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * You have to create a function that takes a positive integer number and returns the next bigger number formed by the same digits:
+ * 4kyu
+ * <p>
+ * Bad performance.
+ *
+ * <p>
+ * You have to create a function that takes a positive integer number and returns the next
+ * bigger number formed by the same digits:
  * <p>
  * 12 ==> 21
  * 513 ==> 531
@@ -19,6 +25,7 @@ import java.util.stream.Collectors;
 public class BiggerNumberNext {
 
     private List<String> listPermutation;
+    private String globalString;
 
     /**
      * Constructor.
@@ -35,7 +42,8 @@ public class BiggerNumberNext {
         listPermutation.clear();
         String str = Long.toString(number);
         int length = str.length();
-        this.permute(str, 0, length - 1);
+        this.globalString = str;
+        this.permute(0, length - 1);
         List<String> listString;
         listString = this.listPermutation
                 .stream()
@@ -46,7 +54,7 @@ public class BiggerNumberNext {
         for (String stringElement : listString) {
             long actualNum = Long.parseLong(stringElement);
             int index = listString.indexOf(stringElement);
-            if (actualNum == number && (index < listString.size() - 1)) {
+            if (actualNum == number && index < listString.size() - 1) {
                 stringResult = listString.get(index + 1);
             }
         }
@@ -54,33 +62,39 @@ public class BiggerNumberNext {
     }
 
     /**
-     * permutation function (Bad performance.)
+     * permutation function (Bad performance).
      *
      * @param str string to calculate permutation for
      * @param l   starting index
      * @param r   end index
      */
-    private void permute(String str, int l, int r) {
+    /**
+     * permutation function (Bad performance).
+     *
+     * @param l starting index.
+     * @param r end index.
+     */
+    private void permute(final int l, final int r) {
         if (l == r) {
-            listPermutation.add(str);
+            listPermutation.add(globalString);
         } else {
             for (int i = l; i <= r; i++) {
-                str = swap(str, l, i);
-                permute(str, l + 1, r);
-                str = swap(str, l, i);
+                globalString = swap(globalString, l, i);
+                permute(l + 1, r);
+                globalString = swap(globalString, l, i);
             }
         }
     }
 
     /**
-     * Swap Characters at position
+     * Swap Characters at position.
      *
-     * @param a string value
-     * @param i position 1
-     * @param j position 2
+     * @param a string value.
+     * @param i position 1.
+     * @param j position 2.
      * @return swapped string.
      */
-    private String swap(String a, int i, int j) {
+    private String swap(final String a, final int i, final int j) {
         char temp;
         char[] charArray = a.toCharArray();
         temp = charArray[i];

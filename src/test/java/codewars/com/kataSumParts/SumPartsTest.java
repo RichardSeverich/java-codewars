@@ -25,8 +25,8 @@ public class SumPartsTest {
      */
     @Test
     public void test1() {
-        int[] actualResult = sumParts.sumParts1(new int[]{1, 2, 3, 4, 5});
-        int[] expectedResult = {15, 14, 12, 9, 5, 0};
+        final int[] actualResult = sumParts.sumParts1(new int[]{1, 2, 3, 4, 5});
+        final int[] expectedResult = {15, 14, 12, 9, 5, 0};
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
 
@@ -36,8 +36,8 @@ public class SumPartsTest {
     @Test
     public void test2() {
         // Results
-        int[] actualResult = sumParts.sumParts2(new int[]{0, 1, 3, 6, 10});
-        int[] expectedResult = {20, 20, 19, 16, 10, 0};
+        final int[] actualResult = sumParts.sumParts2(new int[]{0, 1, 3, 6, 10});
+        final int[] expectedResult = {20, 20, 19, 16, 10, 0};
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
 
@@ -47,8 +47,8 @@ public class SumPartsTest {
     @Test
     public void test3() {
         // Results
-        int[] actualResult = sumParts.sumParts3(new int[]{0, 1, 3, 6, 10});
-        int[] expectedResult = {20, 20, 19, 16, 10, 0};
+        final int[] actualResult = sumParts.sumParts3(new int[]{0, 1, 3, 6, 10});
+        final int[] expectedResult = {20, 20, 19, 16, 10, 0};
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
 
@@ -58,8 +58,8 @@ public class SumPartsTest {
     @Test
     public void test4() {
         // Results
-        int[] actualResult = sumParts.sumParts4(new int[]{0, 1, 3, 6, 10});
-        int[] expectedResult = {20, 20, 19, 16, 10, 0};
+        final int[] actualResult = sumParts.sumParts4(new int[]{0, 1, 3, 6, 10});
+        final int[] expectedResult = {20, 20, 19, 16, 10, 0};
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
 }

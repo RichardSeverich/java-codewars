@@ -4,6 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Test.
+ */
 public class BiggerNumberNextTest {
 
     private BiggerNumberNext biggerNumber;
@@ -21,8 +24,8 @@ public class BiggerNumberNextTest {
      */
     @Test
     public void test1() {
-        long actualResult = biggerNumber.nextBiggerNumber(2017);
-        long expectedResult = 2071;
+        final long actualResult = biggerNumber.nextBiggerNumber(2017);
+        final long expectedResult = 2071;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -31,8 +34,8 @@ public class BiggerNumberNextTest {
      */
     @Test
     public void test2() {
-        long actualResult = biggerNumber.nextBiggerNumber(1);
-        long expectedResult = -1;
+        final long actualResult = biggerNumber.nextBiggerNumber(1);
+        final long expectedResult = -1;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -41,8 +44,8 @@ public class BiggerNumberNextTest {
      */
     @Test
     public void test3() {
-        long actualResult = biggerNumber.nextBiggerNumber(144);
-        long expectedResult = 414;
+        final long actualResult = biggerNumber.nextBiggerNumber(144);
+        final long expectedResult = 414;
         Assert.assertEquals(expectedResult, actualResult);
     }
 

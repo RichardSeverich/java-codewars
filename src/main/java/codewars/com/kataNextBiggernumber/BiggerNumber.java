@@ -8,7 +8,13 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * You have to create a function that takes a positive integer number and returns the next bigger number formed by the same digits:
+ * 4kyu
+ * <p>
+ * Bad performance.
+ *
+ * <p>
+ * You have to create a function that takes a positive integer number and returns the next bigger number
+ * formed by the same digits:
  * <p>
  * 12 ==> 21
  * 513 ==> 531
@@ -21,9 +27,8 @@ import java.util.stream.Stream;
  */
 public class BiggerNumber {
 
-
     /**
-     * Constructor
+     * Constructor.
      */
     BiggerNumber() {
 
@@ -91,7 +96,7 @@ public class BiggerNumber {
     }
 
     /**
-     * Bat: Execution Timed Out
+     * Bat: Execution Timed Out.
      *
      * @param str string.
      * @return Stream.

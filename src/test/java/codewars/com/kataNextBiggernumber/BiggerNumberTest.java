@@ -4,6 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Test.
+ */
 public class BiggerNumberTest {
 
 
@@ -22,8 +25,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test1() {
-        long actualResult = biggerNumber.biggerNumber1(12);
-        long expectedResult = 21;
+        final long actualResult = biggerNumber.biggerNumber1(12);
+        final long expectedResult = 21;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -32,8 +35,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test2() {
-        long actualResult = biggerNumber.biggerNumber1(2017);
-        long expectedResult = 7210;
+        final long actualResult = biggerNumber.biggerNumber1(2017);
+        final long expectedResult = 7210;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -42,8 +45,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test3() {
-        long actualResult = biggerNumber.biggerNumber1(9);
-        long expectedResult = -1;
+        final long actualResult = biggerNumber.biggerNumber1(9);
+        final long expectedResult = -1;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -52,8 +55,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test4() {
-        long actualResult = biggerNumber.biggerNumber2(12);
-        long expectedResult = 21;
+        final long actualResult = biggerNumber.biggerNumber2(12);
+        final long expectedResult = 21;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -62,8 +65,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test5() {
-        long actualResult = biggerNumber.biggerNumber2(2017);
-        long expectedResult = 7210;
+        final long actualResult = biggerNumber.biggerNumber2(2017);
+        final long expectedResult = 7210;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -72,8 +75,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test6() {
-        long actualResult = biggerNumber.biggerNumber2(9);
-        long expectedResult = -1;
+        final long actualResult = biggerNumber.biggerNumber2(9);
+        final long expectedResult = -1;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -82,8 +85,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test7() {
-        long actualResult = biggerNumber.nextBiggerNumber(2017);
-        long expectedResult = 2071;
+        final long actualResult = biggerNumber.nextBiggerNumber(2017);
+        final long expectedResult = 2071;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -92,8 +95,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test8() {
-        long actualResult = biggerNumber.nextBiggerNumber(1);
-        long expectedResult = -1;
+        final long actualResult = biggerNumber.nextBiggerNumber(1);
+        final long expectedResult = -1;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -102,8 +105,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test9() {
-        long actualResult = biggerNumber.nextBiggerNumber(144);
-        long expectedResult = 414;
+        final long actualResult = biggerNumber.nextBiggerNumber(144);
+        final long expectedResult = 414;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -112,8 +115,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test10() {
-        long actualResult = biggerNumber.nextBiggerNumber(513);
-        long expectedResult = 531;
+        final long actualResult = biggerNumber.nextBiggerNumber(513);
+        final long expectedResult = 531;
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -122,8 +125,8 @@ public class BiggerNumberTest {
      */
     @Test
     public void test11() {
-        long actualResult = biggerNumber.nextBiggerNumber(515);
-        long expectedResult = 551;
+        final long actualResult = biggerNumber.nextBiggerNumber(515);
+        final long expectedResult = 551;
         Assert.assertEquals(expectedResult, actualResult);
     }
 

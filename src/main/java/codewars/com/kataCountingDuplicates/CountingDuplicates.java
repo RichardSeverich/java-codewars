@@ -34,7 +34,7 @@ public class CountingDuplicates {
      * @param text text
      * @return number of duplicates.
      */
-    public int duplicateCount(String text) {
+    public int duplicateCount(final String text) {
         String[] array = text.toLowerCase().split("");
         List<String> list = new ArrayList<>();
         int result = 0;
@@ -57,7 +57,7 @@ public class CountingDuplicates {
      * @param text text
      * @return number of duplicates.
      */
-    public int duplicateCountPro(String text) {
+    public int duplicateCountPro(final String text) {
         return (int) text
                 .toLowerCase()
                 .chars()
@@ -72,7 +72,7 @@ public class CountingDuplicates {
      * @param text text
      * @return number of duplicates.
      */
-    public int duplicateCountGood(String text) {
+    public int duplicateCountGood(final String text) {
         List<String> list = Arrays.asList(text.toLowerCase().split(""));
         return (int) list.stream().filter(s -> Collections.frequency(list, s) > 1).distinct().count();
     }

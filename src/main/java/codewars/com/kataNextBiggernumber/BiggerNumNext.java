@@ -6,7 +6,21 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *
+ * 4kyu
+ * <p>
+ * Good Performance.
+ * <p>
+ * You have to create a function that takes a positive integer number and returns the next bigger number
+ * formed by the same digits:
+ * <p>
+ * 12 ==> 21
+ * 513 ==> 531
+ * 2017 ==> 2071
+ * If no bigger number can be composed using those digits, return -1:
+ * <p>
+ * 9 ==> -1
+ * 111 ==> -1
+ * 531 ==> -1
  */
 public class BiggerNumNext {
 
@@ -47,7 +61,7 @@ public class BiggerNumNext {
      * @param srt srt.
      * @return srt.
      */
-    public String sortStringNumbers(String srt) {
+    public String sortStringNumbers(final String srt) {
         String[] arrayString = srt.split("");
         List<String> listString = new ArrayList<>(Arrays.asList(arrayString));
         listString = listString
@@ -64,16 +78,16 @@ public class BiggerNumNext {
     }
 
     /**
-     * value in index= i should be replace for value in index j
+     * value in index= i should be replace for value in index j.
      * <p>
-     * value in index= j should be replace for value in index i
+     * value in index= j should be replace for value in index i.
      *
      * @param str string.
      * @param i   index.
      * @param j   index.
      * @return string swapped.
      */
-    public String swap(String str, int i, int j) {
+    public String swap(final String str, final int i, final int j) {
         StringBuilder sb = new StringBuilder(str);
         sb.setCharAt(i, str.charAt(j));
         sb.setCharAt(j, str.charAt(i));
@@ -90,7 +104,7 @@ public class BiggerNumNext {
      * @param arrayString arrayString.
      * @return IndexChange.
      */
-    public int[] getIndexChange(String[] arrayString) {
+    public int[] getIndexChange(final String[] arrayString) {
         int[] arrayIndex = new int[2];
         int indexChange = -1;
         arrayIndex[0] = -1;
@@ -112,5 +126,25 @@ public class BiggerNumNext {
             }
         }
         return arrayIndex;
+    }
+
+    /**
+     * @param n number.
+     * @return nextBiggerNumber.
+     */
+    public long getNextBiggerNumberGood(final long n) {
+        char[] s = String.valueOf(n).toCharArray();
+        for (int i = s.length - 2; i >= 0; i--) {
+            for (int j = s.length - 1; j > i; j--) {
+                if (s[i] < s[j]) {
+                    char tmp = s[i];
+                    s[i] = s[j];
+                    s[j] = tmp;
+                    Arrays.sort(s, i + 1, s.length);
+                    return Long.parseLong(String.valueOf(s));
+                }
+            }
+        }
+        return -1;
     }
 }

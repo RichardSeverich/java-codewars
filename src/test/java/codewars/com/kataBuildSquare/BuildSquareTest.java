@@ -26,12 +26,13 @@ public class BuildSquareTest {
      */
     @Test
     public void test1() {
+        final int three = 3;
         expectedResult
                 .append("+++")
                 .append(System.getProperty("line.separator"))
                 .append("+++")
                 .append(System.getProperty("line.separator"))
                 .append("+++");
-        Assert.assertEquals(expectedResult.toString(), buildSquare.generateShape(3));
+        Assert.assertEquals(expectedResult.toString(), buildSquare.generateShape(three));
     }
 }

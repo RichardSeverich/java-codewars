@@ -33,9 +33,9 @@ public class DataReverse {
      * @param arrayInt arrayInt.
      * @return array.
      */
-    public int[] getDataReverse(int[] arrayInt) {
+    public int[] getDataReverse(final int[] arrayInt) {
         //Count number of rows
-        int longBytes = 8;
+        final int longBytes = 8;
         int[] singleArrayInt = new int[longBytes];
         List<Integer> listIntegerResult = new ArrayList<>();
         int indexSingle = 0;
@@ -62,10 +62,11 @@ public class DataReverse {
      * @param data data.
      * @return array.
      */
-    public int[] dataReverseGood1(int[] data) {
-        int bytes[] = new int[data.length];
-        for (int i = data.length - 8, j = 0; i >= 0; i -= 8, j += 8) {
-            System.arraycopy(data, i, bytes, j, 8);
+    public int[] dataReverseGood1(final int[] data) {
+        final int longBytes = 8;
+        int[] bytes = new int[data.length];
+        for (int i = data.length - longBytes, j = 0; i >= 0; i -= longBytes, j += longBytes) {
+            System.arraycopy(data, i, bytes, j, longBytes);
         }
         return bytes;
     }
@@ -74,9 +75,10 @@ public class DataReverse {
      * @param data data.
      * @return array.
      */
-    public int[] dataReverseGood2(int[] data) {
+    public int[] dataReverseGood2(final int[] data) {
+        final int longBytes = 8;
         return java.util.stream.IntStream.range(0, data.length)
-                .map(i -> data[data.length - 8 - (i / 8 * 8) + (i % 8)])
+                .map(i -> data[data.length - longBytes - (i / longBytes * longBytes) + (i % longBytes)])
                 .toArray();
     }
 }
