@@ -48,14 +48,14 @@ public class SmallerNumber {
         String stringNumberSwapped = biggerNumber.swap(stringNumber, arrayIndexChange[0], arrayIndexChange[1]);
 
         int indexMax = arrayIndexChange[1];
-        int indexMin = arrayIndexChange[0];
+        //int indexMin = arrayIndexChange[0];
         if (arrayIndexChange[0] > arrayIndexChange[1]) {
             indexMax = arrayIndexChange[0];
-            indexMin = arrayIndexChange[1];
+            //indexMin = arrayIndexChange[1];
         }
         // get header and tail
-        String headerString = stringNumberSwapped.substring(0, indexMin+ 1);
-        String tailString = stringNumberSwapped.substring(indexMin);
+        String headerString = stringNumberSwapped.substring(0, indexMax+1);
+        String tailString = stringNumberSwapped.substring(indexMax);
         tailString = tailString.substring(1);
 
         // build result
