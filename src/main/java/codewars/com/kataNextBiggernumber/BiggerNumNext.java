@@ -25,6 +25,13 @@ import java.util.stream.Collectors;
 public class BiggerNumNext {
 
     /**
+     * Constructor.
+     */
+    public BiggerNumNext() {
+
+    }
+
+    /**
      * @param number number.
      * @return getNextBiggerNumber.
      */
@@ -58,6 +65,8 @@ public class BiggerNumNext {
     }
 
     /**
+     * de menor a mayor.
+     *
      * @param srt srt.
      * @return srt.
      */
