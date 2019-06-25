@@ -22,19 +22,50 @@ public class SmallerNumberTest {
     @Test
     public void test1() {
         final int[] actualResult = smallerNumber
-                .getIndexChange(new String[]{"1", "0", "0", "5", "1", "7", "0", "6", "1", "1"});
-        final int[] expectedResult = new int[]{7, 8};
+                .getIndexChange(new String[]{"9", "4", "1", "4"});
+        final int[] expectedResult = new int[]{1, 2};
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
 
     /**
-     * Test 1.
+     * Test 18.
+     */
+    @Test
+    public void test18() {
+        final long actualResult = smallerNumber.getNextSmaller(9414);
+        final long expectedResult = 9144;
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test 19.
+     */
+    @Test
+    public void test19() {
+        final long actualResult = smallerNumber.getNextSmaller(53134);
+        final long expectedResult = 51433;
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test 20.
+     */
+    @Test
+    public void test20() {
+        final int[] actualResult = smallerNumber
+                .getIndexChange(new String[]{"5", "3", "1", "3", "4"});
+        final int[] expectedResult = new int[]{1, 2};
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test 10.
      */
     @Test
     public void test10() {
         final int[] actualResult = smallerNumber
                 .getIndexChange(new String[]{"1", "0", "0", "5", "1", "7", "0", "6", "1", "1"});
-        final int[] expectedResult = new int[]{7, 8};
+        final int[] expectedResult = new int[]{7, 9};
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
 
@@ -133,7 +164,7 @@ public class SmallerNumberTest {
      */
     @Test
     public void test12() {
-        final long actualResult = smallerNumber.getNextSmallerOnly(709);
+        final long actualResult = smallerNumber.getNextSmaller(709);
         final long expectedResult = -1;
         Assert.assertEquals(expectedResult, actualResult);
     }
@@ -149,7 +180,7 @@ public class SmallerNumberTest {
     }
 
     /**
-     * Test 13.
+     * Test 14.
      */
     @Test
     public void test14() {
@@ -158,7 +189,34 @@ public class SmallerNumberTest {
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
 
+    /**
+     * Test 15.
+     */
+    @Test
+    public void test15() {
+        final int[] actualResult = smallerNumber.getIndexChange(new String[]{"9", "0", "7"});
+        final int[] expectedResult = new int[]{0, 2};
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
 
+    /**
+     * Test 16.
+     */
+    @Test
+    public void test16() {
+        final int[] actualResult = smallerNumber.getIndexChange(new String[]{"1", "0", "0"});
+        final int[] expectedResult = new int[]{-1, -1};
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
 
+    /**
+     * Test 17.
+     */
+    @Test
+    public void test17() {
+        final int[] actualResult = smallerNumber.getIndexChange(new String[]{"9", "9", "9", "9", "9"});
+        final int[] expectedResult = new int[]{-1, -1};
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
 
 }

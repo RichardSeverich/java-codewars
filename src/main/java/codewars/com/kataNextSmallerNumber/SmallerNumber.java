@@ -2,6 +2,11 @@ package codewars.com.kataNextSmallerNumber;
 
 import codewars.com.kataNextBiggernumber.BiggerNumNext;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 /**
  * 4kyu
@@ -34,56 +39,35 @@ public class SmallerNumber {
     }
 
     /**
-     * @param number
-     * @return
-     */
-    public long getNextSmaller(final long number) {
-        long resultOne;
-        long resultTwo;
-        BiggerNumNext biggerNumNext = new BiggerNumNext();
-        resultOne = this.getNextSmallerOnly(number);
-        if (resultOne == -1) {
-            return resultOne;
-        }
-        resultTwo = biggerNumNext.getNextBiggerNumber(resultOne);
-        if (resultTwo == -1) {
-            return resultOne;
-        }
-        if (resultOne > resultTwo && resultOne < number) {
-            return resultOne;
-        }
-        if (resultTwo > resultOne && resultTwo < number) {
-            return resultTwo;
-        }
-        return resultOne;
-
-    }
-
-    /**
      * @param number number.
      * @return number.
      */
-    public long getNextSmallerOnly(final long number) {
+    public long getNextSmaller(final long number) {
         BiggerNumNext biggerNumber = new BiggerNumNext();
         // convert long to string
         String stringNumber = String.valueOf(number);
         // get array.
         String[] arrayString = String.valueOf(number).split("");
+
         // get index should be swapped.
         int[] arrayIndexChange = this.getIndexChange(arrayString);
         if (arrayIndexChange[0] == -1) {
             return -1;
         }
+
         // swapped.
         String stringNumberSwapped = biggerNumber.swap(stringNumber, arrayIndexChange[0], arrayIndexChange[1]);
 
+        // find index Max
         int indexMax = arrayIndexChange[1];
+        int indexMin = arrayIndexChange[0];
         if (arrayIndexChange[0] > arrayIndexChange[1]) {
             indexMax = arrayIndexChange[0];
+            indexMin = arrayIndexChange[1];
         }
         // get header and tail
-        String headerString = stringNumberSwapped.substring(0, indexMax + 1);
-        String tailString = stringNumberSwapped.substring(indexMax);
+        String headerString = stringNumberSwapped.substring(0, indexMin + 1);
+        String tailString = stringNumberSwapped.substring(indexMin);
         tailString = tailString.substring(1);
 
         // build result
@@ -92,7 +76,7 @@ public class SmallerNumber {
         if (tailString.length() == 0) {
             return Long.parseLong(result.toString());
         }
-        tailString = biggerNumber.sortStringNumbers(tailString);
+        tailString = this.sortReverseStringNumber(tailString);
         result.append(tailString);
         return Long.parseLong(result.toString());
     }
@@ -107,27 +91,54 @@ public class SmallerNumber {
         arrayIndex[0] = -1;
         arrayIndex[1] = -1;
         for (int i = arrayString.length - 1; i >= 0; i--) {
+            int valueOne = Integer.parseInt(arrayString[i]);
             for (int j = i; j >= 0; j--) {
                 boolean flagDiff = j == i;
-                boolean flagZeroCondition = j == 0 && arrayString[i].equals("0");
-                int valueOne = Integer.parseInt(arrayString[i]);
                 int valueTwo = Integer.parseInt(arrayString[j]);
-                if (valueOne < valueTwo && indexChange == -1 && !flagDiff && !flagZeroCondition) {
-                    indexChange = 1;
-                    arrayIndex[0] = j;
-                    arrayIndex[1] = i;
-                    break;
-                }
-                int sumIndexesOne = i + j;
-                int sumIndexesTwo = arrayIndex[0] + arrayIndex[1];
-                boolean myFlag = sumIndexesOne > sumIndexesTwo;
-                if (valueOne <= valueTwo && myFlag && !flagDiff && !flagZeroCondition) {
-                    arrayIndex[0] = j;
-                    arrayIndex[1] = i;
-                    break;
+                boolean flagEqualValues = valueOne == valueTwo;
+                if (!flagDiff && !flagEqualValues) {
+                    boolean flagZeroCondition = j == 0 && arrayString[i].equals("0");
+                    if (valueOne < valueTwo && indexChange == -1 && !flagZeroCondition) {
+                        indexChange = 1;
+                        arrayIndex[0] = j; // Major
+                        arrayIndex[1] = i;
+                        break;
+                    }
+                    if (valueOne <= valueTwo && indexChange == 1 && !flagZeroCondition) {
+                        int valueTwoBefore = Integer.parseInt(arrayString[arrayIndex[1]]);
+                        boolean flagValue = valueTwoBefore > valueOne;
+                        boolean flagIndex = arrayIndex[0] <= j;
+                        if (flagValue && flagIndex) {
+                            arrayIndex[0] = j;
+                            arrayIndex[1] = i;
+                            break;
+                        }
+                    }
                 }
             }
         }
         return arrayIndex;
+    }
+
+    /**
+     * de menor a mayor.
+     *
+     * @param srt srt.
+     * @return srt.
+     */
+    public String sortReverseStringNumber(final String srt) {
+        String[] arrayString = srt.split("");
+        List<String> listString = new ArrayList<>(Arrays.asList(arrayString));
+        listString = listString
+                .stream()
+                .map(Integer::valueOf)
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.toList());
+        StringBuilder sb = new StringBuilder();
+        for (String element : listString) {
+            sb.append(element);
+        }
+        return sb.reverse().toString();
     }
 }
