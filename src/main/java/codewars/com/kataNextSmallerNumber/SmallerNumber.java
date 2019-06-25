@@ -48,28 +48,22 @@ public class SmallerNumber {
         String stringNumber = String.valueOf(number);
         // get array.
         String[] arrayString = String.valueOf(number).split("");
-
         // get index should be swapped.
         int[] arrayIndexChange = this.getIndexChange(arrayString);
         if (arrayIndexChange[0] == -1) {
             return -1;
         }
-
         // swapped.
         String stringNumberSwapped = biggerNumber.swap(stringNumber, arrayIndexChange[0], arrayIndexChange[1]);
-
         // find index Max
-        int indexMax = arrayIndexChange[1];
         int indexMin = arrayIndexChange[0];
         if (arrayIndexChange[0] > arrayIndexChange[1]) {
-            indexMax = arrayIndexChange[0];
             indexMin = arrayIndexChange[1];
         }
         // get header and tail
         String headerString = stringNumberSwapped.substring(0, indexMin + 1);
         String tailString = stringNumberSwapped.substring(indexMin);
         tailString = tailString.substring(1);
-
         // build result
         StringBuilder result = new StringBuilder();
         result.append(headerString);
@@ -91,24 +85,26 @@ public class SmallerNumber {
         arrayIndex[0] = -1;
         arrayIndex[1] = -1;
         for (int i = arrayString.length - 1; i >= 0; i--) {
-            int valueOne = Integer.parseInt(arrayString[i]);
+            int iValue = Integer.parseInt(arrayString[i]);
             for (int j = i; j >= 0; j--) {
                 boolean flagDiff = j == i;
-                int valueTwo = Integer.parseInt(arrayString[j]);
-                boolean flagEqualValues = valueOne == valueTwo;
+                int jValue = Integer.parseInt(arrayString[j]);
+                boolean flagEqualValues = iValue == jValue;
                 if (!flagDiff && !flagEqualValues) {
                     boolean flagZeroCondition = j == 0 && arrayString[i].equals("0");
-                    if (valueOne < valueTwo && indexChange == -1 && !flagZeroCondition) {
+                    if (iValue < jValue && indexChange == -1 && !flagZeroCondition) {
                         indexChange = 1;
-                        arrayIndex[0] = j; // Major
+                        arrayIndex[0] = j;
                         arrayIndex[1] = i;
                         break;
                     }
-                    if (valueOne <= valueTwo && indexChange == 1 && !flagZeroCondition) {
-                        int valueTwoBefore = Integer.parseInt(arrayString[arrayIndex[1]]);
-                        boolean flagValue = valueTwoBefore > valueOne;
+                    if (iValue <= jValue && indexChange == 1 && !flagZeroCondition) {
+                        int iValueBefore = Integer.parseInt(arrayString[arrayIndex[1]]);
+                        int jValueBefore = Integer.parseInt(arrayString[arrayIndex[0]]);
+                        boolean iFlagValue = iValueBefore > iValue;
+                        boolean jFlagValue = jValueBefore > jValue;
                         boolean flagIndex = arrayIndex[0] <= j;
-                        if (flagValue && flagIndex) {
+                        if (iFlagValue && jFlagValue && flagIndex) {
                             arrayIndex[0] = j;
                             arrayIndex[1] = i;
                             break;
@@ -140,5 +136,36 @@ public class SmallerNumber {
             sb.append(element);
         }
         return sb.reverse().toString();
+    }
+
+    /**
+     * @param n number.
+     * @return nextSmaller.
+     */
+    public long getNextSmallerGood(long n) {
+        char[] carr = String.valueOf(n).toCharArray();
+        int len = carr.length, i;
+        for (i = len - 1; i > 0; i--) {
+            if (carr[i] < carr[i - 1]) {
+                break;
+            }
+        }
+        if (i == 0) {
+            return -1;
+        } else {
+            int x = carr[i - 1], min = i;
+            for (int j = i + 1; j < len; j++) {
+                if (carr[j] < x && carr[j] > carr[min]) {
+                    min = j;
+                }
+            }
+            char temp = carr[i - 1];
+            carr[i - 1] = carr[min];
+            carr[min] = temp;
+            String[] sArr = String.valueOf(carr).split("");
+            java.util.Arrays.sort(sArr, i, len, java.util.Collections.reverseOrder());
+            long r = Long.parseLong(String.join("", sArr));
+            return String.valueOf(r).length() == len ? r : -1;
+        }
     }
 }
