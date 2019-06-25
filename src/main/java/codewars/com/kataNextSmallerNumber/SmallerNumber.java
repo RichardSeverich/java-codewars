@@ -33,7 +33,37 @@ public class SmallerNumber {
     SmallerNumber() {
     }
 
+    /**
+     * @param number
+     * @return
+     */
     public long getNextSmaller(final long number) {
+        long resultOne;
+        long resultTwo;
+        BiggerNumNext biggerNumNext = new BiggerNumNext();
+        resultOne = this.getNextSmallerOnly(number);
+        if (resultOne == -1) {
+            return resultOne;
+        }
+        resultTwo = biggerNumNext.getNextBiggerNumber(resultOne);
+        if (resultTwo == -1) {
+            return resultOne;
+        }
+        if (resultOne > resultTwo && resultOne < number) {
+            return resultOne;
+        }
+        if (resultTwo > resultOne && resultTwo < number) {
+            return resultTwo;
+        }
+        return resultOne;
+
+    }
+
+    /**
+     * @param number number.
+     * @return number.
+     */
+    public long getNextSmallerOnly(final long number) {
         BiggerNumNext biggerNumber = new BiggerNumNext();
         // convert long to string
         String stringNumber = String.valueOf(number);
@@ -48,13 +78,11 @@ public class SmallerNumber {
         String stringNumberSwapped = biggerNumber.swap(stringNumber, arrayIndexChange[0], arrayIndexChange[1]);
 
         int indexMax = arrayIndexChange[1];
-        //int indexMin = arrayIndexChange[0];
         if (arrayIndexChange[0] > arrayIndexChange[1]) {
             indexMax = arrayIndexChange[0];
-            //indexMin = arrayIndexChange[1];
         }
         // get header and tail
-        String headerString = stringNumberSwapped.substring(0, indexMax+1);
+        String headerString = stringNumberSwapped.substring(0, indexMax + 1);
         String tailString = stringNumberSwapped.substring(indexMax);
         tailString = tailString.substring(1);
 
@@ -69,6 +97,10 @@ public class SmallerNumber {
         return Long.parseLong(result.toString());
     }
 
+    /**
+     * @param arrayString arrayString.
+     * @return array.
+     */
     public int[] getIndexChange(final String[] arrayString) {
         int[] arrayIndex = new int[2];
         int indexChange = -1;
@@ -77,9 +109,10 @@ public class SmallerNumber {
         for (int i = arrayString.length - 1; i >= 0; i--) {
             for (int j = i; j >= 0; j--) {
                 boolean flagDiff = j == i;
+                boolean flagZeroCondition = j == 0 && arrayString[i].equals("0");
                 int valueOne = Integer.parseInt(arrayString[i]);
                 int valueTwo = Integer.parseInt(arrayString[j]);
-                if (valueOne < valueTwo && indexChange == -1 && !flagDiff) {
+                if (valueOne < valueTwo && indexChange == -1 && !flagDiff && !flagZeroCondition) {
                     indexChange = 1;
                     arrayIndex[0] = j;
                     arrayIndex[1] = i;
@@ -87,8 +120,8 @@ public class SmallerNumber {
                 }
                 int sumIndexesOne = i + j;
                 int sumIndexesTwo = arrayIndex[0] + arrayIndex[1];
-                boolean flag = sumIndexesOne > sumIndexesTwo;
-                if (valueOne <= valueTwo && flag && !flagDiff) {
+                boolean myFlag = sumIndexesOne > sumIndexesTwo;
+                if (valueOne <= valueTwo && myFlag && !flagDiff && !flagZeroCondition) {
                     arrayIndex[0] = j;
                     arrayIndex[1] = i;
                     break;

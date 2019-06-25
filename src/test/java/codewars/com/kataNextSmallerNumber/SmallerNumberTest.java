@@ -128,4 +128,37 @@ public class SmallerNumberTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
+    /**
+     * Test 12.
+     */
+    @Test
+    public void test12() {
+        final long actualResult = smallerNumber.getNextSmallerOnly(709);
+        final long expectedResult = -1;
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test 13.
+     */
+    @Test
+    public void test13() {
+        final int[] actualResult = smallerNumber.getIndexChange(new String[]{"7", "9", "0"});
+        final int[] expectedResult = new int[]{1, 2};
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test 13.
+     */
+    @Test
+    public void test14() {
+        final int[] actualResult = smallerNumber.getIndexChange(new String[]{"7", "0", "9"});
+        final int[] expectedResult = new int[]{-1, -1};
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
+
+
+
+
 }
