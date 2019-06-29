@@ -1,7 +1,5 @@
 package codewars.com.kataStringMix;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Dadas las dos cadenas s1 y s2, queremos visualizar cuán diferentes son las dos cadenas.
@@ -61,18 +59,37 @@ public class StringsMix {
 
     }
 
+    /**
+     * @param stringOne stringOne.
+     * @param stringTwo stringTwo.
+     * @return mix.
+     */
     public String mix(String stringOne, String stringTwo) {
         String[][] arrayRepeatedOne = this.getArrayWithRepeated(stringOne);
         String[][] arrayRepeatedTwo = this.getArrayWithRepeated(stringTwo);
-        int lengthArrayOne = arrayRepeatedOne.length;
-        int lengthArrayTwo = arrayRepeatedTwo.length;
         String[][] arrayMix;
-        if (lengthArrayOne > lengthArrayTwo) {
-            arrayMix = this.getArrayMix(arrayRepeatedOne, arrayRepeatedTwo, "1", "2");
-        } else {
-            arrayMix = this.getArrayMix(arrayRepeatedTwo, arrayRepeatedOne, "2", "1");
-        }
+        arrayMix = this.getArrayMix(arrayRepeatedOne, arrayRepeatedTwo);
         return arrayMix.toString();
+    }
+
+    /**
+     * @param arrayMix arrayMix.
+     * @return sortArray.
+     */
+    public String[][] sortArray(final String[][] arrayMix) {
+        String[] temp;
+        for (int i = 1; i < arrayMix.length; i++) {
+            for (int j = i; j > 0; j--) {
+                int valueOne = Integer.parseInt(arrayMix[j][1]);
+                int valueTwo = Integer.parseInt(arrayMix[j - 1][1]);
+                if (valueOne > valueTwo) {
+                    temp = arrayMix[j];
+                    arrayMix[j] = arrayMix[j - 1];
+                    arrayMix[j - 1] = temp;
+                }
+            }
+        }
+        return arrayMix;
     }
 
     /**
@@ -80,8 +97,7 @@ public class StringsMix {
      * @param arrayRepeatedTwo arrayRepeatedTwo-
      * @return array mix.
      */
-    public String[][] getArrayMix(final String[][] arrayRepeatedOne, final String[][] arrayRepeatedTwo,
-                                  final String numOne, final String numTwo) {
+    public String[][] getArrayMix(final String[][] arrayRepeatedOne, final String[][] arrayRepeatedTwo) {
         String[][] arrayMix = new String[arrayRepeatedOne.length + arrayRepeatedTwo.length][3];
         int indexArrayMix = 0;
         for (int i = 0; i < arrayRepeatedOne.length; i++) {
@@ -96,22 +112,21 @@ public class StringsMix {
                     if (numberOne == numberTwo) {
                         arrayMix[indexArrayMix][2] = "=";
                     } else if (numberOne > numberTwo) {
-                        arrayMix[indexArrayMix][2] = numOne;
+                        arrayMix[indexArrayMix][2] = "1";
                     } else {
                         arrayMix[indexArrayMix][1] = arrayRepeatedTwo[j][1];
-                        arrayMix[indexArrayMix][2] = numTwo;
+                        arrayMix[indexArrayMix][2] = "2";
                     }
                     indexArrayMix++;
                     break;
                 }
             }
         }
-
         for (int i = 0; i < arrayRepeatedOne.length; i++) {
             if (!isStringExistInArray(arrayMix, arrayRepeatedOne[i][0])) {
                 arrayMix[indexArrayMix][0] = arrayRepeatedOne[i][0];
                 arrayMix[indexArrayMix][1] = arrayRepeatedOne[i][1];
-                arrayMix[indexArrayMix][2] = numOne;
+                arrayMix[indexArrayMix][2] = "1";
                 indexArrayMix++;
             }
         }
@@ -119,7 +134,7 @@ public class StringsMix {
             if (!isStringExistInArray(arrayMix, arrayRepeatedTwo[i][0])) {
                 arrayMix[indexArrayMix][0] = arrayRepeatedTwo[i][0];
                 arrayMix[indexArrayMix][1] = arrayRepeatedTwo[i][1];
-                arrayMix[indexArrayMix][2] = numTwo;
+                arrayMix[indexArrayMix][2] = "2";
                 indexArrayMix++;
             }
         }
