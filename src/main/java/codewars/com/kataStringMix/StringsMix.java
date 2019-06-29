@@ -1,5 +1,8 @@
 package codewars.com.kataStringMix;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Dadas las dos cadenas s1 y s2, queremos visualizar cuán diferentes son las dos cadenas.
  * Solo tendremos en cuenta las letras minúsculas (de la A a la Z). Primero, contemos la
@@ -51,15 +54,83 @@ package codewars.com.kataStringMix;
  */
 public class StringsMix {
 
+    /**
+     * Constructor.
+     */
     StringsMix() {
 
     }
 
-    public String mix(String stringOne, String StringTwo) {
-        // your code
-        return "";
+    public String mix(String stringOne, String stringTwo) {
+        String[][] arrayRepeatedOne = this.getArrayWithRepeated(stringOne);
+        String[][] arrayRepeatedTwo = this.getArrayWithRepeated(stringTwo);
+        int lengthArrayOne = arrayRepeatedOne.length;
+        int lengthArrayTwo = arrayRepeatedTwo.length;
+        String[][] arrayMix;
+        if (lengthArrayOne > lengthArrayTwo) {
+            arrayMix = this.getArrayMix(arrayRepeatedOne, arrayRepeatedTwo, "1", "2");
+        } else {
+            arrayMix = this.getArrayMix(arrayRepeatedTwo, arrayRepeatedOne, "2", "1");
+        }
+        return arrayMix.toString();
     }
 
+    /**
+     * @param arrayRepeatedOne arrayRepeatedOne.
+     * @param arrayRepeatedTwo arrayRepeatedTwo-
+     * @return array mix.
+     */
+    public String[][] getArrayMix(final String[][] arrayRepeatedOne, final String[][] arrayRepeatedTwo,
+                                  final String numOne, final String numTwo) {
+        String[][] arrayMix = new String[arrayRepeatedOne.length + arrayRepeatedTwo.length][3];
+        int indexArrayMix = 0;
+        for (int i = 0; i < arrayRepeatedOne.length; i++) {
+            String valueOne = arrayRepeatedOne[i][0];
+            for (int j = 0; j < arrayRepeatedTwo.length; j++) {
+                String valueTwo = arrayRepeatedTwo[j][0];
+                if (valueOne.equals(valueTwo)) {
+                    int numberOne = Integer.parseInt(arrayRepeatedOne[i][1]);
+                    int numberTwo = Integer.parseInt(arrayRepeatedTwo[j][1]);
+                    arrayMix[indexArrayMix][0] = arrayRepeatedOne[i][0];
+                    arrayMix[indexArrayMix][1] = arrayRepeatedOne[i][1];
+                    if (numberOne == numberTwo) {
+                        arrayMix[indexArrayMix][2] = "=";
+                    } else if (numberOne > numberTwo) {
+                        arrayMix[indexArrayMix][2] = numOne;
+                    } else {
+                        arrayMix[indexArrayMix][1] = arrayRepeatedTwo[j][1];
+                        arrayMix[indexArrayMix][2] = numTwo;
+                    }
+                    indexArrayMix++;
+                    break;
+                }
+            }
+        }
+
+        for (int i = 0; i < arrayRepeatedOne.length; i++) {
+            if (!isStringExistInArray(arrayMix, arrayRepeatedOne[i][0])) {
+                arrayMix[indexArrayMix][0] = arrayRepeatedOne[i][0];
+                arrayMix[indexArrayMix][1] = arrayRepeatedOne[i][1];
+                arrayMix[indexArrayMix][2] = numOne;
+                indexArrayMix++;
+            }
+        }
+        for (int i = 0; i < arrayRepeatedTwo.length; i++) {
+            if (!isStringExistInArray(arrayMix, arrayRepeatedTwo[i][0])) {
+                arrayMix[indexArrayMix][0] = arrayRepeatedTwo[i][0];
+                arrayMix[indexArrayMix][1] = arrayRepeatedTwo[i][1];
+                arrayMix[indexArrayMix][2] = numTwo;
+                indexArrayMix++;
+            }
+        }
+        return arrayMix;
+    }
+
+
+    /**
+     * @param string string.
+     * @return array with repeated.
+     */
     public String[][] getArrayWithRepeated(final String string) {
         String[] arrayStrings = string.split("");
         int arrayLength = arrayStrings.length;
@@ -86,7 +157,6 @@ public class StringsMix {
         }
         return result;
     }
-
 
     /**
      * @param arrayString arrayString.
@@ -117,4 +187,3 @@ public class StringsMix {
         return Character.isLowerCase(c);
     }
 }
-

@@ -27,20 +27,14 @@ public class StringsMixTest {
         final String[][] arrayString = new String[5][2];
         arrayString[0][0] = "a";
         arrayString[0][1] = "5";
-
         arrayString[1][0] = "b";
         arrayString[1][1] = "2";
-
         arrayString[2][0] = "x";
         arrayString[2][1] = "1";
-
         arrayString[3][0] = "y";
         arrayString[3][1] = "3";
-
         arrayString[4][0] = null;
         arrayString[4][1] = null;
-
-
         Assert.assertTrue(stringsMix.isStringExistInArray(arrayString, "a"));
         Assert.assertFalse(stringsMix.isStringExistInArray(arrayString, "A"));
         Assert.assertFalse(stringsMix.isStringExistInArray(arrayString, "X"));
@@ -98,7 +92,7 @@ public class StringsMixTest {
      */
     @Test
     public void test5() {
-        final String parameter = "aaabbbbcccccAAAABBBCCCzxvnmlkp";
+        final String parameter = "aaabbbbcccccAAAABBBCCCzxvnmukp";
         final String[][] expectedResult = new String[30][2];
         expectedResult[0][0] = "a";
         expectedResult[0][1] = "3";
@@ -117,5 +111,151 @@ public class StringsMixTest {
         final String parameter = "a";
         final String[][] expectedResult = new String[1][2];
         Assert.assertArrayEquals(expectedResult, stringsMix.getArrayWithRepeated(parameter));
+        //assertEquals("1:ee/1:ll/1:oo", Mixing.mix("Lords of the Fallen", "gamekult"));
+
+        //assertEquals("1:nnnnn/1:ooooo/1:tttt/1:eee/1:gg/1:ii/1:mm/=:rr",
+        // Mixing.mix("A generation must confront the looming ", "codewarrs"));
     }
+
+    /**
+     * Test 7.
+     */
+    @Test
+    public void test7() {
+        final String[][] expectedResult = new String[7][3];
+
+        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+
+        final String[][] parameterTwo = new String[][]{{"a", "2"}, {"b", "3"}, {"c", "3"}};
+        // Value 1
+        expectedResult[0][0] = "a";
+        expectedResult[0][1] = "3";
+        expectedResult[0][2] = "1";
+        // Value 2
+        expectedResult[1][0] = "b";
+        expectedResult[1][1] = "4";
+        expectedResult[1][2] = "1";
+        // Value 3
+        expectedResult[2][0] = "c";
+        expectedResult[2][1] = "3";
+        expectedResult[2][2] = "2";
+        // Value 4
+        expectedResult[3][0] = "f";
+        expectedResult[3][1] = "2";
+        expectedResult[3][2] = "1";
+        Assert.assertArrayEquals(expectedResult,
+                stringsMix.getArrayMix(parameterOne, parameterTwo, "1", "2"));
+    }
+
+    /**
+     * Test 8.
+     */
+    @Test
+    public void test8() {
+        final String[][] expectedResult = new String[7][3];
+
+        final String[][] parameterOne = new String[][]{{"a", "2"}, {"b", "3"}, {"c", "3"}};
+
+        final String[][] parameterTwo = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+
+        // Value 1
+        expectedResult[0][0] = "a";
+        expectedResult[0][1] = "3";
+        expectedResult[0][2] = "2";
+        // Value 2
+        expectedResult[1][0] = "b";
+        expectedResult[1][1] = "4";
+        expectedResult[1][2] = "2";
+        // Value 3
+        expectedResult[2][0] = "c";
+        expectedResult[2][1] = "3";
+        expectedResult[2][2] = "1";
+        // Value 4
+        expectedResult[3][0] = "f";
+        expectedResult[3][1] = "2";
+        expectedResult[3][2] = "2";
+        Assert.assertArrayEquals(expectedResult,
+                stringsMix.getArrayMix(parameterTwo, parameterOne, "2", "1"));
+    }
+
+    /**
+     * Test 9.
+     */
+    @Test
+    public void test9() {
+        final String[][] expectedResult = new String[7][3];
+
+        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+
+        final String[][] parameterTwo = new String[][]{{"x", "2"}, {"y", "3"}, {"z", "4"}};
+        // Value 1
+        expectedResult[0][0] = "a";
+        expectedResult[0][1] = "3";
+        expectedResult[0][2] = "1";
+        // Value 2
+        expectedResult[1][0] = "b";
+        expectedResult[1][1] = "4";
+        expectedResult[1][2] = "1";
+        // Value 3
+        expectedResult[2][0] = "c";
+        expectedResult[2][1] = "2";
+        expectedResult[2][2] = "1";
+        // Value 4
+        expectedResult[3][0] = "f";
+        expectedResult[3][1] = "2";
+        expectedResult[3][2] = "1";
+        // Value 5
+        expectedResult[4][0] = "x";
+        expectedResult[4][1] = "2";
+        expectedResult[4][2] = "2";
+        // Value 6
+        expectedResult[5][0] = "y";
+        expectedResult[5][1] = "3";
+        expectedResult[5][2] = "2";
+        // Value 7
+        expectedResult[6][0] = "z";
+        expectedResult[6][1] = "4";
+        expectedResult[6][2] = "2";
+        Assert.assertArrayEquals(expectedResult,
+                stringsMix.getArrayMix(parameterOne, parameterTwo, "1", "2"));
+    }
+
+    /**
+     * Test 10.
+     */
+    @Test
+    public void test10() {
+        final String[][] expectedResult = new String[7][3];
+
+        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+
+        final String[][] parameterTwo = new String[][]{{"a", "2"}, {"y", "3"}, {"z", "4"}};
+        // Value 1
+        expectedResult[0][0] = "a";
+        expectedResult[0][1] = "3";
+        expectedResult[0][2] = "1";
+        // Value 2
+        expectedResult[1][0] = "b";
+        expectedResult[1][1] = "4";
+        expectedResult[1][2] = "1";
+        // Value 3
+        expectedResult[2][0] = "c";
+        expectedResult[2][1] = "2";
+        expectedResult[2][2] = "1";
+        // Value 4
+        expectedResult[3][0] = "f";
+        expectedResult[3][1] = "2";
+        expectedResult[3][2] = "1";
+        // Value 5
+        expectedResult[4][0] = "y";
+        expectedResult[4][1] = "3";
+        expectedResult[4][2] = "2";
+        // Value 6
+        expectedResult[5][0] = "z";
+        expectedResult[5][1] = "4";
+        expectedResult[5][2] = "2";
+        Assert.assertArrayEquals(expectedResult,
+                stringsMix.getArrayMix(parameterOne, parameterTwo, "1", "2"));
+    }
+
 }
