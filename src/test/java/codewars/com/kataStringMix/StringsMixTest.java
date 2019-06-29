@@ -111,9 +111,6 @@ public class StringsMixTest {
         final String parameter = "a";
         final String[][] expectedResult = new String[1][2];
         Assert.assertArrayEquals(expectedResult, stringsMix.getArrayWithRepeated(parameter));
-        //assertEquals("1:ee/1:ll/1:oo", Mixing.mix("Lords of the Fallen", "gamekult"));
-        //assertEquals("1:nnnnn/1:ooooo/1:tttt/1:eee/1:gg/1:ii/1:mm/=:rr",
-        // Mixing.mix("A generation must confront the looming ", "codewarrs"));
     }
 
     /**
@@ -311,4 +308,25 @@ public class StringsMixTest {
 
         Assert.assertArrayEquals(expectedResult, stringsMix.sortArray(arrayMix));
     }
+
+    /**
+     * Test 13.
+     */
+    @Test
+    public void test13() {
+        final String expectedResult = "1:ee/1:ll/1:oo";
+        Assert.assertEquals(expectedResult, stringsMix.mix("Lords of the Fallen", "gamekult"));
+    }
+
+    /**
+     * Test 14.
+     */
+    @Test
+    public void test14() {
+        final String expectedResult = "1:nnnnn/1:ooooo/1:tttt/1:eee/1:gg/1:ii/1:mm/=:rr";
+        Assert.assertEquals(expectedResult,
+                stringsMix.mix("A generation must confront the looming", "codewarrs"));
+    }
+
+
 }

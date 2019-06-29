@@ -69,7 +69,21 @@ public class StringsMix {
         String[][] arrayRepeatedTwo = this.getArrayWithRepeated(stringTwo);
         String[][] arrayMix;
         arrayMix = this.getArrayMix(arrayRepeatedOne, arrayRepeatedTwo);
-        return arrayMix.toString();
+        arrayMix = this.sortArray(arrayMix);
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < arrayMix.length; i++) {
+            if(arrayMix[i][0]==null){
+                break;
+            }
+            result.append(arrayMix[i][2]);
+            result.append(":");
+            int number = Integer.parseInt(arrayMix[i][1]);
+            for (int j = 0; j < number; j++) {
+                result.append(arrayMix[i][0]);
+            }
+            result.append("/");
+        }
+        return result.toString();
     }
 
     /**
@@ -80,6 +94,9 @@ public class StringsMix {
         String[] temp;
         for (int i = 1; i < arrayMix.length; i++) {
             for (int j = i; j > 0; j--) {
+                if(arrayMix[j][0] == null){
+                    break;
+                }
                 int valueOne = Integer.parseInt(arrayMix[j][1]);
                 int valueTwo = Integer.parseInt(arrayMix[j - 1][1]);
                 if (valueOne > valueTwo) {
@@ -102,8 +119,14 @@ public class StringsMix {
         int indexArrayMix = 0;
         for (int i = 0; i < arrayRepeatedOne.length; i++) {
             String valueOne = arrayRepeatedOne[i][0];
+            if (valueOne == null) {
+                break;
+            }
             for (int j = 0; j < arrayRepeatedTwo.length; j++) {
                 String valueTwo = arrayRepeatedTwo[j][0];
+                if (valueTwo == null) {
+                    break;
+                }
                 if (valueOne.equals(valueTwo)) {
                     int numberOne = Integer.parseInt(arrayRepeatedOne[i][1]);
                     int numberTwo = Integer.parseInt(arrayRepeatedTwo[j][1]);
@@ -140,7 +163,6 @@ public class StringsMix {
         }
         return arrayMix;
     }
-
 
     /**
      * @param string string.
