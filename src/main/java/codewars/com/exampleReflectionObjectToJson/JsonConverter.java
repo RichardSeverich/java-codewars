@@ -3,6 +3,7 @@ package codewars.com.exampleReflectionObjectToJson;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Field;
+import java.util.List;
 
 
 /**
@@ -19,6 +20,7 @@ public class JsonConverter<T> {
     private Object currentResultMethodInvoke;
     private StringBuilder stringJsonFormat;
     private String indentation;
+    private JsonConverterUtils utils;
 
     /**
      * @param someGenericObject someGenericClass.
@@ -26,6 +28,7 @@ public class JsonConverter<T> {
     JsonConverter(final T someGenericObject) {
         this.genericObject = someGenericObject;
         this.stringJsonFormat = new StringBuilder();
+        this.utils = new JsonConverterUtils();
         this.indentation = "    ";
     }
 
@@ -72,29 +75,47 @@ public class JsonConverter<T> {
     private boolean selectMethod() {
         String currentMethodName = this.currentMethod.getName();
         String currentFieldName = this.currentField.getName().toLowerCase();
-        if (currentMethodName.contains(GET) && currentMethodName.toLowerCase().contains(currentFieldName)) {
+        if (currentMethodName.contains(GET) &&
+                currentMethodName.replace(GET, "").equalsIgnoreCase(currentFieldName)) {
             this.currentResultMethodInvoke = this.invokeMethod();
             this.currentAttributeName = currentMethodName.replace(GET, "");
-            this.builtSetAttribute();
+            this.selectStrategy();
             return true;
         }
         return false;
     }
 
-    /*
-    private void selectStrategy() {
-        if (this.genericObject.getClass() == this.currentResultMethodInvoke.getClass()) {
-            String newIndentation = this.indentation + this.indentation;
-            JsonConverter<T> jsonConverter = new JsonConverter(currentResultMethodInvoke, newIndentation);
-            currentResultMethodInvoke = jsonConverter.getStringInJSonFormat();
-            builtSetAttribute();
-        } else {
-            builtSetAttribute();
+    /**
+     * @return String.
+     */
+    private Object invokeMethod() {
+        Object result = null;
+        try {
+            result = currentMethod.invoke(genericObject);
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+            e.printStackTrace();
         }
-    }*/
+        return result;
+    }
+
 
     /**
-     *
+     * selectStrategy.
+     */
+    private void selectStrategy() {
+        if (this.utils.isArray(this.currentResultMethodInvoke)) {
+            this.builtSetAttributeArray();
+        } else if (this.utils.isCollection(this.currentResultMethodInvoke)) {
+            List list = (List) this.currentResultMethodInvoke;
+            this.currentResultMethodInvoke = list.toArray(new Object[0]);
+            this.builtSetAttributeArray();
+        } else {
+            this.builtSetAttribute();
+        }
+    }
+
+    /**
+     * builtSetAttribute.
      */
     private void builtSetAttribute() {
         this.stringJsonFormat
@@ -110,15 +131,33 @@ public class JsonConverter<T> {
     }
 
     /**
-     * @return String.
+     * builtSetAttributeArray.
      */
-    private Object invokeMethod() {
-        Object result = null;
-        try {
-            result = currentMethod.invoke(genericObject);
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-            e.printStackTrace();
+    private void builtSetAttributeArray() {
+        this.stringJsonFormat
+                .append(indentation)
+                .append("\"")
+                .append(this.currentAttributeName)
+                .append("\"")
+                .append(":")
+                .append(" ")
+                .append("[");
+        this.builtIterateArray();
+        this.stringJsonFormat.append("]")
+                .append(",")
+                .append(System.getProperty(LINE_SEPARATOR));
+    }
+
+    /**
+     * builtIterateArray.
+     */
+    private void builtIterateArray() {
+        Object[] objectArray = (Object[]) this.currentResultMethodInvoke;
+        for (Object anyElement : objectArray) {
+            this.stringJsonFormat
+                    .append(anyElement)
+                    .append(",");
         }
-        return result;
+        this.stringJsonFormat.setLength(this.stringJsonFormat.length() - 1);
     }
 }
