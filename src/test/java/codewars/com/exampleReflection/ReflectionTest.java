@@ -25,8 +25,8 @@ public class ReflectionTest {
         user.setBirthDate("18/05/1980");
         user.setEmail("Michael.Millers@gmail.com");
         // Instantiate classes
-        ReflectionPrintMethods<User> reflectionPrintMethods;
-        reflectionPrintMethods = new ReflectionPrintMethods<>(user);
+        ReflectionPrint<User> reflectionPrintMethods;
+        reflectionPrintMethods = new ReflectionPrint<>(user);
         // Results
         String[] actualResult = reflectionPrintMethods.getMethods();
         String[] expectedResult = new String[]{
@@ -92,6 +92,33 @@ public class ReflectionTest {
                 {"6265552", "Mich", "Harris", "18/05/1990", "Michael.Harris@gmail.com"},
                 {"8545632", "Tony", "Stark", "18/08/1991", "Tony.Stark@gmail.com"},
                 {"9863214", "Nicole", "Cruise", "18/08/1996", "Nicole.Cruise@gmail.com"}
+        };
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test3
+     */
+    @Test
+    public void test3() {
+        // User 1
+        User user = new User();
+        user.setId("6265852");
+        user.setName("Michael");
+        user.setLastName("Millers");
+        user.setBirthDate("18/05/1980");
+        user.setEmail("Michael.Millers@gmail.com");
+        // Instantiate classes
+        ReflectionPrint<User> reflectionPrint;
+        reflectionPrint = new ReflectionPrint<>(user);
+        // Results
+        String[] actualResult = reflectionPrint.getFields();
+        String[] expectedResult = new String[]{
+                "id",
+                "name",
+                "lastName",
+                "birthDate",
+                "email",
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
