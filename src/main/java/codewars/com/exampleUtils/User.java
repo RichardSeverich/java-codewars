@@ -1,4 +1,4 @@
-package codewars.com.exampleReflection;
+package codewars.com.exampleUtils;
 
 /**
  * Class.
@@ -14,7 +14,6 @@ public class User {
      * Constructor.
      */
     public User() {
-
     }
 
     /**

@@ -1,5 +1,7 @@
 package codewars.com.exampleReflection;
 
+import codewars.com.exampleUtils.User;
+import codewars.com.exampleUtils.UserAnnotations;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,9 +15,9 @@ import java.util.List;
 public class ReflectionTest {
 
     /**
-     * Test 1.
+     * Test 1: Methods.
      */
-   /*@Test
+    @Test
     public void test1() {
         // User 1
         User user = new User();
@@ -30,19 +32,19 @@ public class ReflectionTest {
         // Results
         String[] actualResult = reflectionPrintMethods.getMethods();
         String[] expectedResult = new String[]{
-                "public java.lang.String codewars.com.exampleReflection.User.getBirthDate()",
-                "public java.lang.String codewars.com.exampleReflection.User.getEmail()",
-                "public java.lang.String codewars.com.exampleReflection.User.getId()",
-                "public java.lang.String codewars.com.exampleReflection.User.getLastName()",
-                "public java.lang.String codewars.com.exampleReflection.User.getName()",
-                "public void codewars.com.exampleReflection.User.setBirthDate(java.lang.String)",
-                "public void codewars.com.exampleReflection.User.setEmail(java.lang.String)",
-                "public void codewars.com.exampleReflection.User.setId(java.lang.String)",
-                "public void codewars.com.exampleReflection.User.setLastName(java.lang.String)",
-                "public void codewars.com.exampleReflection.User.setName(java.lang.String)"
+                "public java.lang.String codewars.com.exampleUtils.User.getBirthDate()",
+                "public java.lang.String codewars.com.exampleUtils.User.getEmail()",
+                "public java.lang.String codewars.com.exampleUtils.User.getId()",
+                "public java.lang.String codewars.com.exampleUtils.User.getLastName()",
+                "public java.lang.String codewars.com.exampleUtils.User.getName()",
+                "public void codewars.com.exampleUtils.User.setBirthDate(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setEmail(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setId(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setLastName(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setName(java.lang.String)"
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
-    }*/
+    }
 
     /**
      * Test 2.
@@ -97,7 +99,7 @@ public class ReflectionTest {
     }
 
     /**
-     * Test3
+     * Test3: Fields
      */
     @Test
     public void test3() {
@@ -119,6 +121,30 @@ public class ReflectionTest {
                 "lastName",
                 "birthDate",
                 "email",
+        };
+        Assert.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    /**
+     * Test4: Annotations.
+     */
+    @Test
+    public void test4() {
+        // User 1
+        UserAnnotations user = new UserAnnotations();
+        user.setId("6265852");
+        user.setName("Michael");
+        user.setBirthDate("18/05/1980");
+        // Instantiate classes
+        ReflectionPrint<UserAnnotations> reflectionPrint;
+        reflectionPrint = new ReflectionPrint<>(user);
+        // Results
+        String[] actualResult = reflectionPrint.getFieldsAnnotations();
+        String[] expectedResult = new String[]{
+                "Field name :id - @MyAnnotation.name : ci - @MyAnnotation.description : cedula del usuario",
+                "Field name :name - @MyAnnotation.name : nombre - @MyAnnotation.description : nombre del ususario",
+                "Field name :birthDate - @MyAnnotation.name : fechaNacimiento - @MyAnnotation.description : " +
+                        "fecha de nacimiento",
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
     }

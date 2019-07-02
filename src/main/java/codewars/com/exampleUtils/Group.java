@@ -1,27 +1,25 @@
-package codewars.com.exampleReflectionObjectToJson;
-
-import java.util.List;
+package codewars.com.exampleUtils;
 
 /**
  * Class.
  */
-public class Movie {
+public class Group {
 
     private String id;
 
     private String name;
 
-    private List actors;
+    private String[] members;
 
     /**
      * Constructor.
      */
-    Movie() {
+    public Group() {
 
     }
 
     /**
-     * @return id.
+     * @return getId.
      */
     public String getId() {
         return id;
@@ -35,7 +33,7 @@ public class Movie {
     }
 
     /**
-     * @return name.
+     * @return getName.
      */
     public String getName() {
         return name;
@@ -49,16 +47,16 @@ public class Movie {
     }
 
     /**
-     * @return actors.
+     * @return members.
      */
-    public List getActors() {
-        return actors;
+    public String[] getMembers() {
+        return members;
     }
 
     /**
-     * @param actors actors.
+     * @param members members.
      */
-    public void setActors(final List actors) {
-        this.actors = actors;
+    public void setMembers(final String[] members) {
+        this.members = members;
     }
 }

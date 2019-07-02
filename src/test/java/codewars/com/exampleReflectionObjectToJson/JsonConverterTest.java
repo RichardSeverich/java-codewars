@@ -1,6 +1,9 @@
 package codewars.com.exampleReflectionObjectToJson;
 
 
+import codewars.com.exampleUtils.Group;
+import codewars.com.exampleUtils.Movie;
+import codewars.com.exampleUtils.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
