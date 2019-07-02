@@ -19,7 +19,7 @@ public class JsonConverterUtils {
      * @param ob ob.
      * @return return true is is collection.
      */
-    public boolean isCollection(Object ob) {
+    public boolean isCollection(final Object ob) {
         return ob instanceof Collection || ob instanceof Map;
     }
 
@@ -27,7 +27,7 @@ public class JsonConverterUtils {
      * @param obj Object.
      * @return true if is array.
      */
-    public boolean isArray(Object obj) {
+    public boolean isArray(final Object obj) {
         return obj != null && obj.getClass().isArray();
     }
 
@@ -35,7 +35,7 @@ public class JsonConverterUtils {
      * @param obj obj.
      * @return true if is primitive array.
      */
-    public boolean isPrimitiveArray(Object obj) {
+    public boolean isPrimitiveArray(final Object obj) {
         return obj != null
                 && obj.getClass().isArray()
                 && obj.getClass().getComponentType() != null

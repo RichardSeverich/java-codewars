@@ -36,10 +36,11 @@ public class JsonConverter<T> {
      * @return StringInJSonFormat.
      */
     public String getStringInJSonFormat() {
+        final int three = 3;
         this.stringJsonFormat
                 .append("{").append(System.getProperty(LINE_SEPARATOR));
         this.iterateFields();
-        this.stringJsonFormat.setLength(this.stringJsonFormat.length() - 3);
+        this.stringJsonFormat.setLength(this.stringJsonFormat.length() - three);
         this.stringJsonFormat
                 .append(System.getProperty(LINE_SEPARATOR)).append("}");
         return this.stringJsonFormat.toString();
@@ -70,13 +71,13 @@ public class JsonConverter<T> {
     }
 
     /**
-     * selectMethod.
+     * @return boolean.
      */
     private boolean selectMethod() {
         String currentMethodName = this.currentMethod.getName();
         String currentFieldName = this.currentField.getName().toLowerCase();
-        if (currentMethodName.contains(GET) &&
-                currentMethodName.replace(GET, "").equalsIgnoreCase(currentFieldName)) {
+        if (currentMethodName.contains(GET)
+                && currentMethodName.replace(GET, "").equalsIgnoreCase(currentFieldName)) {
             this.currentResultMethodInvoke = this.invokeMethod();
             this.currentAttributeName = currentMethodName.replace(GET, "");
             this.selectStrategy();

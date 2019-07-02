@@ -64,7 +64,7 @@ public class StringsMix {
      * @param stringTwo stringTwo.
      * @return mix.
      */
-    public String mix(String stringOne, String stringTwo) {
+    public String mix(final String stringOne, final String stringTwo) {
         String[][] arrayRepeatedOne = this.getArrayWithRepeated(stringOne);
         String[][] arrayRepeatedTwo = this.getArrayWithRepeated(stringTwo);
         String[][] arrayMix;
@@ -72,7 +72,7 @@ public class StringsMix {
         arrayMix = this.sortArray(arrayMix);
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < arrayMix.length; i++) {
-            if(arrayMix[i][0]==null){
+            if (arrayMix[i][0] == null) {
                 break;
             }
             result.append(arrayMix[i][2]);
@@ -94,7 +94,7 @@ public class StringsMix {
         String[] temp;
         for (int i = 1; i < arrayMix.length; i++) {
             for (int j = i; j > 0; j--) {
-                if(arrayMix[j][0] == null){
+                if (arrayMix[j][0] == null) {
                     break;
                 }
                 int valueOne = Integer.parseInt(arrayMix[j][1]);
@@ -115,7 +115,8 @@ public class StringsMix {
      * @return array mix.
      */
     public String[][] getArrayMix(final String[][] arrayRepeatedOne, final String[][] arrayRepeatedTwo) {
-        String[][] arrayMix = new String[arrayRepeatedOne.length + arrayRepeatedTwo.length][3];
+        final int three = 3;
+        String[][] arrayMix = new String[arrayRepeatedOne.length + arrayRepeatedTwo.length][three];
         int indexArrayMix = 0;
         for (int i = 0; i < arrayRepeatedOne.length; i++) {
             String valueOne = arrayRepeatedOne[i][0];
