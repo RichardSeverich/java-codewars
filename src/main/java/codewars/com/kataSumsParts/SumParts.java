@@ -24,7 +24,7 @@ import java.util.stream.IntStream;
  * <p>
  * The corresponding sums are (put together in a list): [20, 20, 19, 16, 10, 0]
  * <p>
- * The function parts_sums (or its variants in other languages) will take as parameter
+ * The function parts_sums (or its variants in utils languages) will take as parameter
  * a list ls and return a list of the sums of its parts as defined above.
  */
 public class SumParts {

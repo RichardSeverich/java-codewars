@@ -19,7 +19,7 @@ public class ReflectionTest {
      */
     @Test
     public void test1() {
-        // User 1
+        // IUser 1
         User user = new User();
         user.setId("6265852");
         user.setName("Michael");
@@ -32,16 +32,16 @@ public class ReflectionTest {
         // Results
         String[] actualResult = reflectionPrintMethods.getMethods();
         String[] expectedResult = new String[]{
-                "public java.lang.String codewars.com.exampleUtils.User.getBirthDate()",
-                "public java.lang.String codewars.com.exampleUtils.User.getEmail()",
-                "public java.lang.String codewars.com.exampleUtils.User.getId()",
-                "public java.lang.String codewars.com.exampleUtils.User.getLastName()",
-                "public java.lang.String codewars.com.exampleUtils.User.getName()",
-                "public void codewars.com.exampleUtils.User.setBirthDate(java.lang.String)",
-                "public void codewars.com.exampleUtils.User.setEmail(java.lang.String)",
-                "public void codewars.com.exampleUtils.User.setId(java.lang.String)",
-                "public void codewars.com.exampleUtils.User.setLastName(java.lang.String)",
-                "public void codewars.com.exampleUtils.User.setName(java.lang.String)"
+                "public java.lang.String codewars.com.exampleUtils.IUser.getBirthDate()",
+                "public java.lang.String codewars.com.exampleUtils.IUser.getEmail()",
+                "public java.lang.String codewars.com.exampleUtils.IUser.getId()",
+                "public java.lang.String codewars.com.exampleUtils.IUser.getLastName()",
+                "public java.lang.String codewars.com.exampleUtils.IUser.getName()",
+                "public void codewars.com.exampleUtils.IUser.setBirthDate(java.lang.String)",
+                "public void codewars.com.exampleUtils.IUser.setEmail(java.lang.String)",
+                "public void codewars.com.exampleUtils.IUser.setId(java.lang.String)",
+                "public void codewars.com.exampleUtils.IUser.setLastName(java.lang.String)",
+                "public void codewars.com.exampleUtils.IUser.setName(java.lang.String)"
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
@@ -51,7 +51,7 @@ public class ReflectionTest {
      */
     @Test
     public void test2() {
-        // User 1
+        // IUser 1
         User user1 = new User();
         user1.setId("6265552");
         user1.setName("Mich");
@@ -59,7 +59,7 @@ public class ReflectionTest {
         user1.setBirthDate("18/05/1990");
         user1.setEmail("Michael.Harris@gmail.com");
 
-        // User 2
+        // IUser 2
         User user2 = new User();
         user2.setId("8545632");
         user2.setName("Tony");
@@ -67,7 +67,7 @@ public class ReflectionTest {
         user2.setBirthDate("18/08/1991");
         user2.setEmail("Tony.Stark@gmail.com");
 
-        // User 3
+        // IUser 3
         User user3 = new User();
         user3.setId("9863214");
         user3.setName("Nicole");
@@ -103,7 +103,7 @@ public class ReflectionTest {
      */
     @Test
     public void test3() {
-        // User 1
+        // IUser 1
         User user = new User();
         user.setId("6265852");
         user.setName("Michael");
@@ -130,7 +130,7 @@ public class ReflectionTest {
      */
     @Test
     public void test4() {
-        // User 1
+        // IUser 1
         UserAnnotations user = new UserAnnotations();
         user.setId("6265852");
         user.setName("Michael");

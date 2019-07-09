@@ -3,7 +3,7 @@ package codewars.com.exampleUtils;
 import javax.annotation.Resource;
 
 /**
- * User.
+ * IUser.
  */
 public class UserAnnotations {
 
