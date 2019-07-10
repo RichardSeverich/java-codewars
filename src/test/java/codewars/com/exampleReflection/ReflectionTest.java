@@ -32,16 +32,16 @@ public class ReflectionTest {
         // Results
         String[] actualResult = reflectionPrintMethods.getMethods();
         String[] expectedResult = new String[]{
-                "public java.lang.String codewars.com.exampleUtils.IUser.getBirthDate()",
-                "public java.lang.String codewars.com.exampleUtils.IUser.getEmail()",
-                "public java.lang.String codewars.com.exampleUtils.IUser.getId()",
-                "public java.lang.String codewars.com.exampleUtils.IUser.getLastName()",
-                "public java.lang.String codewars.com.exampleUtils.IUser.getName()",
-                "public void codewars.com.exampleUtils.IUser.setBirthDate(java.lang.String)",
-                "public void codewars.com.exampleUtils.IUser.setEmail(java.lang.String)",
-                "public void codewars.com.exampleUtils.IUser.setId(java.lang.String)",
-                "public void codewars.com.exampleUtils.IUser.setLastName(java.lang.String)",
-                "public void codewars.com.exampleUtils.IUser.setName(java.lang.String)"
+                "public java.lang.String codewars.com.exampleUtils.User.getBirthDate()",
+                "public java.lang.String codewars.com.exampleUtils.User.getEmail()",
+                "public java.lang.String codewars.com.exampleUtils.User.getId()",
+                "public java.lang.String codewars.com.exampleUtils.User.getLastName()",
+                "public java.lang.String codewars.com.exampleUtils.User.getName()",
+                "public void codewars.com.exampleUtils.User.setBirthDate(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setEmail(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setId(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setLastName(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setName(java.lang.String)"
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
