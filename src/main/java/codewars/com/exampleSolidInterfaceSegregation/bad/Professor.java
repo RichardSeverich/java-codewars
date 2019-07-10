@@ -26,6 +26,8 @@ public class Professor implements User {
         this.id = id;
         this.name = name;
         this.salary = salary;
+        this.listProfessors = listProfessors;
+        this.listStudents = listStudents;
     }
 
     /**
