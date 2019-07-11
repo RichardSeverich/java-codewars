@@ -1,11 +1,10 @@
 package codewars.com.exampleSolidOpenClosed.bad;
 
-import codewars.com.exampleSolidOpenClosed.good.Polygon;
 
 /**
  * Class.
  */
-public class Circle implements Polygon {
+public class Circle {
 
     private int radius;
 
@@ -17,9 +16,8 @@ public class Circle implements Polygon {
     }
 
     /**
-     * {@inheritDoc}
+     * @return area.
      */
-    @Override
     public int getArea() {
         return (int) (Math.PI * Math.pow(radius, 2));
     }

@@ -1,11 +1,9 @@
 package codewars.com.exampleSolidOpenClosed.bad;
 
-import codewars.com.exampleSolidOpenClosed.good.Polygon;
-
 /**
  * class.
  */
-public class Square implements Polygon {
+public class Square {
 
     private int side;
 
@@ -17,9 +15,8 @@ public class Square implements Polygon {
     }
 
     /**
-     * {@inheritDoc}
+     * @return area.
      */
-    @Override
     public int getArea() {
         return (int) Math.pow(side, 2);
     }
