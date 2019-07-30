@@ -4,12 +4,12 @@ package codewars.com.exampleReflectionDependencyInjection;
 /**
  * Class.
  */
-public class ReflectionCreateInstance<T> {
+public class Creator<T> {
 
     /**
      * Constructor.
      */
-    public ReflectionCreateInstance() {
+    public Creator() {
 
     }
 

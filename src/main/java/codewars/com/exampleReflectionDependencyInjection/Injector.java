@@ -1,4 +1,4 @@
 package codewars.com.exampleReflectionDependencyInjection;
 
-public class DependencyInjectionContainer {
+public class Injector {
 }
