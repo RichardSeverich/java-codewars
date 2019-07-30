@@ -14,35 +14,20 @@ public final class Container {
     /**
      * Class.
      */
-    public static <TInterface, TClass> void setInstance() {
-        // Define Creator
-        Creator<TClass> creator = new Creator<>();
-
-        // Define Types Class Creator
-        TypeClass<TInterface> typeClassInterface = new TypeClass<>();
-        TypeClass<TClass> typeClassClass = new TypeClass<>();
-
-        // Get Types
-        Class<TInterface> classTypeInterface = typeClassInterface.getClassType();
-        Class<TClass> classTypeClass = typeClassClass.getClassType();
-
-        // Get Instance class
-        TClass genericInstancedClass = creator.getInstance(classTypeClass);
-
-        // Wrapper Instance
-        Wrapper<TClass> wrapper = new Wrapper<>(genericInstancedClass);
-
-        // Stored.
-        objectMap.put(classTypeInterface, wrapper);
+    public static <T> void set(Class<T> classDefinition) {
+        Creator<T> creator;
+        creator = new Creator<>();
+        T genericClass = creator.getInstance(classDefinition);
+        Wrapper<T> wrapper = new Wrapper<>(genericClass);
+        objectMap.put(classDefinition, wrapper);
     }
 
     /**
-     * @param <TInterface> generic.
+     * @param classDefinition classDefinition.
+     * @param <T>             generic.
      * @return generic instanced object.
      */
-    public static <TInterface> Object getInstance() {
-        TypeClass<TInterface> typeClassInterface = new TypeClass<>();
-        Class<TInterface> classTypeInterface = typeClassInterface.getClassType();
-        return objectMap.get(classTypeInterface).getInstance();
+    public static <T> Object getInstance(Class<T> classDefinition) {
+        return objectMap.get(classDefinition).getInstance();
     }
 }

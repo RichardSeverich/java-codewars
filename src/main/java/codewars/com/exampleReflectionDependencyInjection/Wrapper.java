@@ -10,14 +10,14 @@ public class Wrapper<T> {
     /**
      * @param instance instance.
      */
-    Wrapper(T instance) {
+    public Wrapper(T instance) {
         this.instance = instance;
     }
 
     /**
      * @return instance.
      */
-    T getInstance() {
+    public T getInstance() {
         return instance;
     }
 }
