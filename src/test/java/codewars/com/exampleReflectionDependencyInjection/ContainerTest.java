@@ -24,11 +24,11 @@ public class ContainerTest {
      */
     @Test
     public void test1() {
-        Container.set(User.class);
-        Container.set(Movie.class);
-        Container.set(Group.class);
-        Assert.assertTrue(Container.getInstance(User.class) instanceof User);
-        Assert.assertTrue(Container.getInstance(Movie.class) instanceof Movie);
-        Assert.assertTrue(Container.getInstance(Group.class) instanceof Group);
+        Container.setInstance();
+        Container.setInstance();
+        Container.setInstance();
+        Assert.assertTrue(Container.getInstance() instanceof User);
+        Assert.assertTrue(Container.getInstance() instanceof Movie);
+        Assert.assertTrue(Container.getInstance() instanceof Group);
     }
 }

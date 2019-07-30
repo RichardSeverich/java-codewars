@@ -10,7 +10,7 @@ package codewars.com.kataSetAlarm;
  * true whenever you are on vacation.
  * <p>
  * The function should return true if you are employed and not on vacation
- * (because these are the circumstances under which you need to set an alarm).
+ * (because these are the circumstances under which you need to setInstance an alarm).
  * It should return false otherwise. Examples:
  * <p>
  * kataSetAlarm(true, true) -> false
