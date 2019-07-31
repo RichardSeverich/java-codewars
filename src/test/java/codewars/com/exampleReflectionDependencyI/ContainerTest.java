@@ -1,8 +1,6 @@
 package codewars.com.exampleReflectionDependencyI;
 
-import codewars.com.exampleUtils.Group;
-import codewars.com.exampleUtils.Movie;
-import codewars.com.exampleUtils.User;
+import codewars.com.exampleUtils.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,11 +22,25 @@ public class ContainerTest {
      */
     @Test
     public void test1() {
-        Container.<User, User>setInstance();
-        Container.<Movie, Movie>setInstance();
-        Container.<Group, Group>setInstance();
-        Assert.assertTrue(Container.getInstance() instanceof User);
-        Assert.assertTrue(Container.getInstance() instanceof Movie);
-        Assert.assertTrue(Container.getInstance() instanceof Group);
+        // Verify Container with interface
+        IDog dog = new DogBulldog();
+        Container.<IDog, DogBulldog>setInstance(dog, new DogBulldog());
+        Assert.assertTrue(Container.getInstance(dog) instanceof DogBulldog);
+
+
+        // Verify Container with User class
+        User user = new User();
+        Container.<User>setInstance(user);
+        Assert.assertTrue(Container.getInstance(user) instanceof User);
+
+        // Verify Container with Movie class
+        Movie movie = new Movie();
+        Container.<Movie>setInstance(movie);
+        Assert.assertTrue(Container.getInstance(movie) instanceof Movie);
+
+        // Verify Container with Group class
+        Group group = new Group();
+        Container.<Group>setInstance(group);
+        Assert.assertTrue(Container.getInstance(group) instanceof Group);
     }
 }
