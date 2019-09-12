@@ -1,7 +1,6 @@
 package codewars.com.kataAjedrez;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Ayúdame con el juego.
@@ -66,78 +65,166 @@ import java.util.Map;
  */
 public class Chess {
 
-    Map<Integer, String[][]> mapBlack;
-    String[][] arrayBlack = new String[16][2];
+    // Arrays
+    private List<String> listBack;
+    private List<String> listWhite;
 
+    // Helpers
+    private int rowPosition;
+    private int columnPosition;
+    private int countLineSeparator;
+    private String temp;
+
+
+    /**
+     * Constructor.
+     */
     Chess() {
-        mapBlack = new HashMap<>();
+        //List
+        listBack = new ArrayList<>();
+        listWhite = new ArrayList<>();
+        //Helpers
+        rowPosition = 8;
+        columnPosition = 0;
+        countLineSeparator = 0;
+
+        setDefaultValuesList();
     }
 
 
-    public String count(final String input) {
+    /**
+     *
+     */
+    private void setDefaultValuesList() {
+        for (int i = 0; i < 16; i++) {
+            listBack.add("empty");
+            listWhite.add("empty");
+        }
+    }
+
+
+    /**
+     * @param input input.
+     * @return positions.
+     */
+    public String getPosition(final String input) {
         String[] tempArray = input.split("");
-        int rowPosition = 8;
-        int columnPosition = 0;
         for (int i = 0; i < tempArray.length; i++) {
-            if (!(tempArray[i].equals("+") || tempArray[i].equals("-") || tempArray[i].equals("|"))) {
-                if (tempArray[i].equals(".") || tempArray[i].equals(".")) {
-
-                }
-
+            temp = tempArray[i];
+            this.updateRowPosition();
+            if (isPlace()) {
+                columnPosition++;
+            }
+            if (isPiece()) {
+                columnPosition++;
+                addPositionsToList();
             }
         }
-
         return input;
     }
 
     /**
-     * @param str str.
-     * @return return.
+     * @return boolean.
      */
-    public String verifyType(final String str) {
-        switch (str) {
-            case "k":
-                // code block
-                break;
-            case "q":
-                // code block
-                break;
-            case "r":
-                // code block
-                break;
-            case "b":
-                // code block
-                break;
-            case "n":
-                // code block
-                break;
-            case "p":
-                // code block
-                break;
-            case "K":
-                // code block
-                break;
-            case "Q":
-                // code block
-                break;
-            case "R":
-                // code block
-                break;
-            case "B":
-                // code block
-                break;
-            case "N":
-                // code block
-                break;
-            case "P":
-                // code block
-                break;
-            default:
-                // code block
-        }
-        return "";
+    private boolean isPiece() {
+        return !(temp.equals("+")
+                || temp.equals("-")
+                || temp.equals("|")
+                || temp.equals(".")
+                || temp.equals(":")
+                || temp.equals(System.getProperty("line.separator")));
     }
 
+    /**
+     * @return boolean.
+     */
+    private boolean isPlace() {
+        return temp.equals(".") || temp.equals(":");
+    }
+
+    /**
+     * updateRowPosition.
+     */
+    private void updateRowPosition() {
+        if (this.temp.equals(System.getProperty("line.separator"))) {
+            this.countLineSeparator++;
+            if (this.countLineSeparator == 2) {
+                this.countLineSeparator = 0;
+                this.rowPosition--;
+            }
+        }
+    }
+
+
+    /**
+     *
+     */
+    public void addPositionsToList() {
+        String column = mappingColumn(columnPosition);
+        switch (temp) {
+            case "k":
+                listBack.add(0, "K" + column + rowPosition);
+                break;
+            case "q":
+                listBack.add(1, "Q" + column + rowPosition);
+                break;
+            case "r":
+                if (listBack.get(2).equals("empty")) {
+                    listBack.add(2, "R" + column + rowPosition);
+                } else {
+                    listBack.add(3, "R" + column + rowPosition);
+                }
+                break;
+            case "b":
+                if (listBack.get(4).equals("empty")) {
+                    listBack.add(4, "B" + column + rowPosition);
+                } else {
+                    listBack.add(5, "B" + column + rowPosition);
+                }
+                break;
+            case "n":
+                if (listBack.get(6).equals("empty")) {
+                    listBack.add(6, "N" + column + rowPosition);
+                } else {
+                    listBack.add(7, "N" + column + rowPosition);
+                }
+                break;
+            case "p":
+                listBack.add(column + rowPosition);
+                break;
+            case "K":
+                listWhite.add("K" + column + rowPosition);
+                break;
+            case "Q":
+                listWhite.add("Q" + column + rowPosition);
+                break;
+            case "R":
+                if (listWhite.get(2).equals("empty")) {
+                    listWhite.add(2, "R" + column + rowPosition);
+                } else {
+                    listWhite.add(3, "R" + column + rowPosition);
+                }
+                break;
+            case "B":
+                if (listWhite.get(4).equals("empty")) {
+                    listWhite.add(4, "B" + column + rowPosition);
+                } else {
+                    listWhite.add(5, "B" + column + rowPosition);
+                }
+                break;
+            case "N":
+                if (listWhite.get(6).equals("empty")) {
+                    listWhite.add(6, "N" + column + rowPosition);
+                } else {
+                    listWhite.add(7, "N" + column + rowPosition);
+                }
+                break;
+            case "P":
+                listWhite.add(column + rowPosition);
+                break;
+            default:
+        }
+    }
 
     /**
      * A = 0 – 2
