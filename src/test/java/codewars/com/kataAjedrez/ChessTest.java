@@ -25,6 +25,19 @@ public class ChessTest {
      */
     @Test
     public void test1() {
+        chess.setTemp("a");
+        Assert.assertTrue(chess.isLowercase());
+        Assert.assertFalse(chess.isUppercase());
+        chess.setTemp("A");
+        Assert.assertTrue(chess.isUppercase());
+        Assert.assertFalse(chess.isLowercase());
+    }
+
+    /**
+     * Test 10.
+     */
+    @Test
+    public void test10() {
         StringBuilder input = new StringBuilder();
         input
                 .append("+---+---+---+---+---+---+---+---+").append(System.getProperty("line.separator"))
@@ -49,6 +62,6 @@ public class ChessTest {
                 .append("White: Ke1,Qd1,Ra1,Rh1,Bc1,Bf1,Nb1,a2,c2,d2,f2,g2,h2,a3,e4")
                 .append(System.getProperty("line.separator"))
                 .append("Black: Ke8,Qd8,Ra8,Rh8,Bc8,Ng8,Nc6,a7,b7,c7,d7,e7,f7,h7,h6");
-        Assert.assertEquals(expectedResult.toString(), chess.getPosition(input.toString()));
+        Assert.assertEquals(expectedResult.toString(), chess.getPositions(input.toString()));
     }
 }

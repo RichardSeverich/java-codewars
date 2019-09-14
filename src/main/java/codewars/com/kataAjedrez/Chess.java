@@ -65,9 +65,23 @@ import java.util.*;
  */
 public class Chess {
 
+    private final static String LINE_SEPARATOR = "line.separator";
+
+    // Strings
+    private StringBuilder kingBlack;
+    private StringBuilder queenBlack;
+    private StringBuilder kingWhite;
+    private StringBuilder queenWhite;
+
     // Arrays
-    private List<String> listBack;
-    private List<String> listWhite;
+    private List<String> listBlackRook;
+    private List<String> listWhiteRook;
+    private List<String> listBlackBishop;
+    private List<String> listWhiteBishop;
+    private List<String> listBlackKnight;
+    private List<String> listWhiteKnight;
+    private List<String> listBlackPawn;
+    private List<String> listWhitePawn;
 
     // Helpers
     private int rowPosition;
@@ -80,26 +94,33 @@ public class Chess {
      * Constructor.
      */
     Chess() {
-        //List
-        listBack = new ArrayList<>();
-        listWhite = new ArrayList<>();
+        // Strings
+        kingBlack = new StringBuilder();
+        queenBlack = new StringBuilder();
+        kingWhite = new StringBuilder();
+        queenWhite = new StringBuilder();
+        //List black
+        listBlackRook = new ArrayList<>();
+        listBlackBishop = new ArrayList<>();
+        listBlackKnight = new ArrayList<>();
+        listBlackPawn = new ArrayList<>();
+        //List white
+        listWhiteRook = new ArrayList<>();
+        listWhiteBishop = new ArrayList<>();
+        listWhiteKnight = new ArrayList<>();
+        listWhitePawn = new ArrayList<>();
         //Helpers
         rowPosition = 8;
         columnPosition = 0;
         countLineSeparator = 0;
 
-        setDefaultValuesList();
     }
 
-
     /**
-     *
+     * @param temp temp.
      */
-    private void setDefaultValuesList() {
-        for (int i = 0; i < 16; i++) {
-            listBack.add("empty");
-            listWhite.add("empty");
-        }
+    public void setTemp(final String temp) {
+        this.temp = temp;
     }
 
 
@@ -107,9 +128,9 @@ public class Chess {
      * @param input input.
      * @return positions.
      */
-    public String getPosition(final String input) {
+    public String getPositions(final String input) {
         String[] tempArray = input.split("");
-        for (int i = 0; i < tempArray.length; i++) {
+        for (int i = 33; i < tempArray.length; i++) {
             temp = tempArray[i];
             this.updateRowPosition();
             if (isPlace()) {
@@ -117,10 +138,76 @@ public class Chess {
             }
             if (isPiece()) {
                 columnPosition++;
-                addPositionsToList();
+                fillPositionsToList();
             }
         }
-        return input;
+        return this.getResult();
+    }
+
+
+    /**
+     * fillPositionsToList.
+     */
+    public void fillPositionsToList() {
+        if (isLowercase()) {
+            addPositionsToList(kingBlack, queenBlack, listBlackRook, listBlackBishop, listBlackKnight, listBlackPawn);
+        } else {
+            addPositionsToList(kingWhite, queenWhite, listWhiteRook, listWhiteBishop, listWhiteKnight, listWhitePawn);
+        }
+    }
+
+    /**
+     * fillPositionsToList.
+     */
+    public String getResult() {
+        StringBuilder result = new StringBuilder();
+        String start;
+        start = "White: ";
+        result.append(buildResult(start, kingWhite, queenWhite, listWhiteRook, listWhiteBishop,
+                listWhiteKnight, listWhitePawn));
+        result.setLength(result.length() - 1);
+        result.append(System.getProperty(LINE_SEPARATOR));
+        start = "Black: ";
+        result.append(buildResult(start, kingBlack, queenBlack, listBlackRook, listBlackBishop,
+                listBlackKnight, listBlackPawn));
+        result.setLength(result.length() - 1);
+        return result.toString();
+    }
+
+    /**
+     * @param start      start.
+     * @param king       king.
+     * @param queen      queen.
+     * @param listRook   listRook.
+     * @param listBishop listBishop.
+     * @param listKnight listKnight.
+     * @param listPawn   listPawn.
+     * @return result.
+     */
+    public String buildResult(final String start, StringBuilder king, StringBuilder queen, List<String> listRook,
+                              List<String> listBishop, List<String> listKnight, List<String> listPawn) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(start);
+        sb.append(king.toString());
+        sb.append(queen.toString());
+        sb.append(getStringOfListElements(listRook));
+        sb.append(getStringOfListElements(listBishop));
+        sb.append(getStringOfListElements(listKnight));
+        sb.append(getStringOfListElements(listPawn));
+        return sb.toString();
+    }
+
+    /**
+     * @param list list.
+     * @return String.
+     */
+    public String getStringOfListElements(List<String> list) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : list) {
+            sb.append(str);
+            sb.append(",");
+        }
+        return sb.toString();
     }
 
     /**
@@ -132,7 +219,8 @@ public class Chess {
                 || temp.equals("|")
                 || temp.equals(".")
                 || temp.equals(":")
-                || temp.equals(System.getProperty("line.separator")));
+                || temp.equals("\n")
+                || temp.equals("\r"));
     }
 
     /**
@@ -146,81 +234,59 @@ public class Chess {
      * updateRowPosition.
      */
     private void updateRowPosition() {
-        if (this.temp.equals(System.getProperty("line.separator"))) {
+        if (this.temp.equals("\r")) {
             this.countLineSeparator++;
             if (this.countLineSeparator == 2) {
                 this.countLineSeparator = 0;
                 this.rowPosition--;
+                this.columnPosition = 0;
             }
         }
     }
 
+    /**
+     * @return boolean.
+     */
+    public boolean isUppercase() {
+        return temp.matches("[A-Z]+");
+    }
 
     /**
-     *
+     * @return boolean.
      */
-    public void addPositionsToList() {
-        String column = mappingColumn(columnPosition);
-        switch (temp) {
-            case "k":
-                listBack.add(0, "K" + column + rowPosition);
-                break;
-            case "q":
-                listBack.add(1, "Q" + column + rowPosition);
-                break;
-            case "r":
-                if (listBack.get(2).equals("empty")) {
-                    listBack.add(2, "R" + column + rowPosition);
-                } else {
-                    listBack.add(3, "R" + column + rowPosition);
-                }
-                break;
-            case "b":
-                if (listBack.get(4).equals("empty")) {
-                    listBack.add(4, "B" + column + rowPosition);
-                } else {
-                    listBack.add(5, "B" + column + rowPosition);
-                }
-                break;
-            case "n":
-                if (listBack.get(6).equals("empty")) {
-                    listBack.add(6, "N" + column + rowPosition);
-                } else {
-                    listBack.add(7, "N" + column + rowPosition);
-                }
-                break;
-            case "p":
-                listBack.add(column + rowPosition);
-                break;
+    public boolean isLowercase() {
+        return temp.matches("[a-z]+");
+    }
+
+    /**
+     * @param king       king.
+     * @param queen      queen.
+     * @param listRook   listRook.
+     * @param listBishop listBishop.
+     * @param listKnight listKnight.
+     * @param listPawn   listPawn.
+     */
+    public void addPositionsToList(StringBuilder king, StringBuilder queen, List<String> listRook,
+                                   List<String> listBishop, List<String> listKnight, List<String> listPawn) {
+        String column = mappingColumn();
+        switch (temp.toUpperCase()) {
             case "K":
-                listWhite.add("K" + column + rowPosition);
+                king.append("K").append(column).append(rowPosition).append(",");
                 break;
             case "Q":
-                listWhite.add("Q" + column + rowPosition);
+                queen.append("Q").append(column).append(rowPosition).append(",");
                 break;
             case "R":
-                if (listWhite.get(2).equals("empty")) {
-                    listWhite.add(2, "R" + column + rowPosition);
-                } else {
-                    listWhite.add(3, "R" + column + rowPosition);
-                }
+                listRook.add("R" + column + rowPosition);
                 break;
             case "B":
-                if (listWhite.get(4).equals("empty")) {
-                    listWhite.add(4, "B" + column + rowPosition);
-                } else {
-                    listWhite.add(5, "B" + column + rowPosition);
-                }
+                listBishop.add("B" + column + rowPosition);
                 break;
             case "N":
-                if (listWhite.get(6).equals("empty")) {
-                    listWhite.add(6, "N" + column + rowPosition);
-                } else {
-                    listWhite.add(7, "N" + column + rowPosition);
-                }
+                listKnight.add("N" + column + rowPosition);
                 break;
             case "P":
-                listWhite.add(column + rowPosition);
+                listPawn.add(column + rowPosition);
                 break;
             default:
         }
@@ -236,28 +302,27 @@ public class Chess {
      * G = 18 – 20
      * E = 21- 23
      *
-     * @param column column.
      * @return string.
      */
-    public String mappingColumn(final int column) {
-        if (column >= 0 && column <= 2) {
+    public String mappingColumn() {
+        if (columnPosition >= 0 && columnPosition <= 2) {
             return "a";
-        } else if (column >= 3 && column <= 5) {
+        } else if (columnPosition >= 3 && columnPosition <= 5) {
             return "b";
-        } else if (column >= 7 && column <= 8) {
+        } else if (columnPosition >= 7 && columnPosition <= 8) {
             return "c";
-        } else if (column >= 9 && column <= 11) {
+        } else if (columnPosition >= 9 && columnPosition <= 11) {
             return "d";
-        } else if (column >= 12 && column <= 14) {
+        } else if (columnPosition >= 12 && columnPosition <= 14) {
             return "e";
-        } else if (column >= 15 && column <= 17) {
-            return "e";
-        } else if (column >= 18 && column <= 20) {
-            return "e";
-        } else if (column >= 21 && column <= 23) {
-            return "e";
+        } else if (columnPosition >= 15 && columnPosition <= 17) {
+            return "f";
+        } else if (columnPosition >= 18 && columnPosition <= 20) {
+            return "g";
+        } else if (columnPosition >= 21 && columnPosition <= 23) {
+            return "h";
         } else {
-            return "";
+            return "null";
         }
     }
 }
