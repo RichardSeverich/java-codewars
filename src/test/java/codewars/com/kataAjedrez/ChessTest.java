@@ -4,6 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Test.
  */
@@ -31,6 +34,22 @@ public class ChessTest {
         chess.setTemp("A");
         Assert.assertTrue(chess.isUppercase());
         Assert.assertFalse(chess.isLowercase());
+    }
+
+    /**
+     * Test 2.
+     */
+    @Test
+    public void test2() {
+        List<String> list = new ArrayList<>();
+        list.add("a3");
+        list.add("e4");
+        list.add("h2");
+        list.add("g2");
+        list = chess.sort(list, 2);
+        final String[] expectedResult = {"g2", "h2", "a3", "e4"};
+        String[] actualResult = list.toArray(new String[0]);
+        Assert.assertArrayEquals(expectedResult, actualResult);
     }
 
     /**

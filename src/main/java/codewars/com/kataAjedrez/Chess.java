@@ -163,6 +163,11 @@ public class Chess {
         StringBuilder result = new StringBuilder();
         String start;
         start = "White: ";
+        // Sort Lists
+        listWhitePawn = sort(listWhitePawn, 2);
+        listWhiteRook = sort(listWhiteRook, 3);
+        listWhiteBishop = sort(listWhiteBishop, 3);
+        listWhiteKnight = sort(listWhiteKnight, 3);
         result.append(buildResult(start, kingWhite, queenWhite, listWhiteRook, listWhiteBishop,
                 listWhiteKnight, listWhitePawn));
         result.setLength(result.length() - 1);
@@ -324,5 +329,29 @@ public class Chess {
         } else {
             return "null";
         }
+    }
+
+    /**
+     * @param list       list.
+     * @param stringSize stringSize.
+     * @return list sorted.
+     */
+    public List<String> sort(List<String> list, final int stringSize) {
+        String[] spam = list.toArray(new String[0]);
+        Arrays.sort(spam);
+        list = Arrays.asList(spam);
+        int indexNumber = stringSize - 1;
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i; j < list.size(); j++) {
+                char valueOne = list.get(i).charAt(indexNumber);
+                char valueTwo = list.get(j).charAt(indexNumber);
+                if (valueOne > valueTwo && i != j) {
+                    String stringHelper = list.get(i);
+                    list.set(i, list.get(j));
+                    list.set(j, stringHelper);
+                }
+            }
+        }
+        return list;
     }
 }
