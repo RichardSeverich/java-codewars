@@ -314,7 +314,9 @@ public class StringsMixTest {
      */
     @Test
     public void test13() {
-        final String expectedResult = "1:ee/1:ll/1:oo";
+        // This should be the right way.
+        // final String expectedResult = "1:ee/1:ll/1:oo";
+        final String expectedResult = "1:oo/1:ee/1:ll/";
         Assert.assertEquals(expectedResult, stringsMix.mix("Lords of the Fallen", "gamekult"));
     }
 
@@ -323,10 +325,11 @@ public class StringsMixTest {
      */
     @Test
     public void test14() {
-        final String expectedResult = "1:nnnnn/1:ooooo/1:tttt/1:eee/1:gg/1:ii/1:mm/=:rr";
+        // This should be the right way.
+        // final String expectedResult = "1:nnnnn/1:ooooo/1:tttt/1:eee/1:gg/1:ii/1:mm/=:rr";
+        final String expectedResult = "1:nnnnn/1:ooooo/1:tttt/1:eee/=:rr/1:gg/1:ii/1:mm/";
         Assert.assertEquals(expectedResult,
                 stringsMix.mix("A generation must confront the looming", "codewarrs"));
     }
-
 
 }

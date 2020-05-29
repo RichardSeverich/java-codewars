@@ -31,7 +31,13 @@ public class ReflectionTest {
         reflectionPrintMethods = new ReflectionPrint<>(user);
         // Results
         String[] actualResult = reflectionPrintMethods.getMethods();
-        String[] expectedResult = new String[]{
+        System.out.println(actualResult.length);
+        for(int i=0; i<actualResult.length; i++){
+            System.out.println(actualResult[i]);
+        }
+        //This works with Intellij idea
+        /*
+        String[] expectedResultWindows = new String[]{
                 "public java.lang.String codewars.com.exampleUtils.User.getBirthDate()",
                 "public java.lang.String codewars.com.exampleUtils.User.getEmail()",
                 "public java.lang.String codewars.com.exampleUtils.User.getId()",
@@ -42,6 +48,21 @@ public class ReflectionTest {
                 "public void codewars.com.exampleUtils.User.setId(java.lang.String)",
                 "public void codewars.com.exampleUtils.User.setLastName(java.lang.String)",
                 "public void codewars.com.exampleUtils.User.setName(java.lang.String)"
+        };
+        */
+        // This works with gradle
+        String[] expectedResult = new String[]{
+                "private static boolean[] codewars.com.exampleUtils.User.$jacocoInit()",
+                "public java.lang.String codewars.com.exampleUtils.User.getBirthDate()",
+                "public java.lang.String codewars.com.exampleUtils.User.getEmail()",
+                "public java.lang.String codewars.com.exampleUtils.User.getId()",
+                "public java.lang.String codewars.com.exampleUtils.User.getLastName()",
+                "public java.lang.String codewars.com.exampleUtils.User.getName()",
+                "public void codewars.com.exampleUtils.User.setBirthDate(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setEmail(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setId(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setLastName(java.lang.String)",
+                "public void codewars.com.exampleUtils.User.setName(java.lang.String)",
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
@@ -115,12 +136,24 @@ public class ReflectionTest {
         reflectionPrint = new ReflectionPrint<>(user);
         // Results
         String[] actualResult = reflectionPrint.getFields();
+        //This works with Intellij idea
+        /*
         String[] expectedResult = new String[]{
                 "id",
                 "name",
                 "lastName",
                 "birthDate",
                 "email",
+        };
+        */
+        //This works with gradle
+        String[] expectedResult = new String[]{
+                "id",
+                "name",
+                "lastName",
+                "birthDate",
+                "email",
+                "$jacocoData"
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
     }
