@@ -1,4 +1,4 @@
-﻿# csharp-codewars
+﻿# java-codewars
 
 katas of codewars.
 
