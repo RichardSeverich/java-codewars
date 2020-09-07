@@ -27,7 +27,11 @@ git clone https://github.com/RichardSeverich/java-codewars.git
 gradlew
 ```
 
-3.  Execute unit test: Execute the following command:
+## Usage 
+
+### Unit Test
+
+In order to execute unit test: Execute the following command:
 
 Run all unit tests:
 
@@ -42,6 +46,7 @@ gradle test --tests codewars.com.kataNextBiggernumber.BiggerNumNextTest
 ```
 
 Other examples
+
 ```
 gradle test --tests org.gradle.SomeTest.someSpecificFeature
 gradle test --tests *SomeTest.someSpecificFeature
@@ -51,4 +56,39 @@ gradle test --tests *IntegTest
 gradle test --tests *IntegTest*ui*
 gradle test --tests *IntegTest.singleMethod
 gradle someTestTask --tests *UiTest someOtherTestTask --tests *WebTest*ui
+```
+
+### checkstyle
+
+Execute:
+
+```
+gradlew clean check
+```
+
+
+### Test Coverage
+
+Coverage:
+
+```
+gradle test jacocoTestReport
+```
+
+### findbugs
+
+FindBugs is a program which uses static analysis to look for bugs in Java code.
+
+```
+gradle findbugsMain
+gradle findbugsTest
+```
+
+### PMD
+
+The PMD plugin performs quality checks on your project’s Java source files using PMD and generates reports from these checks.
+
+```
+gradle pmdMain
+gradle pmdTest
 ```
