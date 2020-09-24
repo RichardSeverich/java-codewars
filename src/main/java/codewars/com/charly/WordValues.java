@@ -18,7 +18,7 @@ Emparejamiento de cuerdas
 Valor consonante
 https://www.codewars.com/kata/598d91785d4ce3ec4f000018/train/java
  */
-class WordValues{
+public class WordValues{
 
     public static int [] nameValue(String [] arr){
         int[] array = new int[arr.length];
@@ -31,9 +31,8 @@ class WordValues{
             for (int j = 0; j < obtString.length(); ++j) {
                   ch = obtString.charAt(j);
                   int n = (int)ch - (int)'a' + 1;
-                if (n == (-64)) {
-                }else{
-                  add = add + n;
+                if (!(n == (-64))) {
+                    add = add + n;
                 }
                 if (obtString.length() == j + 1){
                     array[multiplicador] = (add * (multiplicador + 1));

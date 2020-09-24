@@ -1,6 +1,7 @@
 package codewars.com.charly;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Testing123 {
     public static List<String> number(List<String> lines) {
