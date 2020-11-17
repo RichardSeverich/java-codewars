@@ -37,11 +37,11 @@ import java.util.*;
  * denota el tipo de la pieza (excepto de peones para los que se omite este identificador).
  * <p>
  * Esta letra es seguida inmediatamente por la posición de la pieza en la notación de ajedrez estándar: una letra
- * minúscula entre "a" y “h”, que determina la columna
+ * minúscula entre "a" y "h", que determina la columna
  * ("a" es la columna más a la izquierda en la entrada)
  * y un solo dígito entre 1 y 8, eso determina la fila (8 es la primera fila de la entrada).
  * <p>
- * •	a-h columna   (izquierda “a”)
+ * •	a-h columna   (izquierda "a")
  * •	1-8 fila. (8 es la primera fila de la entrada.)
  * Las piezas en la descripción deben aparecer en el siguiente orden:
  * •	Kings (Q)

@@ -42,20 +42,20 @@ gradlew test
 Run single test:
 
 ```
-gradle test --tests codewars.com.kataNextBiggernumber.BiggerNumNextTest
+gradlew test --tests codewars.com.kataNextBiggernumber.BiggerNumNextTest
 ```
 
 Other examples
 
 ```
-gradle test --tests org.gradle.SomeTest.someSpecificFeature
-gradle test --tests *SomeTest.someSpecificFeature
-gradle test --tests *SomeSpecificTest
-gradle test --tests all.in.specific.package*
-gradle test --tests *IntegTest
-gradle test --tests *IntegTest*ui*
-gradle test --tests *IntegTest.singleMethod
-gradle someTestTask --tests *UiTest someOtherTestTask --tests *WebTest*ui
+gradlew test --tests org.gradle.SomeTest.someSpecificFeature
+gradlew test --tests *SomeTest.someSpecificFeature
+gradlew test --tests *SomeSpecificTest
+gradlew test --tests all.in.specific.package*
+gradlew test --tests *IntegTest
+gradlew test --tests *IntegTest*ui*
+gradlew test --tests *IntegTest.singleMethod
+gradlew someTestTask --tests *UiTest someOtherTestTask --tests *WebTest*ui
 ```
 
 ### checkstyle
@@ -72,7 +72,7 @@ gradlew clean check
 Coverage:
 
 ```
-gradle test jacocoTestReport
+gradlew test jacocoTestReport
 ```
 
 ### findbugs
@@ -80,8 +80,8 @@ gradle test jacocoTestReport
 FindBugs is a program which uses static analysis to look for bugs in Java code.
 
 ```
-gradle findbugsMain
-gradle findbugsTest
+gradlew findbugsMain
+gradlew findbugsTest
 ```
 
 ### PMD
@@ -89,6 +89,6 @@ gradle findbugsTest
 The PMD plugin performs quality checks on your project’s Java source files using PMD and generates reports from these checks.
 
 ```
-gradle pmdMain
-gradle pmdTest
+gradlew pmdMain
+gradlew pmdTest
 ```
