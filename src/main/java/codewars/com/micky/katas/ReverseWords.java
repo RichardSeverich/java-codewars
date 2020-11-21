@@ -7,14 +7,14 @@ public class ReverseWords{
       String result = "";
       String[] array = str.split(" ");
    
-      for (int i = array.length -1; i >= 0;i--){
-        if (i == 0){
+      for (int i = array.length; i > 0; i--){
+        /*if (i == 0){
           result += array[i];
         } else {
           result += array[i] + " ";
-        }
+        }*/
+        result += (i == 1)? array[i - 1]: array[i - 1] + " ";
       }
       return result;
     }
    }
-   
