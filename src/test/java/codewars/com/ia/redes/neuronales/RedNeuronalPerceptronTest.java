@@ -36,15 +36,15 @@ public class RedNeuronalPerceptronTest {
             {1.0, 1.0, 1.0},
         };
         Double[] arrayPesos = {0.0, 0.0, 0.0};
-        Double[] arrayPesosAntiguos = {0.0, 0.0, 0.0};
         final Double[] araySalidaDeseada = {1.0, 1.0, 1.0, 0.0};
         // Datos red neurona
-        final int numeroInteraciones = 100;
+        final int numeroInteraciones = 50;
         final int numeroNeuronas = 4;
 
         int index = 0;
         for(int i = 0; i < numeroInteraciones; i++) {
             if(index > numeroNeuronas - 1){
+                System.out.println("******* ******* Interacion ******* ******* *******");
                 index = 0;
             }
             neurona = new Neurona(
@@ -57,13 +57,13 @@ public class RedNeuronalPerceptronTest {
             redNeuronal = new RedNeuronalPerceptron(neurona);
             redNeuronal.entrenar();
             arrayPesos = neurona.arrayNuevosPesos;
-            System.out.println("******* ******* ******* ******* *******");
+            System.out.println("******* Neurona " + index + " *******");
+            System.out.println("Resultado Esperado: " + neurona.salidaDeseada);
+            System.out.println("Resultado Obtenido: " + neurona.sumatoria);
             System.out.println("Entradas: " + Arrays.toString(neurona.arrayEntradas));
             System.out.println("Pesos: " + Arrays.toString(neurona.arrayPesos));
             System.out.println("Pesos Nuevos: " + Arrays.toString(neurona.arrayNuevosPesos));
             System.out.println("Sensor: " + Arrays.toString(neurona.arraySensor));
-            System.out.println("Resultado Esperado: " + neurona.salidaDeseada);
-            System.out.println("Resultado Obtenido: " + neurona.sumatoria);
             System.out.println("Red: " + neurona.red);
             System.out.println("Error: " + neurona.error);
             System.out.println("Correccion: " + neurona.correccion);

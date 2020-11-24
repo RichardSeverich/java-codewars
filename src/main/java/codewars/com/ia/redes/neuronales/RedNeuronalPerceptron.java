@@ -24,6 +24,7 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
             this.neurona.arraySensor[i] = this.neurona.arrayEntradas[i] * this.neurona.arrayPesos[i];
             this.neurona.sumatoria +=  this.neurona.arraySensor[i];
         }
+        this.neurona.sumatoria += this.neurona.bias;
     }
 
     /**
@@ -37,6 +38,7 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
 
     /** calcular error */
     public void calcularError(){
+        // Salida deseada - Salida obtenida 
         this.neurona.error = this.neurona.salidaDeseada-neurona.red;
     }
 
@@ -47,10 +49,8 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
 
     /** calcular nuevos pesos */
     public void calcularPesosNuevos(){
-        int index = 0;
-        for(Double entrada: this.neurona.arrayEntradas){
-            this.neurona.arrayNuevosPesos[index] = entrada * this.neurona.correccion;
-            index++;
+        for(int i=0; i < this.neurona.arraySensor.length; i++ ){
+            this.neurona.arrayNuevosPesos[i] = this.neurona.arrayPesos[i] + this.neurona.correccion * this.neurona.arrayEntradas[i];
         }
     }
 
