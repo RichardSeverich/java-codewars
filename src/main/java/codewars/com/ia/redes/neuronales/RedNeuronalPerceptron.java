@@ -54,6 +54,10 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
         }
     }
 
+     /**
+     * {@inheritDoc}
+     */
+    @Override
     public void entrenar(){
         funcionAgregacion();
         funcionActivacion();

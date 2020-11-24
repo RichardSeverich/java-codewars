@@ -7,10 +7,10 @@ public class Neurona {
 
     public Double[] arrayEntradas; // x1, x2 ... xn
     public Double[] arrayPesos; // w1, w2 ... wn
-    public Double[] arrayNuevosPesos; // 
+    public Double[] arrayNuevosPesos; //
     public Double[] arraySensor; // c0, c1 ... cn
     // Resultado esperado
-    public Double sumatoria; // (s)
+    public Double sumatoria; // (s) (resultado obtenido)
     public Double umbral; // (t) sesgo
     public Double bias; // (b)
     public Double tasaAprendizaje; // (r) epsilon
