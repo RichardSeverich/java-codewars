@@ -1,6 +1,9 @@
 package codewars.com.kataAjedrez;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.lang.StringBuilder;
 
 /**
  * Ayúdame con el juego.
@@ -110,7 +113,8 @@ public class Chess {
         listWhiteKnight = new ArrayList<>();
         listWhitePawn = new ArrayList<>();
         //Helpers
-        rowPosition = 8;
+        final int rowPos = 8;
+        rowPosition = rowPos;
         columnPosition = 0;
         countLineSeparator = 0;
 
@@ -129,8 +133,9 @@ public class Chess {
      * @return positions.
      */
     public String getPositions(final String input) {
+        final int  num = 33;
         String[] tempArray = input.split("");
-        for (int i = 33; i < tempArray.length; i++) {
+        for (int i = num; i < tempArray.length; i++) {
             temp = tempArray[i];
             this.updateRowPosition();
             if (isPlace()) {
@@ -158,16 +163,18 @@ public class Chess {
 
     /**
      * fillPositionsToList.
+     * @return String.
      */
     public String getResult() {
         StringBuilder result = new StringBuilder();
         String start;
         start = "White: ";
         // Sort Lists
+        final int three = 3;
         listWhitePawn = sort(listWhitePawn, 2);
-        listWhiteRook = sort(listWhiteRook, 3);
-        listWhiteBishop = sort(listWhiteBishop, 3);
-        listWhiteKnight = sort(listWhiteKnight, 3);
+        listWhiteRook = sort(listWhiteRook, three);
+        listWhiteBishop = sort(listWhiteBishop, three);
+        listWhiteKnight = sort(listWhiteKnight, three);
         result.append(buildResult(start, kingWhite, queenWhite, listWhiteRook, listWhiteBishop,
                 listWhiteKnight, listWhitePawn));
         result.setLength(result.length() - 1);
@@ -189,8 +196,9 @@ public class Chess {
      * @param listPawn   listPawn.
      * @return result.
      */
-    public String buildResult(final String start, StringBuilder king, StringBuilder queen, List<String> listRook,
-                              List<String> listBishop, List<String> listKnight, List<String> listPawn) {
+    public String buildResult(final String start, final StringBuilder king, final StringBuilder queen, 
+                              final List<String> listRook, final List<String> listBishop, 
+                              final List<String> listKnight, final List<String> listPawn) {
         StringBuilder sb = new StringBuilder();
         sb.append(start);
         sb.append(king.toString());
@@ -206,7 +214,7 @@ public class Chess {
      * @param list list.
      * @return String.
      */
-    public String getStringOfListElements(List<String> list) {
+    public String getStringOfListElements(final List<String> list) {
         StringBuilder sb = new StringBuilder();
         for (String str : list) {
             sb.append(str);
@@ -271,8 +279,9 @@ public class Chess {
      * @param listKnight listKnight.
      * @param listPawn   listPawn.
      */
-    public void addPositionsToList(StringBuilder king, StringBuilder queen, List<String> listRook,
-                                   List<String> listBishop, List<String> listKnight, List<String> listPawn) {
+    public void addPositionsToList(final StringBuilder king, final StringBuilder queen,
+                                   final List<String> listRook, final List<String> listBishop,
+                                   final List<String> listKnight, final List<String> listPawn) {
         String column = mappingColumn();
         switch (temp.toUpperCase()) {
             case "K":
@@ -298,7 +307,7 @@ public class Chess {
     }
 
     /**
-     * A = 0 – 2
+     * A = 0 – 2.
      * B = 3 – 5
      * C = 7 – 8
      * D = 9 – 11
@@ -325,7 +334,7 @@ public class Chess {
         final int twenty = 20;
         final int twentyOne = 21;
         final int twentyThree = 23;
-        if (columnPosition >= 0 && columnPosition <=two) {
+        if (columnPosition >= 0 && columnPosition <= two) {
             return "a";
         } else if (columnPosition >= three && columnPosition <= five) {
             return "b";

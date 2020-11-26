@@ -18,14 +18,21 @@ public class Neurona {
     public Double salidaDeseada; // (z)
     public Double correccion; // d
 
-    /** */
-    Neurona(
+    /** 
+    * @param arrayEntradas.
+    * @param arrayPesos.
+    * @param salidaDeseada.
+    * @param bias.
+    * @param umbral.
+    * @param tasaAprendizaje.
+    */
+    Neurona (
         Double[] arrayEntradas, 
         Double[] arrayPesos,
         Double salidaDeseada,
         Double bias,
         Double umbral,
-        Double tasaAprendizaje ) {
+        Double tasaAprendizaje) {
         this.arrayEntradas = arrayEntradas;
         this.arrayPesos = arrayPesos;
         this.salidaDeseada = salidaDeseada;

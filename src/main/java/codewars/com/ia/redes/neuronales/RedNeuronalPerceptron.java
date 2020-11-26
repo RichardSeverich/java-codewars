@@ -1,7 +1,7 @@
 package codewars.com.ia.redes.neuronales;
 
 /**
- * Class. 
+ * Class.
  * https://es.wikipedia.org/wiki/Perceptron
  */
 public class RedNeuronalPerceptron implements IRedNeuronal {
@@ -10,6 +10,7 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
 
     /**
      * Constructor.
+     * @param neurona neurona.
      */
     public RedNeuronalPerceptron(final Neurona neurona) {
         this.neurona = neurona;
@@ -20,7 +21,7 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
      */
     @Override
     public void funcionAgregacion() {
-        for(int i = 0; i < this.neurona.arrayEntradas.length; i++) {
+        for (int i = 0; i < this.neurona.arrayEntradas.length; i++) {
             this.neurona.arraySensor[i] = this.neurona.arrayEntradas[i] * this.neurona.arrayPesos[i];
             this.neurona.sumatoria +=  this.neurona.arraySensor[i];
         }
@@ -36,21 +37,22 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
         this.neurona.red = this.neurona.sumatoria > this.neurona.umbral ? 1.0 : 0.0;
     }
 
-    /** calcular error */
-    public void calcularError(){
-        // Salida deseada - Salida obtenida 
-        this.neurona.error = this.neurona.salidaDeseada-neurona.red;
+    /** calcular error. */
+    public void calcularError() {
+        // Salida deseada - Salida obtenida
+        this.neurona.error = this.neurona.salidaDeseada - neurona.red;
     }
 
-    /** calcular correccion */
-    public void calcularCorreccion(){
+    /** calcular correccion. */
+    public void calcularCorreccion() {
         this.neurona.correccion = this.neurona.tasaAprendizaje * this.neurona.error;
     }
 
-    /** calcular nuevos pesos */
-    public void calcularPesosNuevos(){
-        for(int i=0; i < this.neurona.arraySensor.length; i++ ){
-            this.neurona.arrayNuevosPesos[i] = this.neurona.arrayPesos[i] + this.neurona.correccion * this.neurona.arrayEntradas[i];
+    /** calcular nuevos pesos. */
+    public void calcularPesosNuevos() {
+        for (int i = 0; i < this.neurona.arraySensor.length; i++) {
+            this.neurona.arrayNuevosPesos[i] = this.neurona.arrayPesos[i]
+            + this.neurona.correccion * this.neurona.arrayEntradas[i];
         }
     }
 
@@ -58,7 +60,7 @@ public class RedNeuronalPerceptron implements IRedNeuronal {
      * {@inheritDoc}
      */
     @Override
-    public void entrenar(){
+    public void entrenar() {
         funcionAgregacion();
         funcionActivacion();
         calcularError();
