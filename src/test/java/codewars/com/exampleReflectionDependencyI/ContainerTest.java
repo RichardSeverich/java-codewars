@@ -1,6 +1,10 @@
 package codewars.com.exampleReflectionDependencyI;
 
-import codewars.com.exampleUtils.*;
+import codewars.com.exampleUtils.IDog;
+import codewars.com.exampleUtils.DogBulldog;
+import codewars.com.exampleUtils.User;
+import codewars.com.exampleUtils.Movie;
+import codewars.com.exampleUtils.Group;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

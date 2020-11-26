@@ -98,7 +98,7 @@ public class FilterTest {
     }
 
     /**
-     * Test 23
+     * Test 3.
      */
     @Test
     public void test03() {

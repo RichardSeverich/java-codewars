@@ -119,7 +119,7 @@ public class StringsMixTest {
     @Test
     public void test7() {
         final String[][] expectedResult = new String[7][3];
-        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"}};
         final String[][] parameterTwo = new String[][]{{"a", "2"}, {"b", "3"}, {"c", "3"}};
         // Value 1
         expectedResult[0][0] = "a";
@@ -148,7 +148,7 @@ public class StringsMixTest {
     public void test8() {
         final String[][] expectedResult = new String[7][3];
         final String[][] parameterOne = new String[][]{{"a", "2"}, {"b", "3"}, {"c", "3"}};
-        final String[][] parameterTwo = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+        final String[][] parameterTwo = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"}};
         // Value 1
         expectedResult[0][0] = "a";
         expectedResult[0][1] = "3";
@@ -175,7 +175,7 @@ public class StringsMixTest {
     @Test
     public void test9() {
         final String[][] expectedResult = new String[7][3];
-        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"}};
         final String[][] parameterTwo = new String[][]{{"x", "2"}, {"y", "3"}, {"z", "4"}};
         // Value 1
         expectedResult[0][0] = "a";
@@ -215,7 +215,7 @@ public class StringsMixTest {
     @Test
     public void test10() {
         final String[][] expectedResult = new String[7][3];
-        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+        final String[][] parameterOne = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"}};
         final String[][] parameterTwo = new String[][]{{"a", "2"}, {"y", "3"}, {"z", "4"}};
         // Value 1
         expectedResult[0][0] = "a";
@@ -252,7 +252,7 @@ public class StringsMixTest {
     public void test11() {
         final String[][] expectedResult = new String[7][3];
         final String[][] parameterOne = new String[][]{{"a", "2"}, {"y", "3"}, {"z", "4"}};
-        final String[][] parameterTwo = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"},};
+        final String[][] parameterTwo = new String[][]{{"a", "3"}, {"b", "4"}, {"c", "2"}, {"f", "2"}};
         // Value 1
         expectedResult[0][0] = "a";
         expectedResult[0][1] = "3";

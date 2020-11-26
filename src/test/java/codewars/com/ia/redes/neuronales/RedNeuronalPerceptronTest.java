@@ -1,7 +1,7 @@
 package codewars.com.ia.redes.neuronales;
 
 import java.util.Arrays;
-import org.junit.Assert;
+//import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -29,7 +29,7 @@ public class RedNeuronalPerceptronTest {
         final Double tasaAprendizaje =  0.1;
         // Datos Neurona
         // Numero de neuronas 4
-        final Double[][] arrayEntradas = { 
+        final Double[][] arrayEntradas = {
             {1.0, 0.0, 0.0},
             {1.0, 0.0, 1.0},
             {1.0, 1.0, 0.0},
@@ -42,8 +42,8 @@ public class RedNeuronalPerceptronTest {
         final int numeroNeuronas = 4;
 
         int index = 0;
-        for(int i = 0; i < numeroInteraciones; i++) {
-            if(index > numeroNeuronas - 1){
+        for (int i = 0; i < numeroInteraciones; i++) {
+            if (index > numeroNeuronas - 1) {
                 System.out.println("******* ******* Interacion ******* ******* *******");
                 index = 0;
             }
@@ -53,7 +53,7 @@ public class RedNeuronalPerceptronTest {
                 araySalidaDeseada[index],
                 bias,
                 umbral,
-                tasaAprendizaje );
+                tasaAprendizaje);
             redNeuronal = new RedNeuronalPerceptron(neurona);
             redNeuronal.entrenar();
             arrayPesos = neurona.arrayNuevosPesos;

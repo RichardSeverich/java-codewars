@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Class. */
 public class JsonConverterUtilsTest {
 
     private JsonConverterUtils jsonConverterUtils;

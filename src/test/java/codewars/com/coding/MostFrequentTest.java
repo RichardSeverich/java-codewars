@@ -69,7 +69,7 @@ public class MostFrequentTest {
      * @param arr contains the array.
      * @return return String.
      */
-    private String arrToString(int[] arr) {
+    private String arrToString(final int[] arr) {
         StringBuilder retStr = new StringBuilder("{ ");
         for (int i : arr) {
             retStr.append(i).append(", ");
@@ -81,7 +81,7 @@ public class MostFrequentTest {
      * @param collection a collection with int numbers.
      * @return the max number.
      */
-    private int mostFrequentAns(int[] collection) {
+    private int mostFrequentAns(final int[] collection) {
         int max = 0;
         int currMax = 0;
         int currNum = 0;
