@@ -20,7 +20,7 @@ public class Purchase {
     /**
      * @param name name.
      */
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -34,7 +34,7 @@ public class Purchase {
     /**
      * @param currencyChange currencyChange.
      */
-    public void setCurrencyChange(Change currencyChange) {
+    public void setCurrencyChange(final Change currencyChange) {
         this.currencyChange = currencyChange;
     }
 
@@ -62,7 +62,7 @@ public class Purchase {
     /**
      * @param dateOfPurchase dateOfPurchase.
      */
-    public void setDateOfPurchase(String dateOfPurchase) {
+    public void setDateOfPurchase(final String dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
     }
 }

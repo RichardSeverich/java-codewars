@@ -18,6 +18,7 @@ public class Neurona {
     public Double salidaDeseada; // (z)
     public Double correccion; // d
 
+    /** */
     Neurona(
         Double[] arrayEntradas, 
         Double[] arrayPesos,

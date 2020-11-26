@@ -310,21 +310,36 @@ public class Chess {
      * @return string.
      */
     public String mappingColumn() {
-        if (columnPosition >= 0 && columnPosition <= 2) {
+        final int two = 2;
+        final int three = 3;
+        final int five = 5;
+        final int seven = 7;
+        final int eight = 8;
+        final int nine = 9;
+        final int eleven = 11;
+        final int twelve = 12;
+        final int forTeen = 14;
+        final int fiveTeen = 15;
+        final int sevenTeen = 17;
+        final int egihtTeen = 18;
+        final int twenty = 20;
+        final int twentyOne = 21;
+        final int twentyThree = 23;
+        if (columnPosition >= 0 && columnPosition <=two) {
             return "a";
-        } else if (columnPosition >= 3 && columnPosition <= 5) {
+        } else if (columnPosition >= three && columnPosition <= five) {
             return "b";
-        } else if (columnPosition >= 7 && columnPosition <= 8) {
+        } else if (columnPosition >= seven && columnPosition <= eight) {
             return "c";
-        } else if (columnPosition >= 9 && columnPosition <= 11) {
+        } else if (columnPosition >= nine && columnPosition <= eleven) {
             return "d";
-        } else if (columnPosition >= 12 && columnPosition <= 14) {
+        } else if (columnPosition >= twelve && columnPosition <= forTeen) {
             return "e";
-        } else if (columnPosition >= 15 && columnPosition <= 17) {
+        } else if (columnPosition >= fiveTeen && columnPosition <= sevenTeen) {
             return "f";
-        } else if (columnPosition >= 18 && columnPosition <= 20) {
+        } else if (columnPosition >= egihtTeen && columnPosition <= twenty) {
             return "g";
-        } else if (columnPosition >= 21 && columnPosition <= 23) {
+        } else if (columnPosition >= twentyOne && columnPosition <= twentyThree) {
             return "h";
         } else {
             return "null";

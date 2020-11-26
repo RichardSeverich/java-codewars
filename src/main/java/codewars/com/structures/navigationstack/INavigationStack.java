@@ -18,15 +18,13 @@ public interface INavigationStack<T> {
 
     /**
      * Desaser.
-     *
-     * @return should execute the undo method from the object.
+     * should execute the undo method from the object.
      */
     void undo();
 
     /**
      * Reaser.
-     *
-     * @return should execute the redo method from the object.
+     * should execute the redo method from the object.
      */
     void redo();
 
