@@ -8,5 +8,5 @@ public interface Polygon {
     /**
      * @return area.
      */
-    public int getArea();
+    int getArea();
 }

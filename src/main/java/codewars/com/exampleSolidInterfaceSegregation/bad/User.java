@@ -12,30 +12,30 @@ public interface User {
      *
      * @return id.
      */
-    public String getId();
+    String getId();
 
     /**
      *
      * @return name.
      */
-    public String getName();
+    String getName();
 
     /**
      *
      * @return salary.
      */
-    public String getSalary();
+    String getSalary();
 
     /**
      *
      * @return ListProfessors
      */
-    public List<String> geListProfessors();
+    List<String> geListProfessors();
 
     /**
      *
      * @return ListStudents
      */
-    public List<String> geListStudents();
+    List<String> geListStudents();
 
 }

@@ -67,8 +67,7 @@ public class Filter {
      */
     public List<Purchase> orderByDate(final List<Purchase> arrayListPurchase) {
         Collections.sort(arrayListPurchase, new Comparator<Purchase>() {
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm a");  //or your pattern
-
+            private DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm a");  //or your pattern
             @Override
             public int compare(final Purchase o1, final Purchase o2) {
                 try {

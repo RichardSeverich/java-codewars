@@ -11,7 +11,14 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface MyAnnotation {
-    public String name();
 
-    public String description();
+    /**
+    * @return String.
+    */
+    String name();
+
+    /**
+    * @return String.
+    */
+    String description();
 }

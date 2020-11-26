@@ -7,13 +7,15 @@ package codewars.com.exampleSolidOpenClosed.bad;
 public class PolygonManager {
 
     /**
-     * @return are
+     * @param square square.
+     * @return area.
      */
     public int getArea(final Square square) {
         return square.getArea();
     }
 
     /**
+     * @param circle circle.
      * @return area.
      */
     public int getArea(final Circle circle) {

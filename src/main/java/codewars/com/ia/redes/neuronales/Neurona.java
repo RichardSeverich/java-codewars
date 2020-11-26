@@ -5,34 +5,34 @@ package codewars.com.ia.redes.neuronales;
  */
 public class Neurona {
 
-    public Double[] arrayEntradas; // x1, x2 ... xn
-    public Double[] arrayPesos; // w1, w2 ... wn
-    public Double[] arrayNuevosPesos; //
-    public Double[] arraySensor; // c0, c1 ... cn
-    public Double sumatoria; // (s) (resultado obtenido)
-    public Double umbral; // (t) sesgo
-    public Double bias; // (b)
-    public Double tasaAprendizaje; // (r) epsilon
-    public Double error; // (e)
-    public Double red; // (n)
-    public Double salidaDeseada; // (z)
-    public Double correccion; // d
+    protected Double[] arrayEntradas; // x1, x2 ... xn
+    protected Double[] arrayPesos; // w1, w2 ... wn
+    protected Double[] arrayNuevosPesos; //
+    protected Double[] arraySensor; // c0, c1 ... cn
+    protected Double sumatoria; // (s) (resultado obtenido)
+    protected Double umbral; // (t) sesgo
+    protected Double bias; // (b)
+    protected Double tasaAprendizaje; // (r) epsilon
+    protected Double error; // (e)
+    protected Double red; // (n)
+    protected Double salidaDeseada; // (z)
+    protected Double correccion; // d
 
-    /** 
-    * @param arrayEntradas.
-    * @param arrayPesos.
-    * @param salidaDeseada.
-    * @param bias.
-    * @param umbral.
-    * @param tasaAprendizaje.
+    /**
+    * @param arrayEntradas arrayEntradas.
+    * @param arrayPesos arrayPesos.
+    * @param salidaDeseada salidaDeseada.
+    * @param bias bias.
+    * @param umbral umbral.
+    * @param tasaAprendizaje tasaAprendizaje.
     */
-    Neurona (
-        Double[] arrayEntradas, 
-        Double[] arrayPesos,
-        Double salidaDeseada,
-        Double bias,
-        Double umbral,
-        Double tasaAprendizaje) {
+    Neurona(
+        final Double[] arrayEntradas,
+        final Double[] arrayPesos,
+        final Double salidaDeseada,
+        final Double bias,
+        final Double umbral,
+        final Double tasaAprendizaje) {
         this.arrayEntradas = arrayEntradas;
         this.arrayPesos = arrayPesos;
         this.salidaDeseada = salidaDeseada;

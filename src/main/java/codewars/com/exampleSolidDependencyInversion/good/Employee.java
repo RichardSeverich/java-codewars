@@ -12,6 +12,7 @@ abstract class Employee {
     /**
      * @param id   id.
      * @param name name.
+     * @param salary salary.
      */
     Employee(final String id, final String name, final int salary) {
         this.id = id;

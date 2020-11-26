@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class ManagerEmployees {
 
-    List<Developer> listDevelopers;
-    List<Tester> listTesters;
+    protected List<Developer> listDevelopers;
+    protected List<Tester> listTesters;
 
     /**
      * Constructor.

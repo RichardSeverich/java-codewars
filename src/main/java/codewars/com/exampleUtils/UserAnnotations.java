@@ -1,6 +1,6 @@
 package codewars.com.exampleUtils;
 
-import javax.annotation.Resource;
+//import javax.annotation.Resource;
 
 /**
  * IUser.
@@ -24,7 +24,7 @@ public class UserAnnotations {
     /**
      * @param id id.
      */
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 
@@ -38,7 +38,7 @@ public class UserAnnotations {
     /**
      * @param name name.
      */
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -52,7 +52,7 @@ public class UserAnnotations {
     /**
      * @param birthDate birthDate.
      */
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(final String birthDate) {
         this.birthDate = birthDate;
     }
 }

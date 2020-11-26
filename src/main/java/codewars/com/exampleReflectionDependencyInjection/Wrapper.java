@@ -10,7 +10,7 @@ public class Wrapper<T> {
     /**
      * @param instance instance.
      */
-    public Wrapper(T instance) {
+    public Wrapper(final T instance) {
         this.instance = instance;
     }
 

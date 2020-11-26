@@ -7,12 +7,12 @@ public interface IRedNeuronal {
 
 
     /** **/
-    public void entrenar();
-    
-    /** **/
-    public void funcionAgregacion();
+    void entrenar();
 
     /** **/
-    public void funcionActivacion();
+    void funcionAgregacion();
+
+    /** **/
+    void funcionActivacion();
 
 }

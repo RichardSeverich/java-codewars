@@ -10,5 +10,5 @@ public interface IStudent extends IUser {
     /**
      * @return ListProfessors
      */
-    public List<String> geListProfessors();
+    List<String> geListProfessors();
 }

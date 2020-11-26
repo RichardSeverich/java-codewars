@@ -9,10 +9,10 @@ public class Square implements IRectangle {
 
     /**
      * Constructor.
+     * @param side side.
      */
     public Square(final int side) {
         this.side = side;
-
     }
 
     /**

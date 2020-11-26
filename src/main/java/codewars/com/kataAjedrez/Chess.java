@@ -3,15 +3,14 @@ package codewars.com.kataAjedrez;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.StringBuilder;
 
 /**
  * Ayúdame con el juego.
  * La entrada consiste en una imagen de arte ASCII de un tablero de ajedrez con piezas de ajedrez en la posición
  * descrita por la entrada.
  * <p>
- * •	mientras que las piezas del jugador negro son letras minúsculas.
- * •	las piezas del jugador blanco se muestran en letras mayúsculas,
+ * •  mientras que las piezas del jugador negro son letras minúsculas.
+ * •  las piezas del jugador blanco se muestran en letras mayúsculas,
  * <p>
  * Las letras son una de:
  * "k" (king) - (Rey)
@@ -27,9 +26,9 @@ import java.lang.StringBuilder;
  * <p>
  * OUTPUT
  * La salida consta de dos líneas:
- * •	La primera línea consiste en la cadena "blanca", Seguido de la descripción de las posiciones de las piezas del
+ * •  La primera línea consiste en la cadena "blanca", Seguido de la descripción de las posiciones de las piezas del
  * jugador blanco.
- * •	La segunda línea consiste en la cadena "negra", Seguido de la descripción de las posiciones de las piezas del
+ * •  La segunda línea consiste en la cadena "negra", Seguido de la descripción de las posiciones de las piezas del
  * jugador blanco.
  * <p>
  * <p>
@@ -44,15 +43,15 @@ import java.lang.StringBuilder;
  * ("a" es la columna más a la izquierda en la entrada)
  * y un solo dígito entre 1 y 8, eso determina la fila (8 es la primera fila de la entrada).
  * <p>
- * •	a-h columna   (izquierda "a")
- * •	1-8 fila. (8 es la primera fila de la entrada.)
+ * •  a-h columna   (izquierda "a")
+ * •  1-8 fila. (8 es la primera fila de la entrada.)
  * Las piezas en la descripción deben aparecer en el siguiente orden:
- * •	Kings (Q)
- * •	Queens (Q)
- * •	Rooks (R) 2
- * •	Bishops (B) 2
- * •	Kinght (N) 2
- * •	Pawns
+ * •  Kings (Q)
+ * •  Queens (Q)
+ * •  Rooks (R) 2
+ * •  Bishops (B) 2
+ * •  Kinght (N) 2
+ * •  Pawns
  * <p>
  * Tenga en cuenta que el número de piezas de os puede diferir de la posición inicial y podría incluso corresponder a
  * una situación que podría surgir en un juego de ajedrez válido
@@ -68,7 +67,7 @@ import java.lang.StringBuilder;
  */
 public class Chess {
 
-    private final static String LINE_SEPARATOR = "line.separator";
+    private static final String LINE_SEPARATOR = "line.separator";
 
     // Strings
     private StringBuilder kingBlack;
@@ -196,8 +195,8 @@ public class Chess {
      * @param listPawn   listPawn.
      * @return result.
      */
-    public String buildResult(final String start, final StringBuilder king, final StringBuilder queen, 
-                              final List<String> listRook, final List<String> listBishop, 
+    public String buildResult(final String start, final StringBuilder king, final StringBuilder queen,
+                              final List<String> listRook, final List<String> listBishop,
                               final List<String> listKnight, final List<String> listPawn) {
         StringBuilder sb = new StringBuilder();
         sb.append(start);
@@ -356,11 +355,12 @@ public class Chess {
     }
 
     /**
-     * @param list       list.
+     * @param listParam       list.
      * @param stringSize stringSize.
      * @return list sorted.
      */
-    public List<String> sort(List<String> list, final int stringSize) {
+    public List<String> sort(final List<String> listParam, final int stringSize) {
+        List<String> list = listParam;
         String[] spam = list.toArray(new String[0]);
         Arrays.sort(spam);
         list = Arrays.asList(spam);
