@@ -18,7 +18,7 @@ public class FindOutlier {
      * @param outlier is a array of int numbers.
      * @return outlier number.
      */
-    int find(int[] outlier) {
+    int find(final int[] outlier) {
         int evenResult = 0;
         int oddResult = 0;
         int countEvenNumbers = 0;

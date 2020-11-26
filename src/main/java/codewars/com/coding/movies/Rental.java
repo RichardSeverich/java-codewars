@@ -11,7 +11,7 @@ public class Rental {
      * @param movie      Is movie for rented.
      * @param daysRented Is the variable that keeps the days rented.
      */
-    public Rental(Movie movie, int daysRented) {
+    public Rental(final Movie movie, final int daysRented) {
         this.movie = movie;
         this.daysRented = daysRented;
     }

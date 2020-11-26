@@ -53,7 +53,7 @@ public class Fibonacci {
      * @param n this variable contains a Big Integer number.
      * @return the Bing integer.
      */
-    public BigInteger fib(BigInteger n) {
+    public BigInteger fib(final BigInteger n) {
         BigInteger negativeChanger = BigInteger.ONE;
         if (n.equals(BigInteger.ZERO)) {
             return BigInteger.ZERO;
@@ -65,7 +65,7 @@ public class Fibonacci {
      * @param n this variable contains a Big Integer number.
      * @return the Bing integer.
      */
-    private BigInteger fibonacci(BigInteger n) {
+    private BigInteger fibonacci(final BigInteger n) {
         if (computedValues.containsKey(n)) {
             return computedValues.get(n);
         }

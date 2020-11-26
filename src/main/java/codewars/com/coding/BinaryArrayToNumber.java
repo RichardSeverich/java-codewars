@@ -14,7 +14,7 @@ public class BinaryArrayToNumber {
      * @param binary this variable contains a list with binary numbers.
      * @return a decimal number.
      */
-    public int convertBinaryArrayToInt(List<Integer> binary) {
+    public int convertBinaryArrayToInt(final List<Integer> binary) {
         int decimal = 0;
         for (int i = 0; i < binary.size(); i++) {
             decimal += binary.get(binary.size() - i - 1) * Math.pow(2, i);

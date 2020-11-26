@@ -21,7 +21,7 @@ public class TwoToOne {
      * @param s2 this variable contains the second string.
      * @return return TwoToOne String.
      */
-    public String longest(String s1, String s2) {
+    public String longest(final String s1, final String s2) {
         String[] myArray = s1.split("");
         SortedSet<String> myTreeSet = new TreeSet<>(Arrays.asList(myArray));
         myArray = s2.split("");

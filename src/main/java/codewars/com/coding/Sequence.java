@@ -15,6 +15,7 @@ public class Sequence {
             result += num;
             num -= 1;
         }
-        return result * 50;
+        final int fifty = 50;
+        return result * fifty;
     }
 }

@@ -8,7 +8,7 @@ public class MoviesNewRelease extends Movie {
     /**
      * @param title is the title of movie.
      */
-    public MoviesNewRelease(String title) {
+    public MoviesNewRelease(final String title) {
         super(title);
     }
 
@@ -17,7 +17,7 @@ public class MoviesNewRelease extends Movie {
      * @return It is the amount to pay for the movie rented.
      */
     @Override
-    public double generatePrice(int daysRented) {
+    public double generatePrice(final int daysRented) {
         return daysRented * TREE;
     }
 
@@ -26,7 +26,7 @@ public class MoviesNewRelease extends Movie {
      * @return
      */
     @Override
-    public int generateFrequent(int daysRented) {
+    public int generateFrequent(final int daysRented) {
         return ONE;
     }
 }

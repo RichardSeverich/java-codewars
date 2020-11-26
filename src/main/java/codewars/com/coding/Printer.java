@@ -28,7 +28,7 @@ public class Printer {
      * @param cad this variable is a control string variable.
      * @return the error rate of the printer.
      */
-    public String printerError(String cad) {
+    public String printerError(final String cad) {
         return String.format("%d/%d", cad.replaceAll("[a-m]", "").length(), cad.length());
     }
 }

@@ -16,7 +16,7 @@ public class Reverse {
      * @param cad this variable contains a string.
      * @return reverse string.
      */
-    public String reverse(String cad) {
+    public String reverse(final String cad) {
         if ((null == cad) || (cad.length() <= 1)) {
             return cad;
         }

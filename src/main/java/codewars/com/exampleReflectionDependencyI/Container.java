@@ -13,6 +13,9 @@ public final class Container {
 
     private static Map<Type, Wrapper> objectMap = new HashMap<>();
 
+    /** Constructor. */
+    private Container() { }
+
     /**
      * @param genericInterface genericInterface.
      * @param genericClass     genericClass.

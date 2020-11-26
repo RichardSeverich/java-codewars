@@ -12,7 +12,7 @@ public class EanValidation {
      * @param firstNum it is the number with EAn code that we are going to verify.
      * @return false or true entered has the correct number EAN.
      */
-    public boolean eanValidationCod(String firstNum) {
+    public boolean eanValidationCod(final String firstNum) {
         char[] partsNum = firstNum.toCharArray();
         int numResult = 0;
         for (int i = 0; i < partsNum.length - 1; i = i + 2) {

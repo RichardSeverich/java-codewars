@@ -3,11 +3,22 @@ package codewars.com.charly;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Testing123 {
-    public static List<String> number(List<String> lines) {
+/**
+* Class.
+*/
+public final class Testing123 {
+
+    /**Constructor. */
+    private Testing123() { }
+
+    /**
+     * @param lines list.
+     * @return List.
+     */
+    public static List<String> number(final List<String> lines) {
         List<String> modificado = new ArrayList();
-        for (int num = 0;num < lines.size();num++){
-            String ind =String.valueOf(num + 1);
+        for (int num = 0; num < lines.size(); num++) {
+            String ind = String.valueOf(num + 1);
             String contenedor = lines.get(num);
             modificado.add(ind + ": " + contenedor);
         }

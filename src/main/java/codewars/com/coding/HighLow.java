@@ -9,7 +9,7 @@ public class HighLow {
      * @param cad is a string.
      * @return String high and low.
      */
-    public String highAndLow(String cad) {
+    public String highAndLow(final String cad) {
         String[] arrayNum = cad.split(" ");
         int high = Integer.parseInt(arrayNum[0]);
         int low = Integer.parseInt(arrayNum[0]);
