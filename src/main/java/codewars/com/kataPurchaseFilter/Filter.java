@@ -33,7 +33,7 @@ public class Filter {
      * @param change       change.
      * @return List.
      */
-    public List<Purchase> filterByCurrencyChange(List<Purchase> listPurchase, Change change) {
+    public List<Purchase> filterByCurrencyChange(final List<Purchase> listPurchase, final Change change) {
         return listPurchase.stream()
                 .filter(purchase -> (purchase.getCurrencyChange() == change))
                 .collect(Collectors.toCollection(ArrayList::new));
@@ -43,7 +43,7 @@ public class Filter {
      * @param arrayListPurchase arrayListPurchase
      * @return Purchase Purchase.
      */
-    public Purchase getMaxPurchaseByQuantity(List<Purchase> arrayListPurchase) {
+    public Purchase getMaxPurchaseByQuantity(final List<Purchase> arrayListPurchase) {
         return arrayListPurchase
                 .stream()
                 .max(Comparator.comparing(Purchase::getQuantity))
@@ -54,7 +54,7 @@ public class Filter {
      * @param arrayListPurchase arrayListPurchase
      * @return Purchase Purchase.
      */
-    public Purchase getMinPurchaseByQuantity(List<Purchase> arrayListPurchase) {
+    public Purchase getMinPurchaseByQuantity(final List<Purchase> arrayListPurchase) {
         return arrayListPurchase
                 .stream()
                 .min(Comparator.comparing(Purchase::getQuantity))
@@ -65,12 +65,11 @@ public class Filter {
      * @param arrayListPurchase arrayListPurchase.
      * @return List.
      */
-    public List<Purchase> orderByDate(List<Purchase> arrayListPurchase) {
+    public List<Purchase> orderByDate(final List<Purchase> arrayListPurchase) {
         Collections.sort(arrayListPurchase, new Comparator<Purchase>() {
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm a");  //or your pattern
-
+            private DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy hh:mm a");  //or your pattern
             @Override
-            public int compare(Purchase o1, Purchase o2) {
+            public int compare(final Purchase o1, final Purchase o2) {
                 try {
                     return formatter.parse(o1.getDateOfPurchase()).compareTo(formatter.parse(o2.getDateOfPurchase()));
 

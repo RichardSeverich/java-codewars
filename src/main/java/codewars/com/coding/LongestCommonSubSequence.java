@@ -21,7 +21,7 @@ public class LongestCommonSubSequence {
      * @param secondCad is the second String.
      * @return the Longest Common Sub Sequence.
      */
-    public String solution(String firstCad, String secondCad) {
+    public String solution(final String firstCad, final String secondCad) {
 
         if (firstCad.length() >= secondCad.length()) {
             return findSubSequence(firstCad, secondCad);
@@ -36,7 +36,7 @@ public class LongestCommonSubSequence {
      * @param secondCad is the second String.
      * @return the Longest Common Sub Sequence.
      */
-    private String findSubSequence(String firstCad, String secondCad) {
+    private String findSubSequence(final String firstCad, final String secondCad) {
         StringBuilder sb = new StringBuilder();
         String[] parts = firstCad.split("");
         for (int i = 0; i < firstCad.length(); i++) {

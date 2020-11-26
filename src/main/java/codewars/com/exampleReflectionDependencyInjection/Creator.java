@@ -3,6 +3,7 @@ package codewars.com.exampleReflectionDependencyInjection;
 
 /**
  * Class.
+ * @param <T> generic.
  */
 public class Creator<T> {
 
@@ -17,7 +18,7 @@ public class Creator<T> {
      * @param classDefinition classDefinition.
      * @return generic.
      */
-    private Object createObject(Class<T> classDefinition) {
+    private Object createObject(final Class<T> classDefinition) {
         Object object = null;
         try {
             object = classDefinition.newInstance();
@@ -32,7 +33,7 @@ public class Creator<T> {
      * @param clazz clazz.
      * @return Generic.
      */
-    private T convertInstanceOfObject(Object o, Class<T> clazz) {
+    private T convertInstanceOfObject(final Object o, final Class<T> clazz) {
         try {
             return clazz.cast(o);
         } catch (ClassCastException e) {
@@ -44,7 +45,7 @@ public class Creator<T> {
      * @param classDefinition classDefinition.
      * @return generic.
      */
-    public T getInstance(Class<T> classDefinition) {
+    public T getInstance(final Class<T> classDefinition) {
         Object object = this.createObject(classDefinition);
         return this.convertInstanceOfObject(object, classDefinition);
     }

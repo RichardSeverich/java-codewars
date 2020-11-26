@@ -1,14 +1,16 @@
 package codewars.com.kataAjedrez;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Ayúdame con el juego.
  * La entrada consiste en una imagen de arte ASCII de un tablero de ajedrez con piezas de ajedrez en la posición
  * descrita por la entrada.
  * <p>
- * •	mientras que las piezas del jugador negro son letras minúsculas.
- * •	las piezas del jugador blanco se muestran en letras mayúsculas,
+ * •  mientras que las piezas del jugador negro son letras minúsculas.
+ * •  las piezas del jugador blanco se muestran en letras mayúsculas,
  * <p>
  * Las letras son una de:
  * "k" (king) - (Rey)
@@ -24,9 +26,9 @@ import java.util.*;
  * <p>
  * OUTPUT
  * La salida consta de dos líneas:
- * •	La primera línea consiste en la cadena "blanca", Seguido de la descripción de las posiciones de las piezas del
+ * •  La primera línea consiste en la cadena "blanca", Seguido de la descripción de las posiciones de las piezas del
  * jugador blanco.
- * •	La segunda línea consiste en la cadena "negra", Seguido de la descripción de las posiciones de las piezas del
+ * •  La segunda línea consiste en la cadena "negra", Seguido de la descripción de las posiciones de las piezas del
  * jugador blanco.
  * <p>
  * <p>
@@ -41,15 +43,15 @@ import java.util.*;
  * ("a" es la columna más a la izquierda en la entrada)
  * y un solo dígito entre 1 y 8, eso determina la fila (8 es la primera fila de la entrada).
  * <p>
- * •	a-h columna   (izquierda "a")
- * •	1-8 fila. (8 es la primera fila de la entrada.)
+ * •  a-h columna   (izquierda "a")
+ * •  1-8 fila. (8 es la primera fila de la entrada.)
  * Las piezas en la descripción deben aparecer en el siguiente orden:
- * •	Kings (Q)
- * •	Queens (Q)
- * •	Rooks (R) 2
- * •	Bishops (B) 2
- * •	Kinght (N) 2
- * •	Pawns
+ * •  Kings (Q)
+ * •  Queens (Q)
+ * •  Rooks (R) 2
+ * •  Bishops (B) 2
+ * •  Kinght (N) 2
+ * •  Pawns
  * <p>
  * Tenga en cuenta que el número de piezas de os puede diferir de la posición inicial y podría incluso corresponder a
  * una situación que podría surgir en un juego de ajedrez válido
@@ -65,7 +67,7 @@ import java.util.*;
  */
 public class Chess {
 
-    private final static String LINE_SEPARATOR = "line.separator";
+    private static final String LINE_SEPARATOR = "line.separator";
 
     // Strings
     private StringBuilder kingBlack;
@@ -110,7 +112,8 @@ public class Chess {
         listWhiteKnight = new ArrayList<>();
         listWhitePawn = new ArrayList<>();
         //Helpers
-        rowPosition = 8;
+        final int rowPos = 8;
+        rowPosition = rowPos;
         columnPosition = 0;
         countLineSeparator = 0;
 
@@ -129,8 +132,9 @@ public class Chess {
      * @return positions.
      */
     public String getPositions(final String input) {
+        final int  num = 33;
         String[] tempArray = input.split("");
-        for (int i = 33; i < tempArray.length; i++) {
+        for (int i = num; i < tempArray.length; i++) {
             temp = tempArray[i];
             this.updateRowPosition();
             if (isPlace()) {
@@ -158,16 +162,18 @@ public class Chess {
 
     /**
      * fillPositionsToList.
+     * @return String.
      */
     public String getResult() {
         StringBuilder result = new StringBuilder();
         String start;
         start = "White: ";
         // Sort Lists
+        final int three = 3;
         listWhitePawn = sort(listWhitePawn, 2);
-        listWhiteRook = sort(listWhiteRook, 3);
-        listWhiteBishop = sort(listWhiteBishop, 3);
-        listWhiteKnight = sort(listWhiteKnight, 3);
+        listWhiteRook = sort(listWhiteRook, three);
+        listWhiteBishop = sort(listWhiteBishop, three);
+        listWhiteKnight = sort(listWhiteKnight, three);
         result.append(buildResult(start, kingWhite, queenWhite, listWhiteRook, listWhiteBishop,
                 listWhiteKnight, listWhitePawn));
         result.setLength(result.length() - 1);
@@ -189,8 +195,9 @@ public class Chess {
      * @param listPawn   listPawn.
      * @return result.
      */
-    public String buildResult(final String start, StringBuilder king, StringBuilder queen, List<String> listRook,
-                              List<String> listBishop, List<String> listKnight, List<String> listPawn) {
+    public String buildResult(final String start, final StringBuilder king, final StringBuilder queen,
+                              final List<String> listRook, final List<String> listBishop,
+                              final List<String> listKnight, final List<String> listPawn) {
         StringBuilder sb = new StringBuilder();
         sb.append(start);
         sb.append(king.toString());
@@ -206,7 +213,7 @@ public class Chess {
      * @param list list.
      * @return String.
      */
-    public String getStringOfListElements(List<String> list) {
+    public String getStringOfListElements(final List<String> list) {
         StringBuilder sb = new StringBuilder();
         for (String str : list) {
             sb.append(str);
@@ -271,8 +278,9 @@ public class Chess {
      * @param listKnight listKnight.
      * @param listPawn   listPawn.
      */
-    public void addPositionsToList(StringBuilder king, StringBuilder queen, List<String> listRook,
-                                   List<String> listBishop, List<String> listKnight, List<String> listPawn) {
+    public void addPositionsToList(final StringBuilder king, final StringBuilder queen,
+                                   final List<String> listRook, final List<String> listBishop,
+                                   final List<String> listKnight, final List<String> listPawn) {
         String column = mappingColumn();
         switch (temp.toUpperCase()) {
             case "K":
@@ -298,7 +306,7 @@ public class Chess {
     }
 
     /**
-     * A = 0 – 2
+     * A = 0 – 2.
      * B = 3 – 5
      * C = 7 – 8
      * D = 9 – 11
@@ -310,21 +318,36 @@ public class Chess {
      * @return string.
      */
     public String mappingColumn() {
-        if (columnPosition >= 0 && columnPosition <= 2) {
+        final int two = 2;
+        final int three = 3;
+        final int five = 5;
+        final int seven = 7;
+        final int eight = 8;
+        final int nine = 9;
+        final int eleven = 11;
+        final int twelve = 12;
+        final int forTeen = 14;
+        final int fiveTeen = 15;
+        final int sevenTeen = 17;
+        final int egihtTeen = 18;
+        final int twenty = 20;
+        final int twentyOne = 21;
+        final int twentyThree = 23;
+        if (columnPosition >= 0 && columnPosition <= two) {
             return "a";
-        } else if (columnPosition >= 3 && columnPosition <= 5) {
+        } else if (columnPosition >= three && columnPosition <= five) {
             return "b";
-        } else if (columnPosition >= 7 && columnPosition <= 8) {
+        } else if (columnPosition >= seven && columnPosition <= eight) {
             return "c";
-        } else if (columnPosition >= 9 && columnPosition <= 11) {
+        } else if (columnPosition >= nine && columnPosition <= eleven) {
             return "d";
-        } else if (columnPosition >= 12 && columnPosition <= 14) {
+        } else if (columnPosition >= twelve && columnPosition <= forTeen) {
             return "e";
-        } else if (columnPosition >= 15 && columnPosition <= 17) {
+        } else if (columnPosition >= fiveTeen && columnPosition <= sevenTeen) {
             return "f";
-        } else if (columnPosition >= 18 && columnPosition <= 20) {
+        } else if (columnPosition >= egihtTeen && columnPosition <= twenty) {
             return "g";
-        } else if (columnPosition >= 21 && columnPosition <= 23) {
+        } else if (columnPosition >= twentyOne && columnPosition <= twentyThree) {
             return "h";
         } else {
             return "null";
@@ -332,11 +355,12 @@ public class Chess {
     }
 
     /**
-     * @param list       list.
+     * @param listParam       list.
      * @param stringSize stringSize.
      * @return list sorted.
      */
-    public List<String> sort(List<String> list, final int stringSize) {
+    public List<String> sort(final List<String> listParam, final int stringSize) {
+        List<String> list = listParam;
         String[] spam = list.toArray(new String[0]);
         Arrays.sort(spam);
         list = Arrays.asList(spam);

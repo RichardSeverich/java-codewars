@@ -9,10 +9,12 @@ public class Multiples {
      * @param number Is number.
      * @return return Sum of multiples of 3 and 5.
      */
-    public int solution(int number) {
+    public int solution(final int number) {
         int result = 0;
+        final int three = 3;
+        final int five = 5;
         for (int i = 0; i < number; i++) {
-            if (i % 3 == 0 || i % 5 == 0) {
+            if (i % three == 0 || i % five == 0) {
                 result += i;
             }
         }

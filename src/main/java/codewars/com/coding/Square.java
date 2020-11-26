@@ -19,7 +19,7 @@ public final class Square {
      * @param num is a float number.
      * @return true if is square number.
      */
-    public boolean isSquare(float num) {
+    public boolean isSquare(final float num) {
         return Math.sqrt(num) % 1 == 0;
     }
 }

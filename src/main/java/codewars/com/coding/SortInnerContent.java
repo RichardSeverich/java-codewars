@@ -16,7 +16,7 @@ public class SortInnerContent {
      * @param cad This is the chain to which we will change its internal content to a descending order.
      * @return Returns the string to which we will change its internal contents to a descending order.
      */
-    public String sortInner(String cad) {
+    public String sortInner(final String cad) {
         String[] partsWords = cad.split(" ");
         StringJoiner stringJoiner = new StringJoiner(" ");
         for (String itemWord : partsWords) {
@@ -29,7 +29,7 @@ public class SortInnerContent {
      * @param itemWord This is the chain to which we will change content to a descending order.
      * @return Returns the changed string in descending order.
      */
-    private String sortDescInnerContent(String itemWord) {
+    private String sortDescInnerContent(final String itemWord) {
         String cadDescending = Stream.of(itemWord.substring(1, itemWord.length() - 1).split(""))
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.joining());

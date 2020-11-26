@@ -14,7 +14,7 @@ abstract class Movie {
     /**
      * @param title is the title of movie.
      */
-    Movie(String title) {
+    Movie(final String title) {
         this.title = title;
     }
 

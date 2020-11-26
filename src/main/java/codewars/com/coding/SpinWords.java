@@ -16,7 +16,7 @@ public class SpinWords {
      * @param spinWord It is the initial string.
      * @return Is the final string.
      */
-    public String spin(String spinWord) {
+    public String spin(final String spinWord) {
         return Stream.of(spinWord.split(" "))
                 .map(word -> (word.length() >= REV) ? new StringBuilder(word).reverse().toString() : word)
                 .collect(Collectors.joining(" "));

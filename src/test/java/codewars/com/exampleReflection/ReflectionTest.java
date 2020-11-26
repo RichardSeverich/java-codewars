@@ -32,7 +32,7 @@ public class ReflectionTest {
         // Results
         String[] actualResult = reflectionPrintMethods.getMethods();
         System.out.println(actualResult.length);
-        for(int i=0; i<actualResult.length; i++){
+        for (int i = 0; i < actualResult.length; i++) {
             System.out.println(actualResult[i]);
         }
         //This works with Intellij idea
@@ -120,7 +120,7 @@ public class ReflectionTest {
     }
 
     /**
-     * Test3: Fields
+     * Test3: Fields.
      */
     @Test
     public void test3() {
@@ -176,8 +176,8 @@ public class ReflectionTest {
         String[] expectedResult = new String[]{
                 "Field name :id - @MyAnnotation.name : ci - @MyAnnotation.description : cedula del usuario",
                 "Field name :name - @MyAnnotation.name : nombre - @MyAnnotation.description : nombre del ususario",
-                "Field name :birthDate - @MyAnnotation.name : fechaNacimiento - @MyAnnotation.description : " +
-                        "fecha de nacimiento",
+                "Field name :birthDate - @MyAnnotation.name : fechaNacimiento - @MyAnnotation.description : "
+                + "fecha de nacimiento",
         };
         Assert.assertArrayEquals(expectedResult, actualResult);
     }

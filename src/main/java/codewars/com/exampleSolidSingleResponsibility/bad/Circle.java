@@ -6,8 +6,6 @@ package codewars.com.exampleSolidSingleResponsibility.bad;
 public class Circle {
 
     /**
-     * '
-     *
      * @param option option
      * @param base   base
      * @param height height

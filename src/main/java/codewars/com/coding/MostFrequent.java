@@ -11,7 +11,7 @@ public class MostFrequent {
      * @param arrayNumbers This variable contains the array of ints.
      * @return return the most frequent item count.
      */
-    public int mostFrequentItemCount(int[] arrayNumbers) {
+    public int mostFrequentItemCount(final int[] arrayNumbers) {
         if (arrayNumbers.length == 0) {
             return 0;
         }

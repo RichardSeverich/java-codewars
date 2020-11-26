@@ -8,11 +8,11 @@ public interface IDog {
     /**
      * @param name name.
      */
-    public void setName(final String name);
+    void setName(String name);
 
     /**
      * @return name.
      */
-    public String getName();
+    String getName();
 
 }

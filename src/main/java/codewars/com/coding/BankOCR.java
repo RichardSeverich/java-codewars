@@ -35,7 +35,8 @@ public class BankOCR {
      * @param entryLine3 TIs the string which will be analyzed.
      * @return Returns a string with numbers.
      */
-    public String convertEntryToNumber(String entryLine1, String entryLine2, String entryLine3) {
+    public String convertEntryToNumber(final String entryLine1,
+        final String entryLine2, final String entryLine3) {
         StringBuilder resultNumber = new StringBuilder();
         extractString(entryLine1);
         extractString(entryLine2);
@@ -57,7 +58,7 @@ public class BankOCR {
      * @param num Is the number already converted.
      * @return Returns the number with Err, ILL.
      */
-    public String identifyErrOrIll(String num) {
+    public String identifyErrOrIll(final String num) {
         StringBuilder resultNumber = new StringBuilder();
         resultNumber.append(num);
         if (num.contains(QUESTION_MARK)) {
@@ -72,7 +73,7 @@ public class BankOCR {
      * @param num It is the number that we will verify if it is valid.
      * @return If it is valid returns True if not False.
      */
-    public boolean isValidChecksum(String num) {
+    public boolean isValidChecksum(final String num) {
         int checkSum = Integer.parseInt(num.substring(EIGHT, NINE));
         int band = TWO;
         for (int i = SEVEN; 0 <= i; i--) {
@@ -85,7 +86,7 @@ public class BankOCR {
     /**
      * @param entryLine Combine an entry line into numbers.
      */
-    private void extractString(String entryLine) {
+    private void extractString(final String entryLine) {
         int j = ZERO;
         for (int i = 0; i < NINE; i++) {
             num.add(new StringBuilder());

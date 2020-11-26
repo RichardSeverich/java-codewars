@@ -8,11 +8,11 @@ public interface IUser {
     /**
      * @return id.
      */
-    public String getId();
+    String getId();
 
     /**
      * @return name.
      */
-    public String getName();
+    String getName();
 
 }

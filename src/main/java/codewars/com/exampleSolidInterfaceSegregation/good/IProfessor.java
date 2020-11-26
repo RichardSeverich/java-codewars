@@ -5,16 +5,16 @@ import java.util.List;
 /**
  * Interface.
  */
-public interface IProfessor extends IUser{
+public interface IProfessor extends IUser {
 
     /**
      * @return salary.
      */
-    public String getSalary();
+    String getSalary();
 
 
     /**
      * @return ListStudents
      */
-    public List<String> geListStudents();
+    List<String> geListStudents();
 }

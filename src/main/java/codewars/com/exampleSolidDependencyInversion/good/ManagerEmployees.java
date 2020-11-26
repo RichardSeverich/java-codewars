@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class ManagerEmployees {
 
-    List<Employee> listEmployee;
+    private List<Employee> listEmployee;
 
     /**
      * Constructor.

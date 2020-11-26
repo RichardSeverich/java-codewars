@@ -13,7 +13,7 @@ public class Customer {
     /**
      * @param name is name of costumer.
      */
-    public Customer(String name) {
+    public Customer(final String name) {
         nameCustomer = name;
         rentalList = new ArrayList<>();
     }
@@ -21,7 +21,7 @@ public class Customer {
     /**
      * @param rental is a rental.
      */
-    public void addRental(Rental rental) {
+    public void addRental(final Rental rental) {
         rentalList.add(rental);
     }
 

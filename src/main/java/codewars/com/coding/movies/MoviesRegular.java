@@ -8,7 +8,7 @@ public class MoviesRegular extends Movie {
     /**
      * @param title is the title of movie.
      */
-    public MoviesRegular(String title) {
+    public MoviesRegular(final String title) {
         super(title);
     }
 
@@ -17,7 +17,7 @@ public class MoviesRegular extends Movie {
      * @return It is the amount to pay for the movie rented.
      */
     @Override
-    public double generatePrice(int daysRented) {
+    public double generatePrice(final int daysRented) {
         return daysRented > TWO ? TWO + (daysRented - TWO) * ONE_FIVE : TWO;
     }
 
@@ -26,7 +26,7 @@ public class MoviesRegular extends Movie {
      * @return It is the frequent points.
      */
     @Override
-    public int generateFrequent(int daysRented) {
+    public int generateFrequent(final int daysRented) {
         return daysRented > 1 ? TWO : ONE;
     }
 }

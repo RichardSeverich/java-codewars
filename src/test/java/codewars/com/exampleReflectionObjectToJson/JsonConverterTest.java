@@ -48,7 +48,8 @@ public class JsonConverterTest {
                 .append(INDENTATION).append("\"Name\": Mich,").append(System.getProperty(LINE_SEPARATOR))
                 .append(INDENTATION).append("\"LastName\": Harris,").append(System.getProperty(LINE_SEPARATOR))
                 .append(INDENTATION).append("\"BirthDate\": 18/05/1990,").append(System.getProperty(LINE_SEPARATOR))
-                .append(INDENTATION).append("\"Email\": Michael.Harris@gmail.com").append(System.getProperty(LINE_SEPARATOR))
+                .append(INDENTATION).append("\"Email\": Michael.Harris@gmail.com")
+                .append(System.getProperty(LINE_SEPARATOR))
                 .append("}");
         Assert.assertEquals(expectedResult.toString(), jsonConverter.getStringInJSonFormat());
     }
@@ -111,7 +112,8 @@ public class JsonConverterTest {
                 .append("{").append(System.getProperty(LINE_SEPARATOR))
                 .append(INDENTATION).append("\"Id\": 5214896,").append(System.getProperty(LINE_SEPARATOR))
                 .append(INDENTATION).append("\"Name\": Dumbo,").append(System.getProperty(LINE_SEPARATOR))
-                .append(INDENTATION).append("\"Actors\": [Lila,Sara,Michael]").append(System.getProperty(LINE_SEPARATOR))
+                .append(INDENTATION).append("\"Actors\": [Lila,Sara,Michael]")
+                .append(System.getProperty(LINE_SEPARATOR))
                 .append("}");
         Assert.assertEquals(expectedResult.toString(), jsonConverter.getStringInJSonFormat());
     }

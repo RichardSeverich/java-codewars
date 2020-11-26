@@ -9,7 +9,7 @@ public class AveragesOfNumbers {
      * @param intArray Int Array.
      * @return Double Array
      */
-    public double[] averages(int[] intArray) {
+    public double[] averages(final int[] intArray) {
         int sizeArray = (intArray == null || intArray.length <= 1) ? 0 : intArray.length - 1;
         double[] averagesArray = (sizeArray == 0) ? new double[0] : new double[sizeArray];
         int i = 0;

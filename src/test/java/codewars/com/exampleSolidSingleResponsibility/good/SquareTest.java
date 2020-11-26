@@ -3,6 +3,7 @@ package codewars.com.exampleSolidSingleResponsibility.good;
 import org.junit.Assert;
 import org.junit.Test;
 
+/** Class. */
 public class SquareTest {
 
     private Square square;

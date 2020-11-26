@@ -3,7 +3,10 @@ package codewars.com.charly;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+/** Class. */
 public class PrimeNumberTest {
+
+    /** Test. */
     @Test
     public void basicTests() {
         assertEquals(true, PrimeNumber.prime(7));
@@ -15,6 +18,7 @@ public class PrimeNumberTest {
         assertEquals(false, PrimeNumber.prime(-88));
     }
 
+    /** Test. */
     @Test
     public void recursionTests() {
         assertEquals(true, PrimeNumber.primeRecursion(2, 2));

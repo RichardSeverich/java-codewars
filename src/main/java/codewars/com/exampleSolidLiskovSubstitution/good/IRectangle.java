@@ -8,5 +8,5 @@ public interface IRectangle {
     /**
      * @return area.
      */
-    public int getArea();
+    int getArea();
 }

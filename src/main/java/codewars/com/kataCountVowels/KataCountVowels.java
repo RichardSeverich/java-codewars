@@ -1,8 +1,6 @@
 package codewars.com.kataCountVowels;
 
-import java.lang.StringBuilder; 
 import java.util.Arrays;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
@@ -19,7 +17,6 @@ o=1
 u=1
 */
 
-
 /**
 * Class.
 */
@@ -28,7 +25,7 @@ public class KataCountVowels {
     /**
     * Constructor.
     */
-    public KataCountVowels(){
+    public KataCountVowels() {
     }
 
     /**
@@ -47,40 +44,40 @@ public class KataCountVowels {
         int countI = 0;
         int countO = 0;
         int countU = 0;
-        for(String value: arrayList){
-            switch(value) {
+        for (String value: arrayList) {
+            switch (value) {
                 case "a":
                     countA++;
-                    if(hashSet.add(value)){
+                    if (hashSet.add(value)) {
                         countWowels++;
                     }
                     break;
                 case "e":
                     countE++;
-                    if(hashSet.add(value)){
+                    if (hashSet.add(value)) {
                         countWowels++;
                     }
                     break;
                 case "i":
                     countI++;
-                    if(hashSet.add(value)){
+                    if (hashSet.add(value)) {
                         countWowels++;
                     }
                     break;
                 case "o":
                     countO++;
-                    if(hashSet.add(value)){
+                    if (hashSet.add(value)) {
                         countWowels++;
                     }
                     break;
                 case "u":
                     countU++;
-                    if(hashSet.add(value)){
+                    if (hashSet.add(value)) {
                         countWowels++;
                     }
                     break;
                 default:
-                    if(hashSet.add(value)){
+                    if (hashSet.add(value)) {
                       countConsonants++;
                     }
             }
