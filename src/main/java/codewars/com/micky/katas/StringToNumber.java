@@ -1,9 +1,16 @@
 package codewars.com.micky.katas;
 
+/**
+ * Class.
+ */
 public class StringToNumber {
-    public static int stringToNumber(String str) {
-      
-      int resultado = Integer.parseInt(str);
-      return resultado;
+
+    /**
+     * @param str str.
+     * @return resultado.
+     */
+    public static int stringToNumber(final String str) {
+        int resultado = Integer.parseInt(str);
+        return resultado;
     }
-  }
+}

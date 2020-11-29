@@ -1,6 +1,5 @@
 package org.minions.devfund.richard.square;
 
-
 /**
  * Class.
  */

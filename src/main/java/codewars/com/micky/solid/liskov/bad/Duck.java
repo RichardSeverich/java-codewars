@@ -1,16 +1,28 @@
 package codewars.com.micky.solid.liskov.bad;
 
+/**
+ * Class.
+ */
 public class Duck {
-    
-    public String getFly(){
+
+    /**
+     * @return String.
+     */
+    public String getFly() {
         return "Si vuela";
     }
 
-    public String getSwing(){
+    /**
+     * @return String.
+     */
+    public String getSwing() {
         return "Si nada";
     }
 
-    public String getCuack(){
+    /**
+     * @return String.
+     */
+    public String getCuack() {
         return "Si hace cuack";
     }
 }

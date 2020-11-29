@@ -1,6 +1,9 @@
 package codewars.com.micky.pilares.polimorfismo;
 
+/**
+ * Class.
+ */
 public class Person {
-    public String nombre;
-    public int carnet;
+    protected String nombre;
+    protected int carnet;
 }

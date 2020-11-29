@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import codewars.com.micky.solid.openclosed.good.SetArea;
 
-public class AreasTest{
+public class AreasTest {
 
     private Square areaSquare1;
     private Circle areaCircle1;
@@ -19,10 +19,6 @@ public class AreasTest{
     public void instance() {
         area = new Areas();
     }
-
-
-
-
 
     /**
      * Test 1.
@@ -54,8 +50,8 @@ public class AreasTest{
     /**
      * Test 4.
      */
-    /*@Test
-    public void test4() {
-        Assert.assertEquals(78.54, Areas.getAreaCircle(5));
-    }*/
+    /*
+     * @Test public void test4() { Assert.assertEquals(78.54,
+     * Areas.getAreaCircle(5)); }
+     */
 }

@@ -1,16 +1,21 @@
 package codewars.com.micky.katas;
 
-import java.util.ArrayList;
-
+/**
+ * Class.
+ */
 public class ReturnNumbersWords {
 
-  public static int returnNumber(String dato){
-    int result = 0;
-    for (int i = 0; i < dato.length(); i ++){
-      if (Character.isDigit(dato.charAt(i))){
-        result ++;
-      }
+    /**
+     * @param dato dato.
+     * @return result.
+     */
+    public static int returnNumber(final String dato) {
+        int result = 0;
+        for (int i = 0; i < dato.length(); i++) {
+            if (Character.isDigit(dato.charAt(i))) {
+                result++;
+            }
+        }
+        return result;
     }
-    return result;
-  }
 }

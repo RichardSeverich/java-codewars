@@ -1,9 +1,15 @@
 package codewars.com.micky.solid.openclosed.good;
 
+/**
+ * Class.
+ */
 public class SetArea {
 
-    public double getArea(Area area){
+    /**
+     * @param area area.
+     * @return area.
+     */
+    public double getArea(final Area area) {
         return area.getArea();
     }
-
 }

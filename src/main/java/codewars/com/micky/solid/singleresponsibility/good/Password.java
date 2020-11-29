@@ -1,15 +1,22 @@
 package codewars.com.micky.solid.singleresponsibility.good;
 
-import java.util.Scanner;
-
+/**
+ * Class.
+ */
 public class Password {
     static String password;
-    
-    public static void setPassword(String pass){
+
+    /**
+     * @param pass password.
+     */
+    public static void setPassword(final String pass) {
         password = pass;
     }
-    
-    public static boolean getPassword(){
+
+    /**
+     * @return boolean.
+     */
+    public static boolean getPassword() {
         if (password.equals(Nickname.validate)) {
             return true;
         }

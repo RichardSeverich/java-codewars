@@ -1,13 +1,22 @@
 package codewars.com.micky.solid.openclosed.bad;
 
-public class Square{
+/**
+ * Class.
+ */
+public class Square {
     private double lado = 0;
 
-    public Square (int lado){
+    /**
+     * @param lado lado.
+     */
+    public Square(final int lado) {
         this.lado = (double) lado;
     }
 
-    public double getArea(){
+    /**
+     * @return area.
+     */
+    public double getArea() {
         return lado * lado;
     }
 }

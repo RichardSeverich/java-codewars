@@ -1,8 +1,17 @@
 package codewars.com.micky.katas;
 
+/**
+ * Class.
+ */
 public class Suma {
-    public static int sum (byte a, byte b) {
-      int c = (a + b);
+
+    /**
+     * @param a a.
+     * @param b b.
+     * @return c.
+     */
+    public static int sum(final byte a, final byte b) {
+        int c = (a + b);
         return c;
     }
 }

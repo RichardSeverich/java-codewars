@@ -1,11 +1,16 @@
 package codewars.com.micky.katas;
 
-import java.util.ArrayList;
+/**
+ * Class.
+ */
+public class ReturnPalabra {
 
-public class ReturnPalabra{
-
-  public static int palabras(String dato){
-    String[] array = dato.split(" ");  
-    return array.length;
-  }
+    /**
+     * @param dato dato.
+     * @return array.
+     */
+    public static int palabras(final String dato) {
+        String[] array = dato.split(" ");
+        return array.length;
+    }
 }

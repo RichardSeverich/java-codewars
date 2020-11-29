@@ -1,7 +1,15 @@
 package codewars.com.micky.katas;
 
+/**
+ * Class.
+ */
 public class Example {
-  public static int take(int num) {
-    return num + 1;
-  }
+
+    /**
+     * @param num num.
+     * @return num.
+     */
+    public static int take(final int num) {
+        return num + 1;
+    }
 }

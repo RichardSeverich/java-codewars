@@ -1,6 +1,12 @@
 package codewars.com.micky.solid.openclosed.good;
 
+/**
+ * Class.
+ */
 public interface Area {
 
-    public abstract double getArea();
+    /**
+     * @return area.
+     */
+    double getArea();
 }

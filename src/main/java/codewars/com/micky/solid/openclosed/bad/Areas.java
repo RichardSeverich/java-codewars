@@ -1,12 +1,23 @@
 package codewars.com.micky.solid.openclosed.bad;
 
+/**
+ * Class.
+ */
 public class Areas {
-    
-    public double getAreaSquare(Square square) {
+
+    /**
+     * @param square square.
+     * @return area.
+     */
+    public double getAreaSquare(final Square square) {
         return square.getArea();
     }
 
-    public double getAreaCircle(Circle circle){
+    /**
+     * @param circle circle.
+     * @return area.
+     */
+    public double getAreaCircle(final Circle circle) {
         return circle.getArea();
     }
 }

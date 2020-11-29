@@ -1,11 +1,16 @@
 package codewars.com.micky.katas;
 
-import java.util.List;
+/**
+ * Class.
+ */
+public class ReturnPalabras {
 
-public class ReturnPalabras{
-  
-  public static int getDato(String dato){
-    String[] array = dato.split(" ");
-    return array.length;
-  }
+    /**
+     * @param dato dato.
+     * @return array.
+     */
+    public static int getDato(final String dato) {
+        String[] array = dato.split(" ");
+        return array.length;
+    }
 }

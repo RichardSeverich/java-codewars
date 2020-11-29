@@ -1,8 +1,16 @@
 package codewars.com.micky.solid.singleresponsibility.good;
 
+/**
+ * Class.
+ */
 public class Sesion {
-    
-    public static boolean getResult(String nick, String pass){
+
+    /**
+     * @param nick nickname.
+     * @param pass password.
+     * @return boolean.
+     */
+    public static boolean getResult(final String nick, final String pass) {
         Nickname.setNickname(nick);
         Password.setPassword(pass);
         boolean nickname = Nickname.getNickname();

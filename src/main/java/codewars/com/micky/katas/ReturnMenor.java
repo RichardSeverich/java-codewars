@@ -1,16 +1,21 @@
 package codewars.com.micky.katas;
 
-import java.util.ArrayList;
+/**
+ * Class.
+ */
+public class ReturnMenor {
 
-public class ReturnMenor{
-
-  public static int getMenor(int[] array){
-    int result = array[0];
-    for (int i = 0; i < array.length; i ++){
-      if(array[i] < result){
-        result = array[i];
-      }
+    /**
+     * @param array array.
+     * @return result.
+     */
+    public static int getMenor(final int[] array) {
+        int result = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < result) {
+                result = array[i];
+            }
+        }
+        return result;
     }
-    return result;
-  }
 }

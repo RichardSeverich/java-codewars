@@ -1,20 +1,47 @@
 package codewars.com.micky.solid.isp.bad;
 
+/**
+ * Interface.
+ */
 public interface Trabajo {
 
-    public abstract String getImprimir();
+    /**
+     * @return String.
+     */
+    String getImprimir();
 
-    public abstract String getEngranpar();
+    /**
+     * @return String.
+     */
+    String getEngranpar();
 
-    public abstract String getCopiar();
+    /**
+     * @return String.
+     */
+    String getCopiar();
 
-    public abstract String getEnviarFax();
+    /**
+     * @return String.
+     */
+    String getEnviarFax();
 
-    public abstract String getSubirInternet();
+    /**
+     * @return String.
+     */
+    String getSubirInternet();
 
-    public abstract String getImprimirLaser();
+    /**
+     * @return String.
+     */
+    String getImprimirLaser();
 
-    public abstract String getImprimirColores();
+    /**
+     * @return String.
+     */
+    String getImprimirColores();
 
-    public abstract String getImprimirNegro();
+    /**
+     * @return String.
+     */
+    String getImprimirNegro();
 }
