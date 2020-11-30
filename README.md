@@ -45,6 +45,12 @@ Run single test:
 gradlew test --tests codewars.com.kataNextBiggernumber.BiggerNumNextTest
 ```
 
+Run single folder:
+
+```
+gradlew test --tests codewars.com.micky.katas.*
+```
+
 Other examples
 
 ```
