@@ -3,7 +3,6 @@ package codewars.com.micky.katas;
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
-import org.junit.runners.JUnit4;
 
 public class LogicOperationsTest {
     @Test
