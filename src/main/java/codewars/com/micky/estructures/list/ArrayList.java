@@ -3,17 +3,18 @@ package codewars.com.micky.estructures.list;
 import java.util.Arrays;
 
 /**
-* Class.
-* @param <T> T.
-*/
+ * Class.
+ * 
+ * @param <T> T.
+ */
 public class ArrayList<T> implements ILista<T> {
     private static final int CAPACIDAD_INICIAL = 5;
     private int tamano = 0;
     private Object[] arrayElementos;
 
     /**
-    * Constructor.
-    */
+     * Constructor.
+     */
     public ArrayList() {
         arrayElementos = new Object[CAPACIDAD_INICIAL];
     }
@@ -68,8 +69,8 @@ public class ArrayList<T> implements ILista<T> {
     }
 
     /**
-     * Update capacity of custom ArrayList.
-     * Method increases capacity of list by making it double.
+     * Update capacity of custom ArrayList. Method increases capacity of list by
+     * making it double.
      */
     private void subirCapacidad() {
         int nuevaCapacidad = arrayElementos.length * 2;
@@ -87,4 +88,3 @@ public class ArrayList<T> implements ILista<T> {
         }
     }
 }
-
