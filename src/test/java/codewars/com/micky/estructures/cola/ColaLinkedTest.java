@@ -1,18 +1,18 @@
-package codewars.com.micky.estructures.pilas;
+package codewars.com.micky.estructures.cola;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ColaTest {
-    private Cola<String> colaList;
+public class ColaLinkedTest {
+    private ColaLinked<String> colaList;
 
     /**
      * Before.
      */
     @Before
     public void instance() {
-        colaList = new Cola<>();
+        colaList = new ColaLinked<>();
     }
 
     /**

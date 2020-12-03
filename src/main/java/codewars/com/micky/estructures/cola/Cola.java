@@ -1,7 +1,12 @@
-package codewars.com.micky.estructures.pilas;
+package codewars.com.micky.estructures.cola;
 
 import java.util.Arrays;
 
+/**
+ * Class.
+ * 
+ * @param <T> T.
+ */
 public class Cola<T> implements ICola<T> {
     private int tamano;
     private Object[] arrayElementos;

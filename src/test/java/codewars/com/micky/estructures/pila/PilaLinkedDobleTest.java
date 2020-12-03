@@ -1,18 +1,18 @@
-package codewars.com.micky.estructures.pilas;
+package codewars.com.micky.estructures.pila;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PilaTest {
-    private Pila<String> pilaList;
+public class PilaLinkedDobleTest {
+    private PilaLinkedDoble<String> pilaList;
 
     /**
      * Before.
      */
     @Before
     public void instance() {
-        pilaList = new Pila<>();
+        pilaList = new PilaLinkedDoble<>();
     }
 
     /**
@@ -26,6 +26,7 @@ public class PilaTest {
         pilaList.push("loka");
         pilaList.push("foca");
         pilaList.push("foco");
+        assertEquals(6, pilaList.tamano());
         assertEquals("foco", pilaList.top());
         pilaList.pop();
         assertEquals("foca", pilaList.top());

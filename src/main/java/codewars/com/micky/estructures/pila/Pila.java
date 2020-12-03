@@ -1,4 +1,4 @@
-package codewars.com.micky.estructures.pilas;
+package codewars.com.micky.estructures.pila;
 
 import java.util.Arrays;
 
