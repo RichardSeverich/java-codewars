@@ -2,9 +2,15 @@ package codewars.com.micky.katas;
 
 import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
-import org.junit.runners.JUnit4;
 
+/**
+ * Test.
+ */
 public class ReturnAllImparesTest {
+
+    /**
+    * Test.
+    */
     @Test
     public void fixedTests() {
         assertArrayEquals(new int[]{5, 7, 9}, ReturnAllImpares.getImpares(new int[] {2, 5, 7, 9, 10}));

@@ -3,6 +3,9 @@ package codewars.com.micky.pilares.herencia;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+* Test.
+*/
 public class HerenciaTest {
     
     /**

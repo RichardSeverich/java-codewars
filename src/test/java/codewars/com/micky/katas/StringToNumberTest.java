@@ -3,21 +3,40 @@ package codewars.com.micky.katas;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+/**
+* Test.
+*/
 public class StringToNumberTest {   
+
+    /**
+    * Test.
+    */
     @Test
-    public void test1(){
+    public void test1() {
       assertEquals("stringToNumber(1234)", 1234 , StringToNumber.stringToNumber("1234"));
     }
+
+    /**
+    * Test.
+    */
     @Test
-    public void test2(){
+    public void test2() {
       assertEquals("stringToNumber(605)", 605 , StringToNumber.stringToNumber("605"));
     }
+
+    /**
+    * Test.
+    */
     @Test
-    public void test3(){
+    public void test3() {
       assertEquals("stringToNumber(1405)", 1405 , StringToNumber.stringToNumber("1405"));
     }
+
+    /**
+    * Test.
+    */
     @Test
-    public void test4(){
+    public void test4() {
       assertEquals("stringToNumber(-7)", -7 , StringToNumber.stringToNumber("-7"));
     }
 }

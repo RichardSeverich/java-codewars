@@ -2,9 +2,15 @@ package codewars.com.micky.katas;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import org.junit.runners.JUnit4;
 
+/**
+ * Test.
+ */
 public class SchoolTest {
+
+	/**
+    * Test.
+    */
   	@Test
 	public void simpleTest() {
 		assertEquals(2,School.getAverage(new int[] {2,2,2,2}));

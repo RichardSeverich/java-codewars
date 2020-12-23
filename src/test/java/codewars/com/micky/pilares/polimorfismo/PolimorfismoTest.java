@@ -3,6 +3,9 @@ package codewars.com.micky.pilares.polimorfismo;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+* Test.
+*/
 public class PolimorfismoTest {
     
     /**
