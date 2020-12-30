@@ -9,7 +9,13 @@ import java.util.HashSet;
 /**
  * Class.
  */
-public class SevenKyuReturnArrayListGood {
+public final class SevenKyuReturnArrayListGood {
+
+    /**
+    * Constructor.
+    */
+    private SevenKyuReturnArrayListGood() {
+    }
 
     /**
      * @param a a.

@@ -3,9 +3,15 @@ package codewars.com.micky.solid.singleresponsibility.good;
 /**
  * Class.
  */
-public class Nickname {
+public final class Nickname {
     static String nickname;
     public static String validate = "micky";
+
+    /**
+    * Constructor.
+    */
+    private Nickname() {
+    }
 
     /**
      * @param nick nickname.

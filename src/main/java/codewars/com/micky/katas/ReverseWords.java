@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReverseWords {
+public final class ReverseWords {
+
+    /**
+    * Constructor.
+    */
+    private ReverseWords() {
+    }
 
     /**
      * @param str str.

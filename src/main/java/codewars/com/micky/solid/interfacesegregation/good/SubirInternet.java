@@ -8,5 +8,5 @@ public interface SubirInternet {
     /**
      * @return String.
      */
-    public abstract String getSubirInternet();
+    String getSubirInternet();
 }

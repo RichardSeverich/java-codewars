@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class Counter {
+public final class Counter {
+
+    /**
+    * Constructor.
+    */
+    public Counter() {
+    }
 
     /**
      * @param arrayOfSheeps arrayOfSheeps.

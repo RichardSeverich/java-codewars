@@ -8,7 +8,13 @@ import java.util.stream.Collectors;
 /**
  * Class.
  */
-public class ReturnNoRepetidos {
+public final class ReturnNoRepetidos {
+
+    /**
+    * Constructor.
+    */
+    private ReturnNoRepetidos() {
+    }
 
     /**
      * @param array array.

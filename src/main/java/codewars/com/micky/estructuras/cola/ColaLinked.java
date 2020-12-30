@@ -22,10 +22,10 @@ public class ColaLinked<T> implements ICola<T> {
      * {@inheritDoc}
      */
     @Override
-    public void push(T elementoPush) {
+    public void push(final T elementoPush) {
         Nodo<T> nuevoNodo = new Nodo<T>();
         nuevoNodo.valor = elementoPush;
-        if(cabeza == null) {
+        if (cabeza == null) {
             cabeza = nuevoNodo;
             cola = nuevoNodo;
         } else {
@@ -40,7 +40,7 @@ public class ColaLinked<T> implements ICola<T> {
      */
     @Override
     public void pop() {
-        if(tamano > 0) {
+        if (tamano > 0) {
             cabeza = cabeza.nodoSiguiente;
             tamano--;
         }

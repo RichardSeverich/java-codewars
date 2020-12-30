@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnMayor {
+public final class ReturnMayor {
+
+    /**
+    * Constructor.
+    */
+    private ReturnMayor() {
+    }
 
     /**
      * @param array array.

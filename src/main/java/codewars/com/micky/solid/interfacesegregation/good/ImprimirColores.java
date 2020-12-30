@@ -8,5 +8,5 @@ public interface ImprimirColores {
     /**
      * @return String.
      */
-    public abstract String getImprimirColores();
+    String getImprimirColores();
 }

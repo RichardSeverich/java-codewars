@@ -13,12 +13,12 @@ public class Nodo<T> {
 
   /**
   * Constructor.
-  * @param indice indice.
+  * @param numeroNodo numeroNodo.
   */
   public Nodo(int numeroNodo) {
     this.valor = null;
     this.padre = null;
-    this.izquierda =null;
+    this.izquierda = null;
     this.derecha = null;
     this.numeroNodo = numeroNodo;
   }

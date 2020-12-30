@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Class.
- * 
+ *
  * @param <T> T.
  */
 public class Pila<T> implements IPila<T> {
@@ -24,7 +24,7 @@ public class Pila<T> implements IPila<T> {
      * {@inheritDoc}
      */
     @Override
-    public void push(T elementoPush) {
+    public void push(final T elementoPush) {
         if (tamano == CAPACIDAD_INICIAL) {
             subirCapacidad();
         }

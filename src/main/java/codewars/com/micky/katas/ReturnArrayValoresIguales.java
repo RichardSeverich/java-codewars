@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnArrayValoresIguales {
+public final class ReturnArrayValoresIguales {
+
+    /**
+    * Constructor.
+    */
+    private ReturnArrayValoresIguales() {
+    }
 
     /**
      * @param array1 array1.

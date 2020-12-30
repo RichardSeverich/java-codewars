@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class SquareSum {
+public final class SquareSum {
+
+    /**
+    * Constructor.
+    */
+    private SquareSum() {
+    }
 
     /**
      * @param n n.

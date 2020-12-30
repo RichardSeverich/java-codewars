@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnRepeat {
+public final class ReturnRepeat {
+
+    /**
+    * Constructor.
+    */
+    private ReturnRepeat() {
+    }
 
     /**
      * @param array array.

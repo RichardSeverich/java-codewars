@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnPares {
+public final class ReturnPares {
+
+    /**
+    * Constructor.
+    */
+    private ReturnPares() {
+    }
 
     /**
      * @param numero numero.

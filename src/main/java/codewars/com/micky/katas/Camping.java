@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class Camping {
+public final class Camping {
+
+    /**
+    * Constructor.
+    */
+    private Camping() {
+    }
 
     /**
      * @param distanceToPump distanceToPump.

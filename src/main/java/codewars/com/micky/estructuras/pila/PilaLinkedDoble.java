@@ -2,7 +2,7 @@ package codewars.com.micky.estructuras.pila;
 
 /**
  * Class.
- * 
+ *
  * @param <T> T.
  */
 public class PilaLinkedDoble<T> implements IPila<T> {
@@ -23,10 +23,10 @@ public class PilaLinkedDoble<T> implements IPila<T> {
      * {@inheritDoc}
      */
     @Override
-    public void push(T elementoPush) {
+    public void push(final T elementoPush) {
         NodoDoble<T> nuevoNodo = new NodoDoble<T>();
         nuevoNodo.valor = elementoPush;
-        if(cabeza == null) {
+        if (cabeza == null) {
             cabeza = nuevoNodo;
             cola = nuevoNodo;
         } else {
@@ -47,7 +47,7 @@ public class PilaLinkedDoble<T> implements IPila<T> {
             cola = null;
             tamano--;
         }
-        if(tamano > 1) {
+        if (tamano > 1) {
             NodoDoble<T> nodoAnterior = cola.nodoAnterior;
             nodoAnterior.nodoSiguiente = null;
             cola = nodoAnterior;

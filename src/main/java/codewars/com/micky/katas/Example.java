@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class Example {
+public final class Example {
+
+    /**
+    * Constructor.
+    */
+    private Example() {
+    }
 
     /**
      * @param num num.

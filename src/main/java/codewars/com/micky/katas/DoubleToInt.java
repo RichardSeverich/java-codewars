@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class DoubleToInt {
+public final class DoubleToInt {
+
+    /**
+    * Constructor.
+    */
+    private DoubleToInt() {
+    }
 
     /**
      * @param i i.

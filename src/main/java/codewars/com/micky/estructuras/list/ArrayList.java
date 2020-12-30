@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Class.
- * 
+ *
  * @param <T> T.
  */
 public class ArrayList<T> implements ILista<T> {

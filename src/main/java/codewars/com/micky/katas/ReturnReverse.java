@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnReverse {
+public final class ReturnReverse {
+
+    /**
+    * Constructor.
+    */
+    private ReturnReverse() {
+    }
 
     /**
      * @param letra letra.

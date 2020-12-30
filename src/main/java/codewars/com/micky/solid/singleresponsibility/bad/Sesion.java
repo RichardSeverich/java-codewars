@@ -3,8 +3,14 @@ package codewars.com.micky.solid.singleresponsibility.bad;
 /**
  * Class.
  */
-public class Sesion {
+public final class Sesion {
     static String validateNick = "micky";
+
+    /**
+    * Constructor.
+    */
+    private Sesion() {
+    }
 
     /**
      * @param nick nickname.

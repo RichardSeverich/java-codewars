@@ -3,8 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class Factorial {
+public final class Factorial {
 
+    /**
+    * Constructor.
+    */
+    public Factorial() {
+    }
 
     /**
      * @param numero numero.
@@ -12,7 +17,7 @@ public class Factorial {
      */
     public int getFactorial(final int numero) {
         int resultado = 1;
-        for (int i = numero; i > 0; i --) {
+        for (int i = numero; i > 0; i--) {
             if (numero > 0) {
                 resultado = resultado * i;
             }

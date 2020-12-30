@@ -8,5 +8,5 @@ public interface Engrampar {
     /**
      * @return String.
      */
-    public abstract String getEngrampar();
+    String getEngrampar();
 }

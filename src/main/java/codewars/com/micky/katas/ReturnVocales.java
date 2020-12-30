@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnVocales {
+public final class ReturnVocales {
+
+    /**
+    * Constructor.
+    */
+    private ReturnVocales() {
+    }
 
     /**
      * @param dato dato.

@@ -8,5 +8,5 @@ public interface Swing {
     /**
      * @return String.
      */
-    public abstract String getSwing();
+    String getSwing();
 }

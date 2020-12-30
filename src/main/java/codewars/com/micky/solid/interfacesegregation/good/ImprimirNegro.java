@@ -8,5 +8,5 @@ public interface ImprimirNegro {
     /**
      * @return String.
      */
-    public abstract String getImprimirNegro();
+    String getImprimirNegro();
 }

@@ -5,7 +5,13 @@ import java.util.ArrayList;
 /**
  * Class.
  */
-public class ReturnAllImpares {
+public final class ReturnAllImpares {
+
+    /**
+    * Constructor.
+    */
+    private ReturnAllImpares() {
+    }
 
     /**
      * @param array array.

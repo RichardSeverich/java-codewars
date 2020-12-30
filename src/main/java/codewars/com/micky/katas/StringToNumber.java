@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class StringToNumber {
+public final class StringToNumber {
+
+    /**
+    * Constructor.
+    */
+    private StringToNumber() {
+    }
 
     /**
      * @param str str.
