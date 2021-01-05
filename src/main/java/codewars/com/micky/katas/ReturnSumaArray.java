@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnSumaArray {
+public final class ReturnSumaArray {
+
+    /**
+    * Constructor.
+    */
+    private ReturnSumaArray() {
+    }
 
     /**
      * @param array1 array1.

@@ -8,5 +8,5 @@ public interface Imprimir {
     /**
      * @return String.
      */
-    public abstract String getImprimir();
+    String getImprimir();
 }

@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnArray {
+public final class ReturnArray {
+
+    /**
+    * Constructor.
+    */
+    private ReturnArray() {
+    }
 
     /**
      * @param dato dato.

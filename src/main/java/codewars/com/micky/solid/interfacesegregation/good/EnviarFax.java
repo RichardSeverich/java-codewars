@@ -8,5 +8,5 @@ public interface EnviarFax {
     /**
      * @return String.
      */
-    public abstract String getEnviarFax();
+    String getEnviarFax();
 }

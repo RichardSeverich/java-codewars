@@ -3,8 +3,14 @@ package codewars.com.micky.solid.singleresponsibility.good;
 /**
  * Class.
  */
-public class Password {
+public final class Password {
     static String password;
+
+    /**
+    * Constructor.
+    */
+    private Password() {
+    }
 
     /**
      * @param pass password.

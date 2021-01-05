@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnMenor {
+public final class ReturnMenor {
+
+    /**
+    * Constructor.
+    */
+    private ReturnMenor() {
+    }
 
     /**
      * @param array array.

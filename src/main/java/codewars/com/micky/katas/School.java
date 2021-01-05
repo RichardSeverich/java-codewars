@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class School {
+public final class School {
+
+    /**
+    * Constructor.
+    */
+    private School() {
+    }
 
     /**
      * @param marks marks.

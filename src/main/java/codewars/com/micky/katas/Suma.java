@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class Suma {
+public final class Suma {
+
+    /**
+    * Constructor.
+    */
+    private Suma() {
+    }
 
     /**
      * @param a a.

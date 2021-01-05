@@ -8,5 +8,5 @@ public interface Copiar {
     /**
      * @return String.
      */
-    public abstract String getCopiar();
+    String getCopiar();
 }

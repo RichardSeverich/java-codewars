@@ -5,7 +5,13 @@ import java.util.ArrayList;
 /**
  * Class.
  */
-public class CodeWarsKata {
+public final class CodeWarsKata {
+
+    /**
+    * Constructor.
+    */
+    private CodeWarsKata() {
+    }
 
     /**
      * @param arr arr.

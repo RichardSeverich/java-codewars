@@ -2,9 +2,15 @@ package codewars.com.micky.katas;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import org.junit.runners.JUnit4;
 
+/**
+* Test.
+*/
 public class WelcomeTest {
+
+    /**
+    * Test.
+    */
     @Test
     public void exampleTest() {
         assertEquals("Your function should have returned 'Welcome'. Try again.","Welcome", Welcome.greet("english"));

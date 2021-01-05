@@ -3,14 +3,19 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class Welcome {
+public final class Welcome {
+
+    /**
+    * Constructor.
+    */
+    private Welcome() {
+    }
 
     /**
      * @param language language.
      * @return String.
      */
     public static String greet(final String language) {
-
         if (language.equals("english")) {
             return "Welcome";
         }

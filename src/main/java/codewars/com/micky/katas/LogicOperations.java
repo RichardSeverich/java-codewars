@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class LogicOperations {
+public final class LogicOperations {
+
+    /**
+    * Constructor.
+    */
+    private LogicOperations() {
+    }
 
     /**
      * @param a a.

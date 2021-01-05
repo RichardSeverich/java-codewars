@@ -8,5 +8,5 @@ public interface Fly {
     /**
      * @return String.
      */
-    public abstract String getFly();
+    String getFly();
 }

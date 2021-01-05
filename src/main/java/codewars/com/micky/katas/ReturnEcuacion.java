@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class ReturnEcuacion {
+public final class ReturnEcuacion {
+
+    /**
+    * Constructor.
+    */
+    private ReturnEcuacion() {
+    }
 
     /**
      * @param a a.

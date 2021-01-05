@@ -2,8 +2,10 @@ package codewars.com.micky.katas;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import org.junit.runners.JUnit4;
 
+/**
+ * Test.
+ */
 public class CounterTest {
     Boolean[] array1 = {true,  true,  true,  false,
                       true,  true,  true,  true ,
@@ -12,6 +14,9 @@ public class CounterTest {
                       true,  true,  true,  true ,
                       false, false, true,  true };
 
+    /**
+     * test.
+     */
     @Test
     public void test() {
       assertEquals("There are 17 sheeps in total", 17, new Counter().countSheeps(array1));

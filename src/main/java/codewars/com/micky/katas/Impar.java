@@ -3,7 +3,13 @@ package codewars.com.micky.katas;
 /**
  * Class.
  */
-public class Impar {
+public final class Impar {
+
+    /**
+    * Constructor.
+    */
+    private Impar() {
+    }
 
     /**
      * @param n n.

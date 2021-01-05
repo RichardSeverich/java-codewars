@@ -8,5 +8,5 @@ public interface Cuack {
     /**
      * @return String.
      */
-    public abstract String getCuack();
+    String getCuack();
 }

@@ -3,7 +3,13 @@ package codewars.com.micky.solid.singleresponsibility.good;
 /**
  * Class.
  */
-public class Sesion {
+public final class Sesion {
+
+    /**
+    * Constructor.
+    */
+    private Sesion() {
+    }
 
     /**
      * @param nick nickname.

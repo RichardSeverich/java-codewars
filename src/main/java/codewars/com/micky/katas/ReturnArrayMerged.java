@@ -5,7 +5,13 @@ import java.util.ArrayList;
 /**
  * Class.
  */
-public class ReturnArrayMerged {
+public final class ReturnArrayMerged {
+
+    /**
+    * Constructor.
+    */
+    private ReturnArrayMerged() {
+    }
 
     /**
      * @param array1 array1.
