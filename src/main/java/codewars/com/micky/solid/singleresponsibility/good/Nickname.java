@@ -4,8 +4,8 @@ package codewars.com.micky.solid.singleresponsibility.good;
  * Class.
  */
 public final class Nickname {
-    static String nickname;
-    public static String validate = "micky";
+    private static String nickname;
+    protected static String validate = "micky";
 
     /**
     * Constructor.

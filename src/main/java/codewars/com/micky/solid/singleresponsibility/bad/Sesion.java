@@ -4,7 +4,7 @@ package codewars.com.micky.solid.singleresponsibility.bad;
  * Class.
  */
 public final class Sesion {
-    static String validateNick = "micky";
+    private static String validateNick = "micky";
 
     /**
     * Constructor.
