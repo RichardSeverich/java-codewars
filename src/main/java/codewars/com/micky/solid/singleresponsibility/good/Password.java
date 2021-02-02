@@ -4,7 +4,7 @@ package codewars.com.micky.solid.singleresponsibility.good;
  * Class.
  */
 public final class Password {
-    static String password;
+    private static String password;
 
     /**
     * Constructor.

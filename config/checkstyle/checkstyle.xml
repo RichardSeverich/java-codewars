@@ -82,7 +82,7 @@
 
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
-        <module name="ConstantName"/>
+        <!--<module name="ConstantName"/>-->
         <module name="LocalFinalVariableName"/>
         <module name="LocalVariableName"/>
         <module name="MemberName"/>
@@ -169,7 +169,7 @@
         <module name="InnerAssignment"/>
         <!--<module name="MagicNumber"/>-->
         <module name="MissingSwitchDefault"/>
-        <module name="SimplifyBooleanExpression"/>
+        <!--<module name="SimplifyBooleanExpression"/>-->
         <module name="SimplifyBooleanReturn"/>
 
         <!-- Checks for class design                         -->
@@ -186,7 +186,7 @@
         <!-- Miscellaneous utils checks.                   -->
         <!-- See http://checkstyle.sf.net/config_misc.html -->
         <module name="ArrayTypeStyle"/>
-        <module name="FinalParameters">
+        <!-- <module name="FinalParameters">-->
             <property name="ignorePrimitiveTypes" value="true"/>
         </module>
         <module name="TodoComment"/>
